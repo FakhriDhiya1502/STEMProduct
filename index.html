@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STEM Digital Solution | Portfolio Bisnis Peternakan Ayam</title>
+  <style>
+    :root {
+      --navy: #082f49;
+      --navy-2: #123f66;
+      --blue: #2563eb;
+      --sky: #5b9bd5;
+      --cyan: #0ea5e9;
+      --green: #16a34a;
+      --amber: #f59e0b;
+      --red: #dc2626;
+      --ink: #172033;
+      --muted: #607086;
+      --soft: #eef6ff;
+      --soft-2: #f8fbff;
+      --line: #dbeafe;
+      --white: #fff;
+      --shadow: 0 24px 70px rgba(8, 47, 73, .16);
+      --shadow-2: 0 14px 34px rgba(8, 47, 73, .09);
+      --radius: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f7fbff, #fff 42%, #f8fbff);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 5vw;
+      background: rgba(255, 255, 255, .9);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 950;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--navy), var(--sky));
+      color: white;
+      box-shadow: var(--shadow-2);
+      font-size: 14px;
+      letter-spacing: .4px;
+    }
+
+    .brand-logo-img {
+      width: 54px;
+      height: 54px;
+      display: block;
+      border-radius: 16px;
+      object-fit: contain;
+    }
+
+    .brand-logo-large {
+      width: min(72%, 360px);
+      height: 150px;
+      display: block;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #3f5872;
+      font-size: 13px;
+      font-weight: 850;
+      padding: 8px 11px;
+      border-radius: 999px;
+    }
+
+    nav a:hover {
+      background: var(--soft);
+      color: var(--navy);
+    }
+
+    nav a.cta {
+      background: var(--navy);
+      color: white;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 82px 5vw 62px;
+      background:
+        radial-gradient(circle at 88% 10%, rgba(14, 165, 233, .26), transparent 32%),
+        linear-gradient(135deg, #fff, #edf7ff 58%, #dfefff);
+    }
+
+    .container {
+      width: min(1260px, 100%);
+      margin: 0 auto;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      max-width: 100%;
+      padding: 9px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: white;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: var(--shadow-2);
+    }
+
+    h1 {
+      margin: 22px 0 16px;
+      color: var(--navy);
+      font-size: clamp(42px, 5vw, 64px);
+      line-height: 1.03;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 780px;
+      margin: 0;
+      color: #465a70;
+      font-size: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 50px;
+      padding: 13px 18px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 950;
+    }
+
+    .btn.primary {
+      background: var(--navy);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .btn.secondary {
+      background: white;
+      color: var(--navy);
+      border: 1px solid var(--line);
+    }
+
+    .hero-panel {
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background: rgba(255, 255, 255, .84);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .command-center {
+      border: 1px solid #e5edf7;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #fbfdff;
+    }
+
+    .screen-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 18px;
+      border-bottom: 1px solid #e5edf7;
+      background: white;
+    }
+
+    .screen-title {
+      font-weight: 950;
+      color: var(--navy);
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .status::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .screen-body {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+      padding: 18px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .mini-card,
+    .signal-card {
+      border: 1px solid #e5edf7;
+      border-radius: 18px;
+      background: white;
+      padding: 14px;
+    }
+
+    .mini-card span,
+    .signal-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .mini-card b {
+      display: block;
+      margin-top: 4px;
+      color: var(--navy);
+      font-size: 28px;
+      line-height: 1.05;
+    }
+
+    .bar-set {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 74px 1fr 42px;
+      gap: 10px;
+      align-items: center;
+      color: #4b5f76;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .bar-track {
+      height: 10px;
+      border-radius: 999px;
+      background: #e8f2fb;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+    }
+
+    .signal-card {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .signal {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid #edf2f7;
+      padding-bottom: 12px;
+    }
+
+    .signal:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .signal b {
+      color: var(--navy);
+      font-size: 14px;
+    }
+
+    .signal em {
+      font-style: normal;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: white;
+      padding: 18px;
+      box-shadow: var(--shadow-2);
+    }
+
+    .stat b {
+      display: block;
+      color: var(--navy);
+      font-size: 28px;
+      line-height: 1.1;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    section {
+      padding: 76px 5vw;
+    }
+
+    .section-title {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: end;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(30px, 3.2vw, 42px);
+      line-height: 1.14;
+      letter-spacing: 0;
+    }
+
+    .section-title p,
+    .section-copy {
+      margin: 0;
+      color: #506176;
+      font-size: 17px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .panel,
+    .card,
+    .product-card,
+    .value-card,
+    .flow-step {
+      border: 1px solid var(--line);
+      background: white;
+      box-shadow: var(--shadow-2);
+    }
+
+    .panel {
+      border-radius: 30px;
+      padding: 28px;
+    }
+
+    .panel h3,
+    .card h3,
+    .product-card h3,
+    .value-card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 23px;
+      line-height: 1.18;
+    }
+
+    .panel p,
+    .card p,
+    .product-card p,
+    .value-card p,
+    .flow-step span {
+      margin: 0;
+      color: #506176;
+    }
+
+    .logo-placeholder {
+      display: grid;
+      place-items: center;
+      min-height: 190px;
+      padding: 26px;
+      border: 1px dashed #9ec7ee;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #f8fbff, #edf7ff);
+      color: var(--navy);
+      text-align: center;
+      font-weight: 950;
+    }
+
+    .dark {
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
+      color: white;
+    }
+
+    .dark h2,
+    .dark .section-title p {
+      color: white;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .problem {
+      min-height: 190px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, .1);
+      padding: 22px;
+      backdrop-filter: blur(6px);
+    }
+
+    .problem b {
+      display: block;
+      margin-bottom: 8px;
+      color: white;
+      font-size: 18px;
+      line-height: 1.22;
+    }
+
+    .problem span {
+      color: rgba(255, 255, 255, .84);
+      font-size: 14px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .product-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 390px;
+      border-radius: 28px;
+      padding: 24px;
+      overflow: hidden;
+    }
+
+    .product-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 5px;
+      background: var(--accent, var(--blue));
+    }
+
+    .product-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .product-mark {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: var(--soft);
+      color: var(--accent, var(--blue));
+      font-size: 18px;
+      font-weight: 950;
+    }
+
+    .product-logo-img {
+      width: 74px;
+      height: 54px;
+      display: block;
+      object-fit: contain;
+      border-radius: 14px;
+      background: var(--soft);
+      padding: 7px;
+    }
+
+    .tag {
+      display: inline-flex;
+      width: fit-content;
+      border-radius: 999px;
+      background: #eef6ff;
+      color: var(--navy);
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 9px;
+      margin: 18px 0 22px;
+      padding: 0;
+      list-style: none;
+      color: #465a70;
+      font-size: 14px;
+    }
+
+    .feature-list li {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 8px;
+      align-items: start;
+    }
+
+    .feature-list li::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: var(--accent, var(--blue));
+    }
+
+    .product-link {
+      margin-top: auto;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 44px;
+      border-radius: 14px;
+      background: var(--navy);
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 950;
+    }
+
+    .flow-wrap {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .flow-step {
+      position: relative;
+      border-radius: 24px;
+      padding: 20px;
+      min-height: 178px;
+    }
+
+    .flow-step b {
+      display: block;
+      margin: 0 0 8px;
+      color: var(--navy);
+      line-height: 1.22;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      border-radius: 13px;
+      background: var(--navy);
+      color: white;
+      font-weight: 950;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .value-card {
+      border-radius: 26px;
+      padding: 24px;
+    }
+
+    .value-card .metric {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--blue);
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 950;
+    }
+
+    .demo {
+      background: linear-gradient(180deg, #f8fbff, #eef6ff);
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .demo-card {
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: white;
+      padding: 26px;
+      box-shadow: var(--shadow-2);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .timeline li {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #e8eef7;
+    }
+
+    .timeline li:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .timeline i {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
+      background: var(--soft);
+      color: var(--blue);
+      font-style: normal;
+      font-weight: 950;
+    }
+
+    .timeline b {
+      color: var(--navy);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .timeline span {
+      color: #506176;
+      font-size: 14px;
+    }
+
+    .contact {
+      padding: 76px 5vw 40px;
+      background: var(--navy);
+      color: white;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 28px;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 34px;
+      background: rgba(255, 255, 255, .08);
+      padding: 34px;
+    }
+
+    .contact h2 {
+      color: white;
+    }
+
+    .contact p {
+      color: rgba(255, 255, 255, .82);
+      margin: 14px 0 0;
+    }
+
+    .contact-box {
+      display: grid;
+      gap: 10px;
+      border-radius: 24px;
+      background: white;
+      color: var(--ink);
+      padding: 22px;
+    }
+
+    .contact-box b {
+      color: var(--navy);
+    }
+
+    .contact-box span {
+      color: #506176;
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 24px 5vw;
+      background: #062238;
+      color: #cdefff;
+      font-size: 13px;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .section-title,
+      .about-grid,
+      .demo-grid,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .products,
+      .problem-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .flow-wrap,
+      .value-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      .hero,
+      section,
+      .contact {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .screen-body,
+      .mini-grid,
+      .stats,
+      .products,
+      .problem-grid,
+      .flow-wrap,
+      .value-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-card {
+        min-height: auto;
+      }
+
+      .contact-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="STEM Digital Solution">
+      <object class="brand-logo-img" data="assets/logo-stem.png" type="image/png">
+        <span class="brand-logo">STEM</span>
+      </object>
+      <span>STEM Digital Solution</span>
+    </a>
+    <nav>
+      <a href="#about">STEM</a>
+      <a href="#challenge">Challenge</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#ecosystem">Ekosistem</a>
+      <a href="#demo">Alur Demo</a>
+      <a class="cta" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Konsultan SAP | Aplikasi Web Terintegrasi | Sistem Bisnis Peternakan</span>
+          <h1>STEM Digital Solution</h1>
+          <p class="lead">
+            Solusi SAP dan aplikasi web terintegrasi untuk perusahaan peternakan ayam modern. Sterling Tulus Cemerlang
+            membantu bisnis farm menghubungkan operasional lapangan, HR, finance, inventory, reporting, dan keputusan
+            manajemen dalam satu ekosistem digital yang siap dikembangkan.
+          </p>
+          <div class="buttons">
+            <a class="btn primary" href="#solutions">Lihat Solusi</a>
+            <a class="btn secondary" href="#demo">Lihat Alur Demo</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><b>SAP</b><span>Finance, inventory, purchasing, dan sales</span></div>
+            <div class="stat"><b>Farm</b><span>Data operasional dan visibilitas flock</span></div>
+            <div class="stat"><b>HR</b><span>Absensi, payroll, dan data karyawan</span></div>
+            <div class="stat"><b>BI</b><span>Dashboard dan laporan manajemen</span></div>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="Pratinjau dashboard bisnis terintegrasi">
+          <div class="command-center">
+            <div class="screen-head">
+              <div class="screen-title">Pusat Kendali Bisnis Peternakan</div>
+              <div class="status">Terintegrasi</div>
+            </div>
+            <div class="screen-body">
+              <div>
+                <div class="mini-grid">
+                  <div class="mini-card"><span>Performa Farm</span><b>96.8%</b></div>
+                  <div class="mini-card"><span>Akurasi Inventory</span><b>98.2%</b></div>
+                  <div class="mini-card"><span>Kesiapan Payroll</span><b>100%</b></div>
+                  <div class="mini-card"><span>Closing Finance</span><b>H+1</b></div>
+                </div>
+                <div class="bar-set">
+                  <div class="bar-row"><span>iFLOCS</span><div class="bar-track"><div class="bar-fill" style="width:92%"></div></div><span>92%</span></div>
+                  <div class="bar-row"><span>iREAPBIZ</span><div class="bar-track"><div class="bar-fill" style="width:86%"></div></div><span>86%</span></div>
+                  <div class="bar-row"><span>iREAPNET</span><div class="bar-track"><div class="bar-fill" style="width:89%"></div></div><span>89%</span></div>
+                  <div class="bar-row"><span>SAP</span><div class="bar-track"><div class="bar-fill" style="width:95%"></div></div><span>95%</span></div>
+                </div>
+              </div>
+              <div class="signal-card">
+                <span>Sinyal Manajemen</span>
+                <div class="signal"><b>Deviasi biaya pakan</b><em>Terlihat</em></div>
+                <div class="signal"><b>Pergerakan stok</b><em>Sinkron</em></div>
+                <div class="signal"><b>Data absensi</b><em>Siap</em></div>
+                <div class="signal"><b>Laporan P&L</b><em>Update</em></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>Mitra Konsultasi SAP untuk Transformasi Bisnis Peternakan</h2>
+          <p>
+            STEM membantu perusahaan peternakan ayam membangun sistem bisnis yang rapi dari proses lapangan sampai
+            laporan manajemen.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="panel">
+            <h3>Sterling Tulus Cemerlang</h3>
+            <p>
+              Sterling Tulus Cemerlang adalah konsultan teknologi yang membantu perusahaan merancang,
+              mengimplementasikan, dan mengembangkan sistem bisnis berbasis SAP serta aplikasi web yang terintegrasi.
+              Fokus STEM bukan hanya menyediakan perangkat lunak, tetapi memastikan proses bisnis pelanggan menjadi
+              lebih efisien, data lebih akurat, dan keputusan manajemen dapat diambil berdasarkan informasi real-time.
+            </p>
+          </div>
+          <div class="panel">
+            <div class="logo-placeholder">
+              <object class="brand-logo-large" data="assets/logo-stem.png" type="image/png">
+                <div>STEM</div>
+              </object>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark" id="challenge">
+      <div class="container">
+        <div class="section-title">
+          <h2>Mengapa Perusahaan Peternakan Membutuhkan Sistem Terintegrasi</h2>
+          <p>
+            Dalam bisnis ayam kemitraan maupun ayam petelur, tantangan utama bukan hanya mencatat transaksi. Tantangan
+            terbesarnya adalah menghubungkan data operasional, stok, HR, finance, dan reporting agar manajemen bisa
+            membaca kondisi bisnis dengan cepat.
+          </p>
+        </div>
+
+        <div class="problem-grid">
+          <div class="problem"><b>Data farm tersebar</b><span>Data kandang, produksi, pakan, mortalitas, dan stok sering berada di file atau sistem berbeda.</span></div>
+          <div class="problem"><b>Finance tidak selalu real-time</b><span>Biaya operasional farm sulit ditelusuri sampai level kandang, flock, project, atau cost center.</span></div>
+          <div class="problem"><b>HR dan payroll kompleks</b><span>Banyak lokasi, shift, absensi lapangan, overtime, dan payroll membutuhkan kontrol yang konsisten.</span></div>
+          <div class="problem"><b>Reporting lambat</b><span>Manajemen membutuhkan dashboard cepat, bukan rekap manual setelah masalah bisnis terlambat terlihat.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solutions">
+      <div class="container">
+        <div class="section-title">
+          <h2>Portfolio Solusi untuk Perusahaan Peternakan</h2>
+          <p>
+            STEM menggabungkan SAP dan aplikasi web terintegrasi untuk menjawab kebutuhan operasional farm, workflow
+            bisnis, HR, payroll, finance, inventory, dan reporting dalam satu ekosistem.
+          </p>
+        </div>
+
+        <div class="products">
+          <article class="product-card" style="--accent:#123f66">
+            <div class="product-top">
+              <object class="product-logo-img" data="assets/logo-sap.png" type="image/png">
+                <div class="product-mark">SAP</div>
+              </object>
+              <span class="tag">ERP Utama</span>
+            </div>
+            <h3>Solusi SAP Business</h3>
+            <p>Fondasi ERP untuk finance, inventory, purchasing, sales, accounting, dan laporan manajemen.</p>
+            <ul class="feature-list">
+              <li>Accounting, cost center, project, dan kontrol financial</li>
+              <li>Inventory, purchasing, sales, dan proses approval</li>
+              <li>Laporan manajemen yang terhubung dengan data operasional</li>
+            </ul>
+            <a class="product-link" href="sap-solution.html">Buka Product Profile</a>
+          </article>
+
+          <article class="product-card" style="--accent:#16a34a">
+            <div class="product-top">
+              <object class="product-logo-img" data="assets/logo-iflocs.png" type="image/png">
+                <div class="product-mark">iF</div>
+              </object>
+              <span class="tag">Operasional Farm</span>
+            </div>
+            <h3>iFLOCS</h3>
+            <p>Solusi monitoring farm untuk mengontrol data kandang, pakan, populasi, produksi, dan performa flock.</p>
+            <ul class="feature-list">
+              <li>Pencatatan harian farm dan monitoring performa flock</li>
+              <li>Tracking pakan, mortalitas, produksi, dan KPI operasional</li>
+              <li>Analisa farm yang terhubung dengan biaya dan inventory di SAP</li>
+            </ul>
+            <a class="product-link" href="iflocs.html">Buka Product Profile</a>
+          </article>
+
+          <article class="product-card" style="--accent:#0ea5e9">
+            <div class="product-top">
+              <object class="product-logo-img" data="assets/logo-ireapbiz.png" type="image/png">
+                <div class="product-mark">iB</div>
+              </object>
+              <span class="tag">Aplikasi Bisnis</span>
+            </div>
+            <h3>iREAPBIZ</h3>
+            <p>Lapisan aplikasi web untuk workflow bisnis, transaksi operasional, approval, reporting, dan integrasi.</p>
+            <ul class="feature-list">
+              <li>Portal proses bisnis dan transaksi operasional yang dapat disesuaikan</li>
+              <li>Workflow approval, reporting, dan visibilitas dokumen</li>
+              <li>Jembatan integrasi fleksibel antara user lapangan dan SAP</li>
+            </ul>
+            <a class="product-link" href="ireapbiz.html">Buka Product Profile</a>
+          </article>
+
+          <article class="product-card" style="--accent:#f59e0b">
+            <div class="product-top">
+              <object class="product-logo-img" data="assets/logo-ireapnet.png" type="image/png">
+                <div class="product-mark">iN</div>
+              </object>
+              <span class="tag">HR & Payroll</span>
+            </div>
+            <h3>iREAPNET</h3>
+            <p>HRIS untuk recruitment, master karyawan, absensi, cuti, payroll, self service, dan dashboard SDM.</p>
+            <ul class="feature-list">
+              <li>HR multi-company, data karyawan, dan otorisasi</li>
+              <li>Absensi NFC, fingerprint, mobile, dan kesiapan payroll</li>
+              <li>Dashboard HR untuk kontrol absensi, manpower, dan payroll</li>
+            </ul>
+            <a class="product-link" href="ireapnet.html">Buka Product Profile</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ecosystem">
+      <div class="container">
+        <div class="section-title">
+          <h2>Bagaimana Solusi Ini Saling Terhubung</h2>
+          <p>
+            Setiap produk dapat berdiri sendiri, tetapi nilai terbesarnya muncul ketika data farm, HR, workflow, dan SAP
+            saling terhubung menjadi satu sumber informasi untuk manajemen.
+          </p>
+        </div>
+
+        <div class="flow-wrap">
+          <div class="flow-step">
+            <div class="step-num">01</div>
+            <b>Operasional Farm</b>
+            <span>Data kandang, pakan, produksi, mortalitas, dan aktivitas lapangan dikumpulkan dari proses harian.</span>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">02</div>
+            <b>Aplikasi Web</b>
+            <span>iFLOCS, iREAPBIZ, dan iREAPNET menangani input, workflow, approval, dan pengalaman user.</span>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">03</div>
+            <b>Integrasi SAP</b>
+            <span>Transaksi penting masuk ke SAP untuk inventory, finance, purchasing, sales, dan accounting.</span>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">04</div>
+            <b>Dashboard</b>
+            <span>KPI operasional dan KPI financial ditampilkan dalam bentuk report dan dashboard manajemen.</span>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">05</div>
+            <b>Keputusan Bisnis</b>
+            <span>Owner dan manajemen dapat mengambil keputusan berdasarkan data yang lebih cepat dan terukur.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="value">
+      <div class="container">
+        <div class="section-title">
+          <h2>Nilai Bisnis untuk Manajemen</h2>
+          <p>
+            Tujuan utama digitalisasi bukan hanya mengganti pencatatan manual, tetapi meningkatkan kontrol bisnis,
+            mempercepat reporting, dan membuat keputusan lebih akurat.
+          </p>
+        </div>
+
+        <div class="value-grid">
+          <div class="value-card"><span class="metric">01</span><h3>Visibilitas Terintegrasi</h3><p>Data farm, HR, stok, transaksi, dan finance dapat dilihat sebagai satu rangkaian proses bisnis.</p></div>
+          <div class="value-card"><span class="metric">02</span><h3>Kontrol Operasional</h3><p>Manajemen dapat memonitor deviasi, biaya, approval, dan performa dari level farm sampai group company.</p></div>
+          <div class="value-card"><span class="metric">03</span><h3>Reporting Lebih Cepat</h3><p>Laporan tidak bergantung pada rekap manual yang lambat. Data dapat diarahkan ke dashboard dan SAP reporting.</p></div>
+          <div class="value-card"><span class="metric">04</span><h3>Proses yang Scalable</h3><p>Sistem dapat dikembangkan untuk multi farm, multi company, multi user, dan kebutuhan bisnis baru.</p></div>
+          <div class="value-card"><span class="metric">05</span><h3>Tracking Biaya Lebih Jelas</h3><p>Biaya operasional, pergerakan inventory, payroll, dan transaksi bisnis dapat ditelusuri dengan lebih jelas.</p></div>
+          <div class="value-card"><span class="metric">06</span><h3>Siap untuk Keputusan</h3><p>Owner, finance, HR, dan operasional memiliki sumber informasi yang sama untuk mengambil keputusan.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo" id="demo">
+      <div class="container demo-grid">
+        <div>
+          <span class="badge">Alur Presentasi yang Disarankan</span>
+          <h2 style="margin-top:18px">Alur Demo untuk Pelanggan Peternakan</h2>
+          <p class="section-copy" style="margin-top:14px">
+            Halaman ini dapat digunakan sebagai pembuka sebelum masuk ke product profile masing-masing solusi. Alur demo
+            dibuat agar pelanggan memahami gambaran ekosistem terlebih dahulu, lalu masuk ke area yang paling relevan
+            dengan kebutuhan mereka.
+          </p>
+        </div>
+
+        <div class="demo-card">
+          <ol class="timeline">
+            <li><i>1</i><div><b>Gambaran Bisnis</b><span>Mulai dari kondisi bisnis farm ayam dan tantangan integrasi data antar divisi.</span></div></li>
+            <li><i>2</i><div><b>Ekosistem STEM</b><span>Jelaskan peran SAP, iFLOCS, iREAPBIZ, dan iREAPNET dalam satu arsitektur solusi.</span></div></li>
+            <li><i>3</i><div><b>Pendalaman Produk</b><span>Pilih product profile sesuai pain point pelanggan: operasional farm, HR payroll, workflow, atau ERP.</span></div></li>
+            <li><i>4</i><div><b>Dashboard dan Reporting</b><span>Tampilkan contoh KPI, report, approval, atau monitoring bisnis yang relevan.</span></div></li>
+            <li><i>5</i><div><b>Roadmap Implementasi</b><span>Tutup dengan assessment, pilot, rencana integrasi, rollout, dan next step proposal.</span></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-card">
+        <div>
+          <h2>Siap Membangun Sistem Bisnis Peternakan yang Terintegrasi?</h2>
+          <p>
+            STEM dapat membantu memetakan kebutuhan bisnis, menentukan prioritas modul, menyiapkan demo, dan menyusun
+            roadmap implementasi SAP serta aplikasi web yang sesuai dengan proses pelanggan.
+          </p>
+          <div class="buttons">
+            <a class="btn primary" href="mailto:[email@stem.co.id]">Minta Diskusi</a>
+            <a class="btn secondary" href="#solutions">Tinjau Solusi</a>
+          </div>
+        </div>
+        <div class="contact-box">
+          <b>Sterling Tulus Cemerlang</b>
+          <span>Contact Person: [Nama]</span>
+          <span>Telepon / WhatsApp: [Nomor Telepon]</span>
+          <span>Email: [email@stem.co.id]</span>
+          <span>Website: [website]</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      STEM Digital Solution. Halaman konsep portfolio untuk demo bisnis peternakan. Lengkapi kontak dan link produk
+      ketika masing-masing product profile sudah siap.
+    </div>
+  </footer>
+</body>
+
+</html>

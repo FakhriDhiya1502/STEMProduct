@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iFLOCS | Product Profile Farm Operation</title>
+  <style>
+    :root {
+      --forest: #12372a;
+      --green: #1f7a4d;
+      --mint: #42b883;
+      --teal: #16a3a3;
+      --amber: #f4a62a;
+      --cream: #f7fbf4;
+      --soft: #eef8f1;
+      --white: #fff;
+      --ink: #17231d;
+      --muted: #657466;
+      --line: #dbeadf;
+      --danger: #dc5b45;
+      --shadow: 0 24px 70px rgba(18, 55, 42, .14);
+      --shadow-2: 0 12px 34px rgba(18, 55, 42, .09);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #fbfdf8, #fff 46%, #f4faf6);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 5vw;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .9);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--forest);
+      text-decoration: none;
+      font-weight: 950;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--forest), var(--mint));
+      color: white;
+      box-shadow: var(--shadow-2);
+      font-size: 14px;
+    }
+
+    .brand-logo-img {
+      width: 56px;
+      height: 56px;
+      display: block;
+      border-radius: 16px;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #456052;
+      font-size: 13px;
+      font-weight: 850;
+      padding: 8px 11px;
+      border-radius: 999px;
+    }
+
+    nav a:hover {
+      color: var(--forest);
+      background: var(--soft);
+    }
+
+    nav a.cta {
+      color: white;
+      background: var(--green);
+    }
+
+    .hero {
+      padding: 82px 5vw 62px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 84% 14%, rgba(66, 184, 131, .28), transparent 30%),
+        radial-gradient(circle at 16% 82%, rgba(244, 166, 42, .16), transparent 28%),
+        linear-gradient(135deg, #fff, #f2fbf2 58%, #e4f5e8);
+    }
+
+    .container {
+      width: min(1260px, 100%);
+      margin: 0 auto;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: .96fr 1.04fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      max-width: 100%;
+      width: fit-content;
+      padding: 9px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: white;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 950;
+      box-shadow: var(--shadow-2);
+    }
+
+    h1 {
+      margin: 22px 0 16px;
+      color: var(--forest);
+      font-size: clamp(44px, 5vw, 68px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 0;
+      color: #46584c;
+      font-size: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 13px 18px;
+      border-radius: 15px;
+      text-decoration: none;
+      font-weight: 950;
+    }
+
+    .btn.primary {
+      color: white;
+      background: var(--forest);
+      box-shadow: var(--shadow);
+    }
+
+    .btn.secondary {
+      color: var(--forest);
+      background: white;
+      border: 1px solid var(--line);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .stat {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 21px;
+      background: white;
+      box-shadow: var(--shadow-2);
+    }
+
+    .stat b {
+      display: block;
+      color: var(--forest);
+      font-size: 28px;
+      line-height: 1.05;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 780;
+    }
+
+    .app-frame {
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background: rgba(255, 255, 255, .86);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-screenshot {
+      display: block;
+      width: 100%;
+      border: 1px solid #dfe9e1;
+      border-radius: 24px;
+      background: white;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .hero-screenshot img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-screenshot-fallback {
+      display: grid;
+      place-items: center;
+      min-height: 360px;
+      padding: 24px;
+      color: var(--green);
+      background:
+        linear-gradient(135deg, rgba(31, 122, 77, .08), rgba(22, 163, 163, .08)),
+        repeating-linear-gradient(45deg, #fbfdfb, #fbfdfb 10px, #f1f8f2 10px, #f1f8f2 20px);
+      text-align: center;
+      font-weight: 950;
+    }
+
+    .hero-screenshot-fallback small {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .app-window {
+      overflow: hidden;
+      border: 1px solid #dfe9e1;
+      border-radius: 24px;
+      background: #f7fbf7;
+    }
+
+    .app-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 16px;
+      color: white;
+      background: linear-gradient(90deg, var(--forest), var(--green));
+    }
+
+    .app-logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 950;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+
+    .app-user {
+      font-size: 12px;
+      font-weight: 850;
+      opacity: .9;
+    }
+
+    .app-body {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      min-height: 360px;
+    }
+
+    .app-side {
+      padding: 16px 12px;
+      border-right: 1px solid #dfe9e1;
+      background: #f0f8f1;
+    }
+
+    .side-title {
+      margin: 0 0 14px;
+      color: var(--forest);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .side-item {
+      display: block;
+      margin: 7px 0;
+      padding: 9px 10px;
+      border-radius: 12px;
+      color: #526658;
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .side-item.active {
+      color: white;
+      background: var(--green);
+    }
+
+    .mock-content {
+      padding: 16px;
+      background: #fbfdfb;
+    }
+
+    .mock-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .mock-title b {
+      color: var(--forest);
+      font-size: 18px;
+    }
+
+    .mock-pill {
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: var(--green);
+      background: var(--soft);
+      font-size: 11px;
+      font-weight: 950;
+    }
+
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .mini-kpi {
+      padding: 12px;
+      border: 1px solid #dfe9e1;
+      border-radius: 15px;
+      background: white;
+    }
+
+    .mini-kpi span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    .mini-kpi b {
+      display: block;
+      margin-top: 3px;
+      color: var(--forest);
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .mock-table {
+      overflow: hidden;
+      border: 1px solid #dfe9e1;
+      border-radius: 16px;
+      background: white;
+    }
+
+    .mock-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr .7fr .7fr;
+    }
+
+    .mock-row span {
+      padding: 10px;
+      border-right: 1px solid #edf3ee;
+      border-bottom: 1px solid #edf3ee;
+      color: #526658;
+      font-size: 11px;
+    }
+
+    .mock-row.header span {
+      color: var(--forest);
+      background: #eff7f0;
+      font-weight: 950;
+    }
+
+    section {
+      padding: 76px 5vw;
+    }
+
+    .section-title {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: end;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--forest);
+      font-size: clamp(30px, 3.2vw, 42px);
+      line-height: 1.14;
+      letter-spacing: 0;
+    }
+
+    .section-title p,
+    .section-copy {
+      margin: 0;
+      color: #526658;
+      font-size: 17px;
+    }
+
+    .dark {
+      color: white;
+      background: linear-gradient(135deg, var(--forest), #24503e);
+    }
+
+    .dark h2,
+    .dark .section-title p {
+      color: white;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .problem {
+      min-height: 190px;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, .1);
+      backdrop-filter: blur(6px);
+    }
+
+    .problem b {
+      display: block;
+      margin-bottom: 9px;
+      color: white;
+      font-size: 19px;
+      line-height: 1.2;
+    }
+
+    .problem span {
+      color: rgba(255, 255, 255, .84);
+      font-size: 14px;
+    }
+
+    .cards,
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .module-showcase {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .solution-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100%;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: linear-gradient(135deg, var(--forest), #24503e);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .solution-panel h2 {
+      color: white;
+      font-size: clamp(30px, 3vw, 40px);
+    }
+
+    .solution-panel p {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, .86);
+      font-size: 16px;
+    }
+
+    .solution-points {
+      display: grid;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .solution-points span {
+      padding: 12px 14px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .08);
+      color: white;
+      font-weight: 850;
+      font-size: 14px;
+    }
+
+    .module-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .module-card {
+      position: relative;
+      min-height: 315px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: white;
+      box-shadow: var(--shadow-2);
+      overflow: hidden;
+    }
+
+    .module-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 5px;
+      background: linear-gradient(90deg, var(--green), var(--teal));
+    }
+
+    .module-card p {
+      margin: 0;
+      color: #526658;
+    }
+
+    .card,
+    .screen-card,
+    .value-card,
+    .flow-step {
+      border: 1px solid var(--line);
+      background: white;
+      box-shadow: var(--shadow-2);
+    }
+
+    .card {
+      min-height: 260px;
+      padding: 24px;
+      border-radius: 26px;
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 15px;
+      border-radius: 17px;
+      color: var(--green);
+      background: var(--soft);
+      font-size: 20px;
+      font-weight: 950;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      color: var(--forest);
+      font-size: 23px;
+      line-height: 1.18;
+    }
+
+    .card p,
+    .value-card p,
+    .screen-card p,
+    .flow-step span {
+      margin: 0;
+      color: #526658;
+    }
+
+    .screen-section {
+      background: linear-gradient(180deg, #f7fbf4, #eff8f2);
+    }
+
+    .app-preview {
+      background: white;
+    }
+
+    .screens {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .screen-card {
+      border-radius: 30px;
+      padding: 20px;
+    }
+
+    .screen-card.wide {
+      grid-column: 1 / -1;
+    }
+
+    .screen-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .screen-label {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--green);
+      background: var(--soft);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .screenshot-frame {
+      margin-top: 16px;
+      border: 1px solid #dfe9e1;
+      border-radius: 22px;
+      background: #f7fbf7;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .screenshot-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      background: rgba(13, 40, 30, .84);
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      display: block;
+      max-width: min(1180px, 94vw);
+      max-height: 86vh;
+      border-radius: 18px;
+      background: white;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .35);
+    }
+
+    .lightbox button {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255, 255, 255, .28);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .12);
+      color: white;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .mini-browser {
+      overflow: hidden;
+      margin-top: 16px;
+      border: 1px solid #dfe9e1;
+      border-radius: 20px;
+      background: #fbfdfb;
+    }
+
+    .browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px;
+      border-bottom: 1px solid #dfe9e1;
+      background: #f0f8f1;
+    }
+
+    .browser-bar i {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #9bb9a5;
+    }
+
+    .browser-page {
+      padding: 14px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .field {
+      height: 34px;
+      border: 1px solid #e2ebe4;
+      border-radius: 8px;
+      background: #f8faf8;
+    }
+
+    .table-sim {
+      overflow: hidden;
+      border: 1px solid #e2ebe4;
+      border-radius: 12px;
+    }
+
+    .table-sim div {
+      display: grid;
+      grid-template-columns: 1.1fr 1.5fr .7fr .7fr .9fr;
+    }
+
+    .table-sim span {
+      min-height: 34px;
+      padding: 8px;
+      border-right: 1px solid #e9f0eb;
+      border-bottom: 1px solid #e9f0eb;
+      color: #526658;
+      font-size: 11px;
+    }
+
+    .table-sim .head span {
+      color: var(--forest);
+      background: #eff7f0;
+      font-weight: 950;
+    }
+
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 3px;
+      padding: 4px;
+      background: #e2ebe4;
+      border-radius: 12px;
+    }
+
+    .phase-grid span {
+      min-height: 34px;
+      padding: 7px 5px;
+      color: #526658;
+      background: white;
+      font-size: 10px;
+    }
+
+    .phase-grid .head {
+      color: var(--forest);
+      background: #eff7f0;
+      font-weight: 950;
+    }
+
+    .phase-grid .yellow {
+      background: #fff8b8;
+    }
+
+    .phase-grid .green {
+      background: #bcf7be;
+    }
+
+    .phase-grid .cyan {
+      background: #bdf5f2;
+    }
+
+    .phase-grid .orange {
+      background: #ff8a1f;
+      color: white;
+    }
+
+    .phase-grid .gray {
+      background: #d7d7d7;
+    }
+
+    .function-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .function-card {
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: white;
+      padding: 24px;
+      box-shadow: var(--shadow-2);
+      min-height: 340px;
+    }
+
+    .function-card h3 {
+      font-size: 20px;
+    }
+
+    .function-card p {
+      margin: 0;
+      color: #526658;
+      font-size: 14px;
+    }
+
+    .function-list {
+      display: grid;
+      gap: 8px;
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      color: #46584c;
+      font-size: 14px;
+    }
+
+    .function-list li {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 8px;
+      align-items: start;
+    }
+
+    .function-list li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .flow-wrap {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .flow-step {
+      min-height: 190px;
+      padding: 18px;
+      border-radius: 22px;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 12px;
+      border-radius: 13px;
+      color: white;
+      background: var(--green);
+      font-weight: 950;
+    }
+
+    .flow-step b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--forest);
+      line-height: 1.2;
+    }
+
+    .integration {
+      background: linear-gradient(135deg, #fff, #f5fbf6);
+    }
+
+    .integration-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .sap-panel {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: var(--forest);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .sap-panel h3,
+    .sap-panel p {
+      color: white;
+    }
+
+    .sap-panel p {
+      opacity: .86;
+    }
+
+    .sap-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .sap-list div {
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .08);
+      font-weight: 850;
+    }
+
+    .value-card {
+      padding: 24px;
+      border-radius: 26px;
+    }
+
+    .metric {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--green);
+      font-size: 34px;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .phase {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: white;
+      box-shadow: var(--shadow-2);
+    }
+
+    .phase .tag {
+      display: inline-flex;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--green);
+      background: var(--soft);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .phase b {
+      display: block;
+      color: var(--forest);
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .phase span {
+      color: #526658;
+      font-size: 14px;
+    }
+
+    .closing {
+      padding: 76px 5vw 40px;
+      color: white;
+      background: var(--forest);
+    }
+
+    .closing-card {
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: 28px;
+      align-items: center;
+      padding: 34px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 34px;
+      background: rgba(255, 255, 255, .08);
+    }
+
+    .closing h2,
+    .closing p {
+      color: white;
+    }
+
+    .closing p {
+      margin: 14px 0 0;
+      opacity: .86;
+    }
+
+    .closing-box {
+      display: grid;
+      gap: 10px;
+      padding: 22px;
+      border-radius: 24px;
+      background: white;
+      color: var(--ink);
+    }
+
+    .closing-box b {
+      color: var(--forest);
+    }
+
+    .closing-box span {
+      color: #526658;
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 24px 5vw;
+      color: #dff4e7;
+      background: #0d281e;
+      font-size: 13px;
+    }
+
+    @media (max-width: 1120px) {
+      .hero-grid,
+      .section-title,
+      .integration-grid,
+      .closing-card {
+        grid-template-columns: 1fr;
+      }
+
+      .problem-grid,
+      .cards,
+      .value-grid,
+      .screens,
+      .function-grid,
+      .module-showcase {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .module-showcase {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-wrap,
+      .roadmap {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      .hero,
+      section,
+      .closing {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .stats,
+      .app-body,
+      .kpi-row,
+      .problem-grid,
+      .cards,
+      .module-cards,
+      .value-grid,
+      .screens,
+      .function-grid,
+      .flow-wrap,
+      .roadmap {
+        grid-template-columns: 1fr;
+      }
+
+      .screen-card.wide {
+        grid-column: auto;
+      }
+
+      .phase-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .closing-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="iFLOCS">
+      <object class="brand-logo-img" data="assets/logo-iflocs.png" type="image/png">
+        <span class="brand-mark">iF</span>
+      </object>
+      <span>iFLOCS</span>
+    </a>
+    <nav>
+      <a href="index.html">Portfolio</a>
+      <a href="#problem">Pain Point</a>
+      <a href="#modules">Modul</a>
+      <a href="#screens">Fungsi Modul</a>
+      <a href="#app-preview">Tampilan</a>
+      <a href="#sap">Integrasi SAP</a>
+      <a class="cta" href="#closing">Demo</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Farm Operation | Inventory Transaction | Phase Reporting | SAP Integrated</span>
+          <h1>iFLOCS</h1>
+          <p class="lead">
+            iFLOCS adalah sistem operasional farm untuk membantu perusahaan peternakan ayam mengontrol transaksi
+            inventory, perpindahan stok, pemakaian pakan/obat/vitamin, report per phase, dan performa flock dalam satu
+            aplikasi web yang siap diintegrasikan dengan SAP.
+          </p>
+          <div class="buttons">
+            <a class="btn primary" href="#modules">Lihat Modul Utama</a>
+            <a class="btn secondary" href="#screens">Lihat Fungsi Modul</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><b>GRPO</b><span>Barang masuk dari purchase order</span></div>
+            <div class="stat"><b>Stock</b><span>Inventory per warehouse dan lokasi farm</span></div>
+            <div class="stat"><b>Phase</b><span>Growth, production, QC, dan hatch report</span></div>
+            <div class="stat"><b>SAP</b><span>Transaksi operasional siap integrasi</span></div>
+          </div>
+        </div>
+
+        <div class="app-frame" aria-label="Screenshot dashboard iFLOCS">
+          <object class="hero-screenshot" data="assets/iflocs-hero-dashboard.png" type="image/png">
+            <div class="hero-screenshot-fallback">
+              Screenshot Dashboard iFLOCS
+              <small>Simpan file sebagai assets/iflocs-hero-dashboard.png</small>
+            </div>
+          </object>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark" id="problem">
+      <div class="container">
+        <div class="section-title">
+          <h2>Masalah Operasional Farm yang Sering Menghambat Kontrol Bisnis</h2>
+          <p>
+            Di bisnis peternakan ayam, data stok, pakan, obat, vitamin, populasi, produksi, dan performa phase harus
+            terbaca cepat. Jika data tersebar, manajemen sulit menilai apakah masalah berasal dari operasional farm,
+            inventory, atau biaya yang belum tercatat rapi.
+          </p>
+        </div>
+
+        <div class="problem-grid">
+          <div class="problem"><b>Stok farm tidak real-time</b><span>Barang masuk, mutasi, dan pemakaian material sering terlambat direkap sehingga stock accuracy sulit dijaga.</span></div>
+          <div class="problem"><b>Mutasi barang sulit ditelusuri</b><span>Transfer antar warehouse atau lokasi farm membutuhkan audit trail yang jelas agar tidak terjadi selisih stok.</span></div>
+          <div class="problem"><b>Pemakaian pakan tidak terhubung</b><span>Feed intake, vitamin, obat, vaccine, dan disinfectant perlu dikaitkan dengan performa flock dan report phase.</span></div>
+          <div class="problem"><b>Report phase masih manual</b><span>Growth, production, QC, hatch result, vitality, FCR, dan body weight membutuhkan format reporting yang konsisten.</span></div>
+          <div class="problem"><b>Data belum siap untuk SAP</b><span>Finance dan inventory membutuhkan transaksi yang rapi agar biaya farm dapat dialokasikan lebih akurat.</span></div>
+          <div class="problem"><b>Akses data perlu dibatasi</b><span>Tidak semua user boleh melihat plan, farm, warehouse, atau report yang sama. Sistem membutuhkan otorisasi yang jelas per role dan area kerja.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="modules">
+      <div class="container">
+        <div class="module-showcase">
+          <div class="solution-panel">
+            <div>
+              <span class="badge" style="box-shadow:none">Modul Utama iFLOCS</span>
+              <h2 style="margin-top:18px">Transaksi Farm, Report Operasional, dan KPI dalam Satu Sistem</h2>
+              <p>
+                iFLOCS memusatkan inventory transaction, stock reporting, report per phase, dan dashboard KPI agar data
+                operasional farm dapat dipakai oleh supervisor, manajemen, finance, dan SAP.
+              </p>
+            </div>
+            <div class="solution-points">
+              <span>Kontrol barang masuk, transfer, dan goods issue</span>
+              <span>Report growth, production, QC, hatch result, dan FCR</span>
+              <span>Otorisasi akses berdasarkan role, plan, farm, dan warehouse</span>
+            </div>
+          </div>
+
+          <div class="module-cards">
+            <div class="module-card">
+              <div class="icon">01</div>
+              <h3>Inventory Transaction</h3>
+              <p>Modul untuk mengontrol penerimaan barang dari PO, transfer antar warehouse, goods issue, dan pergerakan material farm seperti pakan, obat, vitamin, dan item operasional lain.</p>
+            </div>
+            <div class="module-card">
+              <div class="icon">02</div>
+              <h3>Report</h3>
+              <p>Modul laporan untuk membaca saldo inventory, report per phase, growth, production, QC result, hatch result, feed intake, vitality, FCR, dan data operasional farm.</p>
+            </div>
+            <div class="module-card">
+              <div class="icon">03</div>
+              <h3>Dashboard KPI</h3>
+              <p>Modul monitoring untuk membantu manajemen melihat indikator utama farm, stock accuracy, pemakaian material, performa phase, dan akses data berdasarkan otorisasi user.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen-section" id="screens">
+      <div class="container">
+        <div class="section-title">
+          <h2>Fungsi Modul iFLOCS</h2>
+          <p>
+            Fungsi iFLOCS dikelompokkan untuk membantu user farm, supervisor, finance, dan manajemen mengelola transaksi
+            inventory, laporan operasional, KPI, otorisasi, dan integrasi SAP.
+          </p>
+        </div>
+
+        <div class="function-grid">
+          <div class="function-card">
+            <div class="icon">IT</div>
+            <h3>Inventory Transaction</h3>
+            <p>Mengelola transaksi material farm dari penerimaan barang sampai pemakaian operasional.</p>
+            <ul class="function-list">
+              <li>Goods Receipt PO untuk penerimaan barang dari purchase order.</li>
+              <li>Transfer In dan Transfer Out antar warehouse atau lokasi farm.</li>
+              <li>Goods Issue untuk pemakaian pakan, obat, vitamin, dan material farm.</li>
+              <li>Traceability per item, warehouse, quantity, UoM, dokumen, dan user.</li>
+            </ul>
+          </div>
+
+          <div class="function-card">
+            <div class="icon">IR</div>
+            <h3>Inventory Report</h3>
+            <p>Memberikan visibilitas stok berdasarkan lokasi dan item agar tim farm dan finance membaca data yang sama.</p>
+            <ul class="function-list">
+              <li>Stock per warehouse, item group, item code, dan item name.</li>
+              <li>Quantity dan inventory UoM untuk kebutuhan kontrol stok.</li>
+              <li>Filter berdasarkan lokasi dan range data tertentu.</li>
+              <li>Output laporan untuk Excel, PDF, dan kebutuhan rekonsiliasi.</li>
+            </ul>
+          </div>
+
+          <div class="function-card">
+            <div class="icon">RP</div>
+            <h3>Report Per Phase</h3>
+            <p>Membantu supervisor dan manajemen membaca performa operasional berdasarkan plan, periode, dan phase.</p>
+            <ul class="function-list">
+              <li>Growth, production, QC1 & QC2 result, serta QC3 & after hatch result.</li>
+              <li>Feed intake, vitamin, obat, vaccine, disinfectant, dan material treatment.</li>
+              <li>Vitality, FCR, body weight, populasi, transfer mutasi, dan indikator phase.</li>
+              <li>Perbandingan data harian untuk melihat deviasi performa lebih cepat.</li>
+            </ul>
+          </div>
+
+          <div class="function-card">
+            <div class="icon">AU</div>
+            <h3>Authorization & Access Control</h3>
+            <p>Membatasi akses data agar setiap user hanya melihat area yang menjadi tanggung jawabnya.</p>
+            <ul class="function-list">
+              <li>Hak akses berdasarkan role, plan, farm, warehouse, dan report.</li>
+              <li>User farm hanya melihat data operasional yang relevan.</li>
+              <li>Supervisor dan manajemen dapat diberi akses sesuai level otorisasi.</li>
+              <li>Mendukung kontrol data untuk kebutuhan multi farm dan multi lokasi.</li>
+            </ul>
+          </div>
+
+          <div class="function-card">
+            <div class="icon">KP</div>
+            <h3>Dashboard KPI</h3>
+            <p>Menyediakan indikator utama agar kondisi farm dan inventory dapat dimonitor lebih cepat.</p>
+            <ul class="function-list">
+              <li>Stock accuracy, item movement, dan pemakaian material.</li>
+              <li>Feed usage, vitality, FCR, body weight, dan performa phase.</li>
+              <li>Ringkasan operasional untuk supervisor, finance, dan manajemen.</li>
+              <li>Early warning untuk deviasi stok atau performa farm.</li>
+            </ul>
+          </div>
+
+          <div class="function-card">
+            <div class="icon">SI</div>
+            <h3>SAP Integration</h3>
+            <p>Menghubungkan transaksi farm dengan sistem ERP agar inventory, costing, dan reporting lebih rapi.</p>
+            <ul class="function-list">
+              <li>Goods receipt dari PO, inventory transfer, dan goods issue.</li>
+              <li>Cost allocation ke farm, plan, phase, project, atau cost center.</li>
+              <li>Data operasional siap dipakai untuk finance dan accounting.</li>
+              <li>Reporting SAP dapat membaca data farm dengan struktur yang lebih konsisten.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-preview" id="app-preview">
+      <div class="container">
+        <div class="section-title">
+          <h2>Tampilan Aplikasi iFLOCS</h2>
+          <p>
+            Beberapa tampilan utama iFLOCS menunjukkan bagaimana transaksi farm, stock reporting, report per phase, dan
+            performa operasional dapat dipantau dalam satu aplikasi.
+          </p>
+        </div>
+
+        <div class="screens">
+          <div class="screen-card">
+            <div class="screen-top">
+              <div>
+                <h3>Goods Receipt Purchase Order</h3>
+                <p>Memperlihatkan proses penerimaan barang dari purchase order ke warehouse farm dengan referensi dokumen yang jelas.</p>
+              </div>
+              <span class="screen-label">Inventory Transaction</span>
+            </div>
+            <div class="screenshot-frame">
+              <img src="assets/iflocs-grpo.png" alt="Tampilan Goods Receipt Purchase Order iFLOCS" />
+            </div>
+          </div>
+
+          <div class="screen-card">
+            <div class="screen-top">
+              <div>
+                <h3>Inventory Report</h3>
+                <p>Menampilkan saldo stok per warehouse, item, quantity, dan UoM untuk membantu kontrol stock accuracy.</p>
+              </div>
+              <span class="screen-label">Stock Visibility</span>
+            </div>
+            <div class="screenshot-frame">
+              <img src="assets/iflocs-inventory-report.png" alt="Tampilan Inventory Report iFLOCS" />
+            </div>
+          </div>
+
+          <div class="screen-card wide">
+            <div class="screen-top">
+              <div>
+                <h3>Report Per Phase</h3>
+                <p>Membantu manajemen membaca growth, production, feed intake, FCR, body weight, vitality, dan hasil QC dalam satu report.</p>
+              </div>
+              <span class="screen-label">Farm Performance</span>
+            </div>
+            <div class="screenshot-frame">
+              <img src="assets/iflocs-report-per-phase.png" alt="Tampilan Report Per Phase iFLOCS" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow">
+      <div class="container">
+        <div class="section-title">
+          <h2>Workflow Operasional iFLOCS</h2>
+          <p>
+            Alur ini menggambarkan bagaimana transaksi inventory dan data phase farm bergerak dari operasional lapangan
+            sampai menjadi report yang siap dipakai manajemen dan SAP.
+          </p>
+        </div>
+
+        <div class="flow-wrap">
+          <div class="flow-step"><div class="step-num">01</div><b>Plan & Master Data</b><span>Setup plan, warehouse, item, UoM, farm, phase, dan referensi dokumen.</span></div>
+          <div class="flow-step"><div class="step-num">02</div><b>Goods Receipt</b><span>Barang dari PO diterima dan masuk ke warehouse sesuai dokumen penerimaan.</span></div>
+          <div class="flow-step"><div class="step-num">03</div><b>Transfer & Issue</b><span>Barang dipindahkan atau dikeluarkan untuk kebutuhan farm, phase, dan lokasi operasional.</span></div>
+          <div class="flow-step"><div class="step-num">04</div><b>Daily Phase Data</b><span>Feed intake, vitality, body weight, vitamin, obat, vaccine, dan data phase dicatat.</span></div>
+          <div class="flow-step"><div class="step-num">05</div><b>Authorization</b><span>Hak akses memastikan user hanya membuka plan, farm, warehouse, dan report sesuai tanggung jawabnya.</span></div>
+          <div class="flow-step"><div class="step-num">06</div><b>SAP & Decision</b><span>Data transaksi menjadi dasar integrasi SAP, costing, dan keputusan manajemen.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="integration" id="sap">
+      <div class="container integration-grid">
+        <div class="sap-panel">
+          <h2 style="color:white">Integrasi SAP untuk Kontrol Inventory dan Costing Farm</h2>
+          <p>
+            iFLOCS dapat diposisikan sebagai aplikasi operasional yang menangkap data farm, dan SAP menjadi sistem
+            utama untuk inventory, accounting, purchasing, dan financial reporting.
+          </p>
+          <div class="sap-list">
+            <div>Goods Receipt dari Purchase Order</div>
+            <div>Inventory Transfer antar warehouse atau lokasi farm</div>
+            <div>Goods Issue untuk pemakaian material farm</div>
+            <div>Cost allocation ke farm, plan, phase, project, atau cost center</div>
+            <div>Authorization mapping untuk membatasi akses user per plan, farm, warehouse, dan role</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-title" style="display:block;margin-bottom:22px">
+            <h2>Output yang Dibutuhkan Manajemen</h2>
+            <p style="margin-top:12px">Integrasi membuat data farm tidak berhenti sebagai input operasional, tetapi menjadi bahan evaluasi bisnis.</p>
+          </div>
+          <div class="cards" style="grid-template-columns:1fr 1fr">
+            <div class="card"><div class="icon">ST</div><h3>Stock Accuracy</h3><p>Manajemen melihat saldo dan pergerakan stok berdasarkan warehouse, item, dan satuan.</p></div>
+            <div class="card"><div class="icon">CO</div><h3>Cost Visibility</h3><p>Pemakaian material farm dapat dikaitkan dengan biaya dan performa operasional.</p></div>
+            <div class="card"><div class="icon">AU</div><h3>Audit Trail</h3><p>Setiap transaksi memiliki referensi dokumen, lokasi, item, quantity, dan user input.</p></div>
+            <div class="card"><div class="icon">BI</div><h3>Business Reporting</h3><p>Data operasional dan financial dapat disiapkan untuk dashboard, Excel, PDF, atau SAP report.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="value">
+      <div class="container">
+        <div class="section-title">
+          <h2>Nilai Bisnis iFLOCS untuk Perusahaan Farm</h2>
+          <p>
+            iFLOCS membantu perusahaan mengubah transaksi farm yang detail menjadi informasi yang bisa dipakai untuk
+            kontrol stok, performa phase, costing, dan keputusan operasional.
+          </p>
+        </div>
+
+        <div class="value-grid">
+          <div class="value-card"><span class="metric">01</span><h3>Stock Lebih Akurat</h3><p>Barang masuk, keluar, dan transfer lebih mudah ditelusuri sehingga selisih stok dapat ditekan.</p></div>
+          <div class="value-card"><span class="metric">02</span><h3>Pemakaian Material Terkontrol</h3><p>Pakan, obat, vitamin, vaccine, dan item farm lain dapat dikaitkan dengan plan atau phase.</p></div>
+          <div class="value-card"><span class="metric">03</span><h3>Report Phase Lebih Cepat</h3><p>Growth, production, feed intake, vitality, FCR, dan body weight dapat dibaca dalam format yang konsisten.</p></div>
+          <div class="value-card"><span class="metric">04</span><h3>Data Lebih Aman</h3><p>Otorisasi membatasi akses berdasarkan role, plan, farm, warehouse, atau report sehingga user hanya melihat data yang relevan.</p></div>
+          <div class="value-card"><span class="metric">05</span><h3>Finance Lebih Siap</h3><p>Data inventory dan transaksi farm menjadi lebih rapi untuk integrasi SAP dan proses costing.</p></div>
+          <div class="value-card"><span class="metric">06</span><h3>Siap untuk Multi Farm</h3><p>Struktur warehouse, plan, phase, report, dan otorisasi dapat dikembangkan untuk kebutuhan multi lokasi.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="implementation">
+      <div class="container">
+        <div class="section-title">
+          <h2>Roadmap Implementasi</h2>
+          <p>
+            Implementasi iFLOCS dapat dimulai dari area yang paling kritikal, lalu diperluas ke proses farm dan integrasi
+            SAP secara bertahap.
+          </p>
+        </div>
+
+        <div class="roadmap">
+          <div class="phase"><span class="tag">Phase 1</span><b>Assessment</b><span>Mapping proses inventory, farm operation, report phase, dan kebutuhan SAP.</span></div>
+          <div class="phase"><span class="tag">Phase 2</span><b>Master Data & Otorisasi</b><span>Setup warehouse, item, UoM, plan, phase, user, role, dan hak akses data.</span></div>
+          <div class="phase"><span class="tag">Phase 3</span><b>Pilot Transaction</b><span>Validasi GRPO, transfer, goods issue, inventory report, dan report per phase.</span></div>
+          <div class="phase"><span class="tag">Phase 4</span><b>SAP Integration</b><span>Sinkronisasi transaksi inventory, costing, project, cost center, dan reporting.</span></div>
+          <div class="phase"><span class="tag">Phase 5</span><b>Rollout</b><span>Perluasan ke farm, warehouse, user, dan proses reporting management.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" id="closing">
+      <div class="container closing-card">
+        <div>
+          <h2>iFLOCS Membantu Farm Mengubah Data Operasional Menjadi Kontrol Bisnis</h2>
+          <p>
+            Dengan iFLOCS, perusahaan peternakan dapat membangun proses inventory dan reporting farm yang lebih rapi,
+            terukur, dan siap terhubung ke SAP untuk mendukung keputusan manajemen.
+          </p>
+          <div class="buttons">
+            <a class="btn primary" href="index.html">Kembali ke Portfolio</a>
+            <a class="btn secondary" href="#screens">Lihat Fungsi Modul</a>
+          </div>
+        </div>
+        <div class="closing-box">
+          <b>Output Demo iFLOCS</b>
+          <span>Inventory Transaction</span>
+          <span>Goods Receipt PO, Transfer, Goods Issue</span>
+          <span>Inventory Report</span>
+          <span>Report Per Phase</span>
+          <span>Otorisasi user per role, plan, farm, dan warehouse</span>
+          <span>Integrasi SAP untuk inventory dan costing</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      iFLOCS Product Profile. Halaman konsep untuk demo solusi farm operation, inventory transaction, phase reporting,
+      dan integrasi SAP.
+    </div>
+  </footer>
+  <div class="lightbox" id="imageLightbox" aria-hidden="true">
+    <button type="button" aria-label="Tutup gambar">&times;</button>
+    <img src="" alt="" />
+  </div>
+  <script>
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImage = lightbox.querySelector('img');
+    const closeLightbox = () => {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImage.src = '';
+      lightboxImage.alt = '';
+    };
+
+    document.querySelectorAll('.screenshot-frame img, .hero-screenshot img').forEach((image) => {
+      image.addEventListener('click', () => {
+        lightboxImage.src = image.currentSrc || image.src;
+        lightboxImage.alt = image.alt || 'Tampilan aplikasi';
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    lightbox.querySelector('button').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+
+</html>
