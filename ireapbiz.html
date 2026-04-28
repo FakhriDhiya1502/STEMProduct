@@ -1115,12 +1115,6 @@
       font-size: 14px;
     }
 
-    footer {
-      padding: 24px 5vw;
-      color: #dff4e7;
-      background: #0d281e;
-      font-size: 13px;
-    }
 
     @media (max-width: 1120px) {
       .hero-grid,
@@ -1361,6 +1355,140 @@
     margin: 16px 22px 24px;
   }
 }
+
+    .cta-final {
+      padding: 80px 5vw;
+      text-align: center;
+      background: linear-gradient(135deg, var(--soft), #d8f2f8);
+    }
+
+    .cta-final h2 {
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 800;
+      color: var(--forest);
+      margin: 0 0 12px;
+    }
+
+    .cta-final p {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-cta-primary {
+      background: var(--forest);
+      color: #fff;
+      padding: 13px 24px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 950;
+      display: inline-flex;
+      align-items: center;
+      min-height: 50px;
+      box-shadow: var(--shadow-2);
+      transition: all .2s ease;
+    }
+
+    .btn-cta-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 36px rgba(12, 74, 90, .22);
+    }
+
+    .btn-cta-secondary {
+      border: 1px solid var(--line);
+      color: var(--forest);
+      background: white;
+      padding: 13px 24px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 950;
+      display: inline-flex;
+      align-items: center;
+      min-height: 50px;
+      transition: all .2s ease;
+    }
+
+    .btn-cta-secondary:hover {
+      border-color: var(--teal);
+      box-shadow: 0 10px 24px rgba(12, 74, 90, .08);
+    }
+
+    .contact-section {
+      padding: 76px 5vw 40px;
+      background: linear-gradient(135deg, var(--forest), var(--indigo));
+      color: white;
+    }
+
+    .footer-info {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .footer-info h2 {
+      color: white;
+      font-size: clamp(24px, 2.8vw, 34px);
+      margin: 0 0 14px;
+    }
+
+    .footer-info p {
+      color: rgba(255, 255, 255, .82);
+      margin: 0;
+      max-width: 680px;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .footer-keywords {
+      margin-top: 16px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, .52);
+    }
+
+    .contact-box {
+      display: grid;
+      gap: 10px;
+      border-radius: 24px;
+      background: white;
+      color: var(--ink);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box b {
+      color: var(--forest);
+      font-size: 13px;
+      letter-spacing: .4px;
+    }
+
+    .contact-box span {
+      color: #465a68;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    footer {
+      padding: 20px 5vw;
+      background: #06262f;
+      color: rgba(255, 255, 255, .45);
+      font-size: 13px;
+    }
+
+    @media (max-width: 860px) {
+      .footer-info {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -1682,7 +1810,46 @@
       </div>
     </section>
 
-    
+    <section class="cta-final" id="demo">
+      <div class="container">
+        <h2>Mulai Digitalisasi Operasional Farm Anda</h2>
+        <p>
+          Diskusikan kebutuhan operasional farm Anda bersama tim STEM untuk menentukan solusi yang sesuai dengan proses bisnis dan skala operasional Anda.
+        </p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/+6287786555055?text=Halo%20tim%20STEM,%20saya%20ingin%20diskusi%20terkait%20solusi%20digitalisasi%20operasional%20farm." class="btn-cta-primary">Chat via WhatsApp</a>
+          <a href="mailto:sales-enquiry@sterling-team.com" class="btn-cta-secondary">Kirim Email</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container footer-info">
+        <div>
+          <h2>Tentang STEM</h2>
+          <p>
+            STEM (Sterling Tulus Cemerlang) adalah konsultan ERP dan solusi bisnis terintegrasi yang membantu perusahaan meningkatkan efisiensi operasional dan kontrol bisnis melalui sistem yang terstruktur. Kami berpengalaman dalam implementasi ERP, otomasi proses bisnis, dan pengembangan aplikasi berbasis web untuk mendukung transformasi digital yang berkelanjutan.
+          </p>
+          <div class="footer-keywords">
+            SAP Business One • Microsoft Dynamics 365 Business Central • UiPath RPA • Siemens • SaaS • iREAP POS
+          </div>
+        </div>
+        <div class="contact-box">
+          <b>HUBUNGI KAMI</b>
+          <span><b>WhatsApp:</b> +62-877-8655-5055</span>
+          <span><b>Email:</b> sales-enquiry@sterling-team.com</span>
+          <span><b>Website:</b> www.sterling-team.com</span>
+          <span><b>Lokasi:</b> Sampoerna Strategic Square, South Tower Level 30, Jl Jend. Sudirman No. 45-46, Jakarta 12930</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        STEM Digital Solution — iREAPBIZ Business Web Application. Solusi workflow bisnis dan transaksi operasional terintegrasi SAP.
+      </div>
+    </footer>
+
   <div class="lightbox" id="imageLightbox" aria-hidden="true">
     <button type="button" aria-label="Tutup gambar">×</button>
     <img src="" alt="">
