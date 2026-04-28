@@ -1247,63 +1247,6 @@
       transition: transform .28s ease, background-color .28s ease;
     }
 
-    .value-table-wrap {
-      overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      background: white;
-      box-shadow: var(--shadow-2);
-    }
-
-    .value-table {
-      width: 100%;
-      min-width: 920px;
-      border-collapse: collapse;
-    }
-
-    .value-table th,
-    .value-table td {
-      padding: 18px;
-      border-bottom: 1px solid var(--line);
-      text-align: left;
-      vertical-align: top;
-    }
-
-    .value-table th {
-      background: var(--soft);
-      color: var(--forest);
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: 0;
-    }
-
-    .value-table td {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.65;
-    }
-
-    .value-table tbody tr:last-child td {
-      border-bottom: 0;
-    }
-
-    .value-table td:first-child {
-      color: var(--forest);
-      font-weight: 900;
-    }
-
-    .value-tag {
-      display: inline-flex;
-      align-items: center;
-      padding: 7px 11px;
-      border-radius: 999px;
-      color: var(--green);
-      background: var(--soft);
-      font-size: 12px;
-      font-weight: 900;
-      white-space: nowrap;
-    }
-
     .reveal {
       opacity: 0;
       transform: translateY(22px);
@@ -1947,62 +1890,56 @@
     <section id="value">
       <div class="container">
         <div class="section-title">
-          <h2>Business Value untuk Operasional Farm</h2>
+          <h2>Dampak Nyata ke Bisnis Farm</h2>
           <p>
-            Data operasional tidak berhenti di pencatatan. iFLOCS membantu membuat data farm lebih rapi, traceable,
-            siap terhubung ke SAP, dan lebih cepat dipakai untuk kontrol bisnis.
+            Data operasional tidak berhenti di pencatatan, tetapi langsung terhubung ke SAP dan menjadi dasar kontrol,
+            costing, dan pengambilan keputusan yang lebih cepat.
           </p>
         </div>
 
-        <div class="value-table-wrap">
-          <table class="value-table">
-            <thead>
-              <tr>
-                <th>Area Operasional</th>
-                <th>Kondisi Manual</th>
-                <th>Dengan iFLOCS</th>
-                <th>Business Value</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Stock Accuracy</td>
-                <td>Stok sulit ditelusuri antar farm dan gudang.</td>
-                <td>Pergerakan material tercatat lengkap.</td>
-                <td><span class="value-tag">Traceable stock</span></td>
-              </tr>
-              <tr>
-                <td>Material Usage</td>
-                <td>Pemakaian pakan dan OVK tersebar.</td>
-                <td>Usage terhubung dengan plan dan phase.</td>
-                <td><span class="value-tag">Kontrol pemakaian</span></td>
-              </tr>
-              <tr>
-                <td>Phase Reporting</td>
-                <td>Data phase masih perlu rekap ulang.</td>
-                <td>Report phase siap dianalisa cepat.</td>
-                <td><span class="value-tag">Insight lebih cepat</span></td>
-              </tr>
-              <tr>
-                <td>Access Control</td>
-                <td>Akses data belum sesuai area kerja.</td>
-                <td>Data dibatasi sesuai role dan lokasi.</td>
-                <td><span class="value-tag">Data lebih aman</span></td>
-              </tr>
-              <tr>
-                <td>SAP Integration</td>
-                <td>Data perlu dicocokkan manual.</td>
-                <td>Data siap masuk SAP dan costing.</td>
-                <td><span class="value-tag">SAP-ready data</span></td>
-              </tr>
-              <tr>
-                <td>Multi-Farm Control</td>
-                <td>Format data tiap farm tidak seragam.</td>
-                <td>Data lintas farm lebih konsisten.</td>
-                <td><span class="value-tag">Scalable operation</span></td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="value-grid">
+          <div class="value-card"><span class="metric" aria-hidden="true"><svg>
+                <use href="#icon-box"></use>
+              </svg></span>
+            <h3>Accurate & Traceable Stock</h3>
+            <p>Pergerakan material tercatat dengan jelas dan dapat ditelusuri hingga detail transaksi, sehingga selisih
+              stok dapat ditekan dan proses audit menjadi lebih mudah.</p>
+          </div>
+          <div class="value-card"><span class="metric" aria-hidden="true"><svg>
+                <use href="#icon-leaf"></use>
+              </svg></span>
+            <h3>Controlled Material Usage</h3>
+            <p>Pemakaian pakan, OVK, dan material farm tercatat dan terhubung dengan plan serta phase, sehingga
+              penggunaan lebih terkontrol dan pemborosan dapat dikurangi.</p>
+          </div>
+          <div class="value-card"><span class="metric" aria-hidden="true"><svg>
+                <use href="#icon-chart"></use>
+              </svg></span>
+            <h3>Faster Farm Phase Insight</h3>
+            <p>Data phase seperti Feed Intake, Body Weight, Vitality, Mortality, FCR, dan Production tersedia tanpa
+              rekap manual, memungkinkan analisis actual vs plan dilakukan lebih cepat.</p>
+          </div>
+          <div class="value-card"><span class="metric" aria-hidden="true"><svg>
+                <use href="#icon-shield"></use>
+              </svg></span>
+            <h3>Controlled Data Access</h3>
+            <p>Akses data diatur berdasarkan role dan lokasi sehingga setiap user hanya melihat informasi yang relevan,
+              menjaga kontrol operasional di seluruh farm.</p>
+          </div>
+          <div class="value-card"><span class="metric" aria-hidden="true"><svg>
+                <use href="#icon-money"></use>
+              </svg></span>
+            <h3>SAP-Ready Financial Data</h3>
+            <p>Data operasional langsung terhubung ke SAP tanpa input ulang dan siap digunakan untuk costing serta
+              reporting, sehingga proses closing menjadi lebih cepat dan akurat.</p>
+          </div>
+          <div class="value-card"><span class="metric" aria-hidden="true"><svg>
+                <use href="#icon-network"></use>
+              </svg></span>
+            <h3>Scalable Multi-Farm Operations</h3>
+            <p>Struktur sistem mendukung pengelolaan banyak farm secara konsisten, sehingga ekspansi bisnis dapat
+              dilakukan tanpa menambah kompleksitas operasional.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -2014,7 +1951,7 @@
     </div>
     <script>
       const revealItems = document.querySelectorAll(
-        '.section-title, .problem, .action-item, .action-preview, .module-card, .function-card, .screen-card, .flow-step, .value-card, .value-table-wrap, .phase, .sap-panel, .closing-box'
+        '.section-title, .problem, .action-item, .action-preview, .module-card, .function-card, .screen-card, .flow-step, .value-card, .phase, .sap-panel, .closing-box'
       );
 
       revealItems.forEach((item, index) => {

@@ -1,26 +1,28 @@
-<!DOCTYPE html>
-<html lang="id">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>iREAPBIZ | Product Profile Business Transaction Portal</title>
+<html lang="id"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iReapbiz | Product Profile Business Transaction Portal</title>
   <style>
     :root {
-      --navy: #070b4f;
-      --indigo: #14227a;
-      --blue: #0b77bd;
-      --cyan: #21c4c9;
+      --navy: #0c4a5a;
+      --forest: #0c4a5a;
+      --indigo: #134e5e;
+      --blue: #0891b2;
+      --green: #0891b2;
+      --cyan: #22d3ee;
+      --mint: #22d3ee;
+      --teal: #0e7490;
       --orange: #f5a24a;
-      --red: #ef4f6f;
-      --ink: #172033;
-      --muted: #647083;
-      --soft: #eef8fb;
-      --soft-2: #f7fbff;
-      --line: #dce9f3;
+      --amber: #f5a24a;
+      --cream: #f0fafb;
+      --soft: #ecfeff;
       --white: #fff;
-      --shadow: 0 24px 70px rgba(7, 11, 79, .16);
-      --shadow-2: 0 12px 34px rgba(7, 11, 79, .09);
+      --ink: #17231d;
+      --muted: #647083;
+      --line: #cbe9ef;
+      --danger: #dc5b45;
+      --shadow: 0 24px 70px rgba(12, 74, 90, .16);
+      --shadow-2: 0 12px 34px rgba(12, 74, 90, .09);
     }
 
     * {
@@ -35,7 +37,7 @@
       margin: 0;
       font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--ink);
-      background: linear-gradient(180deg, #f8fbff, #fff 44%, #f6fbfd);
+      background: linear-gradient(180deg, #f0fafb, #fff 46%, #e8f7f9);
       line-height: 1.65;
     }
 
@@ -61,7 +63,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      color: var(--navy);
+      color: var(--forest);
       text-decoration: none;
       font-weight: 950;
     }
@@ -72,7 +74,7 @@
       display: grid;
       place-items: center;
       border-radius: 14px;
-      background: linear-gradient(135deg, var(--navy), var(--cyan));
+      background: linear-gradient(135deg, var(--forest), var(--mint));
       color: white;
       box-shadow: var(--shadow-2);
       font-size: 14px;
@@ -95,7 +97,7 @@
 
     nav a {
       text-decoration: none;
-      color: #40536b;
+      color: #456068;
       font-size: 13px;
       font-weight: 850;
       padding: 8px 11px;
@@ -103,22 +105,22 @@
     }
 
     nav a:hover {
-      color: var(--navy);
+      color: var(--forest);
       background: var(--soft);
     }
 
     nav a.cta {
       color: white;
-      background: var(--navy);
+      background: var(--green);
     }
 
     .hero {
       padding: 82px 5vw 62px;
       overflow: hidden;
       background:
-        radial-gradient(circle at 86% 12%, rgba(33, 196, 201, .28), transparent 31%),
-        radial-gradient(circle at 12% 84%, rgba(245, 162, 74, .16), transparent 28%),
-        linear-gradient(135deg, #fff, #eff9fc 58%, #e3f3fa);
+        radial-gradient(circle at 84% 14%, rgba(34, 211, 238, .22), transparent 30%),
+        radial-gradient(circle at 16% 82%, rgba(245, 162, 74, .14), transparent 28%),
+        linear-gradient(135deg, #fff, #f0fafb 58%, #ddf5f8);
     }
 
     .container {
@@ -132,18 +134,34 @@
       gap: 42px;
       align-items: center;
     }
+	.hero-visual {
+	  overflow: hidden;
+	  padding: 22px;
+	  border: 1px solid var(--line);
+	  border-radius: 34px;
+	  background: rgba(255, 255, 255, .84);
+	  box-shadow: var(--shadow);
+	}
 
+	.hero-visual img {
+	  display: block;
+	  width: 100%;
+	  border: 1px solid #dfe8f2;
+	  border-radius: 22px;
+	  background: white;
+	  cursor: zoom-in;
+	}
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      width: fit-content;
       max-width: 100%;
+      width: fit-content;
       padding: 9px 14px;
       border: 1px solid var(--line);
       border-radius: 999px;
       background: white;
-      color: var(--blue);
+      color: var(--green);
       font-size: 13px;
       font-weight: 950;
       box-shadow: var(--shadow-2);
@@ -151,7 +169,7 @@
 
     h1 {
       margin: 22px 0 16px;
-      color: var(--navy);
+      color: var(--forest);
       font-size: clamp(44px, 5vw, 68px);
       line-height: 1.02;
       letter-spacing: 0;
@@ -160,7 +178,7 @@
     .lead {
       max-width: 760px;
       margin: 0;
-      color: #47586d;
+      color: #465a68;
       font-size: 20px;
     }
 
@@ -184,12 +202,12 @@
 
     .btn.primary {
       color: white;
-      background: var(--navy);
+      background: var(--forest);
       box-shadow: var(--shadow);
     }
 
     .btn.secondary {
-      color: var(--navy);
+      color: var(--forest);
       background: white;
       border: 1px solid var(--line);
     }
@@ -211,7 +229,7 @@
 
     .stat b {
       display: block;
-      color: var(--navy);
+      color: var(--forest);
       font-size: 28px;
       line-height: 1.05;
     }
@@ -227,7 +245,7 @@
     .app-frame {
       border: 1px solid var(--line);
       border-radius: 32px;
-      background: rgba(255, 255, 255, .88);
+      background: rgba(255, 255, 255, .86);
       padding: 20px;
       box-shadow: var(--shadow);
     }
@@ -235,10 +253,11 @@
     .hero-screenshot {
       display: block;
       width: 100%;
-      border: 1px solid #dfe8f2;
+      border: 1px solid #dfe9e1;
       border-radius: 24px;
       background: white;
       overflow: hidden;
+      cursor: zoom-in;
     }
 
     .hero-screenshot img {
@@ -252,10 +271,10 @@
       place-items: center;
       min-height: 360px;
       padding: 24px;
-      color: var(--blue);
+      color: var(--green);
       background:
-        linear-gradient(135deg, rgba(33, 196, 201, .08), rgba(245, 162, 74, .08)),
-        repeating-linear-gradient(45deg, #fbfdff, #fbfdff 10px, #f1f8fb 10px, #f1f8fb 20px);
+        linear-gradient(135deg, rgba(31, 122, 77, .08), rgba(22, 163, 163, .08)),
+        repeating-linear-gradient(45deg, #f8feff, #f8feff 10px, #d8f2f8 10px, #d8f2f8 20px);
       text-align: center;
       font-weight: 950;
     }
@@ -269,41 +288,57 @@
 
     .app-window {
       overflow: hidden;
-      border: 1px solid #dfe8f2;
+      border: 1px solid #dfe9e1;
       border-radius: 24px;
-      background: #f8fbfd;
+      background: #f0fafb;
     }
 
     .app-head {
       display: flex;
+      align-items: center;
       justify-content: space-between;
       gap: 12px;
       padding: 13px 16px;
       color: white;
-      background: linear-gradient(90deg, var(--navy), var(--indigo));
-      font-weight: 900;
+      background: linear-gradient(90deg, var(--forest), var(--green));
+    }
+
+    .app-logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 950;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+
+    .app-user {
+      font-size: 12px;
+      font-weight: 850;
+      opacity: .9;
     }
 
     .app-body {
       display: grid;
       grid-template-columns: 170px 1fr;
-      min-height: 370px;
+      min-height: 360px;
     }
 
     .app-side {
       padding: 16px 12px;
-      border-right: 1px solid #dfe8f2;
-      background: linear-gradient(180deg, #0e9bd1, #f8fbfd 34%);
+      border-right: 1px solid #dfe9e1;
+      background: #e8f8fb;
     }
 
-    .app-logo {
-      display: grid;
-      place-items: center;
-      height: 72px;
-      margin-bottom: 12px;
-      border-radius: 18px;
-      color: white;
-      background: rgba(255, 255, 255, .14);
+    .side-title {
+      margin: 0 0 14px;
+      color: var(--forest);
+      font-size: 12px;
       font-weight: 950;
     }
 
@@ -312,118 +347,96 @@
       margin: 7px 0;
       padding: 9px 10px;
       border-radius: 12px;
-      color: #526278;
-      background: rgba(255, 255, 255, .58);
+      color: #526658;
       font-size: 12px;
       font-weight: 850;
     }
 
     .side-item.active {
       color: white;
-      background: var(--navy);
+      background: var(--green);
     }
 
     .mock-content {
       padding: 16px;
-      background: #fbfdff;
+      background: #f8feff;
     }
 
     .mock-title {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      gap: 14px;
       margin-bottom: 14px;
     }
 
     .mock-title b {
-      color: var(--navy);
+      color: var(--forest);
       font-size: 18px;
     }
 
-    .date-pill {
-      padding: 6px 10px;
-      border-radius: 10px;
-      color: var(--blue);
+    .mock-pill {
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: var(--green);
       background: var(--soft);
-      font-size: 12px;
-      font-weight: 900;
+      font-size: 11px;
+      font-weight: 950;
     }
 
-    .dashboard-grid {
+    .kpi-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
       margin-bottom: 12px;
     }
 
-    .dash-card {
-      padding: 14px;
-      border: 1px solid #dfe8f2;
-      border-radius: 16px;
+    .mini-kpi {
+      padding: 12px;
+      border: 1px solid #dfe9e1;
+      border-radius: 15px;
       background: white;
     }
 
-    .dash-card span {
+    .mini-kpi span {
       display: block;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 850;
     }
 
-    .dash-card b {
+    .mini-kpi b {
       display: block;
-      margin-top: 4px;
-      color: var(--navy);
-      font-size: 26px;
+      margin-top: 3px;
+      color: var(--forest);
+      font-size: 22px;
       line-height: 1.1;
     }
 
-    .chart-row {
-      display: grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap: 12px;
-    }
-
-    .bar-chart,
-    .donut-card {
-      min-height: 150px;
-      border: 1px solid #dfe8f2;
+    .mock-table {
+      overflow: hidden;
+      border: 1px solid #dfe9e1;
       border-radius: 16px;
       background: white;
-      padding: 14px;
     }
 
-    .bars {
-      display: flex;
-      align-items: end;
-      gap: 8px;
-      height: 104px;
-      margin-top: 10px;
-      border-bottom: 1px solid #e8eef6;
+    .mock-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr .7fr .7fr;
     }
 
-    .bars i {
-      flex: 1;
-      border-radius: 6px 6px 0 0;
-      background: linear-gradient(180deg, var(--cyan), #28a9d9);
+    .mock-row span {
+      padding: 10px;
+      border-right: 1px solid #edf3ee;
+      border-bottom: 1px solid #edf3ee;
+      color: #526658;
+      font-size: 11px;
     }
 
-    .donut {
-      width: 100px;
-      height: 100px;
-      margin: 10px auto 0;
-      border-radius: 50%;
-      background: conic-gradient(#2188c9 0 78%, var(--cyan) 78% 88%, var(--orange) 88% 95%, var(--red) 95% 100%);
-      position: relative;
-    }
-
-    .donut::after {
-      content: "";
-      position: absolute;
-      inset: 25px;
-      border-radius: 50%;
-      background: white;
+    .mock-row.header span {
+      color: var(--forest);
+      background: #e8f7f9;
+      font-weight: 950;
     }
 
     section {
@@ -440,7 +453,7 @@
 
     h2 {
       margin: 0;
-      color: var(--navy);
+      color: var(--forest);
       font-size: clamp(30px, 3.2vw, 42px);
       line-height: 1.14;
       letter-spacing: 0;
@@ -449,13 +462,13 @@
     .section-title p,
     .section-copy {
       margin: 0;
-      color: #526278;
+      color: #526658;
       font-size: 17px;
     }
 
     .dark {
       color: white;
-      background: linear-gradient(135deg, var(--navy), #101a69);
+      background: linear-gradient(135deg, var(--forest), #134e5e);
     }
 
     .dark h2,
@@ -463,10 +476,7 @@
       color: white;
     }
 
-    .problem-grid,
-    .cards,
-    .function-grid,
-    .value-grid {
+    .problem-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
@@ -494,6 +504,13 @@
       font-size: 14px;
     }
 
+    .cards,
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
     .module-showcase {
       display: grid;
       grid-template-columns: .82fr 1.18fr;
@@ -505,10 +522,11 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      min-height: 100%;
       padding: 28px;
       border: 1px solid var(--line);
       border-radius: 30px;
-      background: linear-gradient(135deg, var(--navy), var(--indigo));
+      background: linear-gradient(135deg, var(--forest), #134e5e);
       color: white;
       box-shadow: var(--shadow);
     }
@@ -546,27 +564,14 @@
       gap: 16px;
     }
 
-    .card,
-    .module-card,
-    .function-card,
-    .screen-card,
-    .value-card,
-    .flow-step {
+    .module-card {
+      position: relative;
+      min-height: 315px;
+      padding: 24px;
       border: 1px solid var(--line);
+      border-radius: 28px;
       background: white;
       box-shadow: var(--shadow-2);
-    }
-
-    .module-card,
-    .function-card,
-    .value-card {
-      padding: 24px;
-      border-radius: 26px;
-    }
-
-    .module-card {
-      min-height: 285px;
-      position: relative;
       overflow: hidden;
     }
 
@@ -575,7 +580,27 @@
       position: absolute;
       inset: 0 0 auto;
       height: 5px;
-      background: linear-gradient(90deg, var(--cyan), var(--orange));
+      background: linear-gradient(90deg, var(--green), var(--teal));
+    }
+
+    .module-card p {
+      margin: 0;
+      color: #526658;
+    }
+
+    .card,
+    .screen-card,
+    .value-card,
+    .flow-step {
+      border: 1px solid var(--line);
+      background: white;
+      box-shadow: var(--shadow-2);
+    }
+
+    .card {
+      min-height: 260px;
+      padding: 24px;
+      border-radius: 26px;
     }
 
     .icon {
@@ -585,7 +610,7 @@
       place-items: center;
       margin-bottom: 15px;
       border-radius: 17px;
-      color: var(--blue);
+      color: var(--green);
       background: var(--soft);
       font-size: 20px;
       font-weight: 950;
@@ -593,52 +618,25 @@
 
     h3 {
       margin: 0 0 10px;
-      color: var(--navy);
+      color: var(--forest);
       font-size: 23px;
       line-height: 1.18;
     }
 
-    .module-card p,
-    .function-card p,
+    .card p,
     .value-card p,
     .screen-card p,
     .flow-step span {
       margin: 0;
-      color: #526278;
+      color: #526658;
     }
 
-    .function-card {
-      min-height: 350px;
+    .screen-section {
+      background: linear-gradient(180deg, #f0fafb, #e4f6f9);
     }
 
-    .function-list {
-      display: grid;
-      gap: 8px;
-      margin: 16px 0 0;
-      padding: 0;
-      list-style: none;
-      color: #46576d;
-      font-size: 14px;
-    }
-
-    .function-list li {
-      display: grid;
-      grid-template-columns: 18px 1fr;
-      gap: 8px;
-      align-items: start;
-    }
-
-    .function-list li::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      margin-top: 8px;
-      border-radius: 50%;
-      background: var(--cyan);
-    }
-
-    .preview-section {
-      background: linear-gradient(180deg, #f8fbff, #eef8fb);
+    .app-preview {
+      background: white;
     }
 
     .screens {
@@ -667,38 +665,17 @@
       display: inline-flex;
       padding: 6px 10px;
       border-radius: 999px;
-      color: var(--blue);
+      color: var(--green);
       background: var(--soft);
       font-size: 12px;
       font-weight: 950;
     }
 
-    .screenshot-note {
-      display: grid;
-      place-items: center;
-      min-height: 260px;
-      margin-top: 16px;
-      border: 1px dashed #a7d8e4;
-      border-radius: 22px;
-      background:
-        linear-gradient(135deg, rgba(33, 196, 201, .08), rgba(245, 162, 74, .08)),
-        repeating-linear-gradient(45deg, #fbfdff, #fbfdff 10px, #f1f8fb 10px, #f1f8fb 20px);
-      color: var(--blue);
-      text-align: center;
-      font-weight: 950;
-    }
-
-    .screenshot-note small {
-      display: block;
-      color: var(--muted);
-      font-weight: 800;
-    }
-
     .screenshot-frame {
       margin-top: 16px;
-      border: 1px solid #dfe8f2;
+      border: 1px solid #dfe9e1;
       border-radius: 22px;
-      background: #f8fbfd;
+      background: #f0fafb;
       overflow: hidden;
       cursor: zoom-in;
     }
@@ -717,7 +694,7 @@
       align-items: center;
       justify-content: center;
       padding: 32px;
-      background: rgba(3, 7, 58, .82);
+      background: rgba(13, 40, 30, .84);
     }
 
     .lightbox.open {
@@ -748,6 +725,169 @@
       cursor: pointer;
     }
 
+    .mini-browser {
+      overflow: hidden;
+      margin-top: 16px;
+      border: 1px solid #dfe9e1;
+      border-radius: 20px;
+      background: #f8feff;
+    }
+
+    .browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px;
+      border-bottom: 1px solid #dfe9e1;
+      background: #e8f8fb;
+    }
+
+    .browser-bar i {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #9bb9a5;
+    }
+
+    .browser-page {
+      padding: 14px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .field {
+      height: 34px;
+      border: 1px solid #e2ebe4;
+      border-radius: 8px;
+      background: #f8faf8;
+    }
+
+    .table-sim {
+      overflow: hidden;
+      border: 1px solid #e2ebe4;
+      border-radius: 12px;
+    }
+
+    .table-sim div {
+      display: grid;
+      grid-template-columns: 1.1fr 1.5fr .7fr .7fr .9fr;
+    }
+
+    .table-sim span {
+      min-height: 34px;
+      padding: 8px;
+      border-right: 1px solid #e9f0eb;
+      border-bottom: 1px solid #e9f0eb;
+      color: #526658;
+      font-size: 11px;
+    }
+
+    .table-sim .head span {
+      color: var(--forest);
+      background: #e8f7f9;
+      font-weight: 950;
+    }
+
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 3px;
+      padding: 4px;
+      background: #e2ebe4;
+      border-radius: 12px;
+    }
+
+    .phase-grid span {
+      min-height: 34px;
+      padding: 7px 5px;
+      color: #526658;
+      background: white;
+      font-size: 10px;
+    }
+
+    .phase-grid .head {
+      color: var(--forest);
+      background: #e8f7f9;
+      font-weight: 950;
+    }
+
+    .phase-grid .yellow {
+      background: #fff8b8;
+    }
+
+    .phase-grid .green {
+      background: #bcf7be;
+    }
+
+    .phase-grid .cyan {
+      background: #bdf5f2;
+    }
+
+    .phase-grid .orange {
+      background: #ff8a1f;
+      color: white;
+    }
+
+    .phase-grid .gray {
+      background: #d7d7d7;
+    }
+
+    .function-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .function-card {
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: white;
+      padding: 24px;
+      box-shadow: var(--shadow-2);
+      min-height: 100px;
+    }
+
+    .function-card h3 {
+      font-size: 20px;
+    }
+
+    .function-card p {
+      margin: 0;
+      color: #526658;
+      font-size: 14px;
+    }
+
+    .function-list {
+      display: grid;
+      gap: 8px;
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      color: #465a68;
+      font-size: 14px;
+    }
+
+    .function-list li {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 8px;
+      align-items: start;
+    }
+
+    .function-list li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
     .flow-wrap {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
@@ -768,19 +908,19 @@
       margin-bottom: 12px;
       border-radius: 13px;
       color: white;
-      background: var(--blue);
+      background: var(--green);
       font-weight: 950;
     }
 
     .flow-step b {
       display: block;
       margin-bottom: 8px;
-      color: var(--navy);
+      color: var(--forest);
       line-height: 1.2;
     }
 
     .integration {
-      background: linear-gradient(135deg, #fff, #f7fbff);
+      background: linear-gradient(135deg, #fff, #f5fbf6);
     }
 
     .integration-grid {
@@ -794,12 +934,12 @@
       padding: 28px;
       border: 1px solid var(--line);
       border-radius: 30px;
-      background: var(--navy);
+      background: var(--forest);
       color: white;
       box-shadow: var(--shadow);
     }
 
-    .sap-panel h2,
+    .sap-panel h3,
     .sap-panel p {
       color: white;
     }
@@ -822,10 +962,72 @@
       font-weight: 850;
     }
 
+    .value-card {
+      padding: 24px;
+      border-radius: 26px;
+    }
+
+    .value-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: white;
+      box-shadow: var(--shadow-2);
+    }
+
+    .value-table {
+      width: 100%;
+      min-width: 920px;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .value-table th,
+    .value-table td {
+      padding: 18px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    .value-table th {
+      background: linear-gradient(135deg, #f4f8ff, #eefbfc);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .value-table td {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .value-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .value-table td:first-child {
+      color: var(--navy);
+      font-weight: 900;
+    }
+
+    .value-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--blue);
+      background: rgba(33, 196, 201, .12);
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
     .metric {
       display: block;
       margin-bottom: 12px;
-      color: var(--blue);
+      color: var(--green);
       font-size: 34px;
       font-weight: 950;
       line-height: 1;
@@ -850,7 +1052,7 @@
       margin-bottom: 12px;
       padding: 6px 10px;
       border-radius: 999px;
-      color: var(--blue);
+      color: var(--green);
       background: var(--soft);
       font-size: 12px;
       font-weight: 950;
@@ -858,20 +1060,20 @@
 
     .phase b {
       display: block;
-      color: var(--navy);
+      color: var(--forest);
       font-size: 18px;
       margin-bottom: 8px;
     }
 
     .phase span {
-      color: #526278;
+      color: #526658;
       font-size: 14px;
     }
 
     .closing {
       padding: 76px 5vw 40px;
       color: white;
-      background: var(--navy);
+      background: var(--forest);
     }
 
     .closing-card {
@@ -905,39 +1107,40 @@
     }
 
     .closing-box b {
-      color: var(--navy);
+      color: var(--forest);
     }
 
     .closing-box span {
-      color: #526278;
+      color: #526658;
       font-size: 14px;
     }
 
     footer {
       padding: 24px 5vw;
-      color: #dff8ff;
-      background: #03073a;
+      color: #dff4e7;
+      background: #0d281e;
       font-size: 13px;
     }
 
     @media (max-width: 1120px) {
       .hero-grid,
       .section-title,
-      .module-showcase,
       .integration-grid,
       .closing-card {
         grid-template-columns: 1fr;
       }
 
       .problem-grid,
-      .function-grid,
+      .cards,
       .value-grid,
-      .screens {
+      .screens,
+      .function-grid,
+      .module-showcase {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .module-cards {
-        grid-template-columns: repeat(2, 1fr);
+      .module-showcase {
+        grid-template-columns: 1fr;
       }
 
       .flow-wrap,
@@ -965,13 +1168,13 @@
 
       .stats,
       .app-body,
-      .dashboard-grid,
-      .chart-row,
+      .kpi-row,
       .problem-grid,
+      .cards,
       .module-cards,
-      .function-grid,
       .value-grid,
       .screens,
+      .function-grid,
       .flow-wrap,
       .roadmap {
         grid-template-columns: 1fr;
@@ -981,27 +1184,198 @@
         grid-column: auto;
       }
 
+      .phase-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
       .closing-card {
         padding: 24px;
       }
     }
+	.biz-action {
+  padding: 76px 5vw;
+  background: linear-gradient(180deg, #f8fbff, #eef8fb);
+}
+
+.biz-action-grid {
+  display: grid;
+  grid-template-columns: .76fr 1.24fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.biz-action-menu {
+  display: grid;
+  gap: 12px;
+}
+
+.biz-action-item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: white;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--shadow-2);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.biz-action-item span {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: var(--soft);
+  color: var(--blue);
+  font-weight: 950;
+}
+
+.biz-action-item b {
+  display: block;
+  color: var(--navy);
+  font-size: 17px;
+  line-height: 1.2;
+}
+
+.biz-action-item small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.biz-action-item:hover,
+.biz-action-item.active {
+  transform: translateY(-3px);
+  border-color: rgba(11, 119, 189, .32);
+  background: linear-gradient(135deg, #fff, #f3fbff);
+  box-shadow: 0 18px 42px rgba(7, 11, 79, .13);
+}
+
+.biz-action-item.active span {
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  color: white;
+}
+
+.biz-action-preview {
+  position: relative;
+  min-height: 460px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(33, 196, 201, .22), transparent 30%),
+    linear-gradient(135deg, #fff, #f6fbff);
+  box-shadow: var(--shadow);
+}
+
+.biz-preview-copy {
+  position: relative;
+  z-index: 2;
+  padding: 28px 30px 8px;
+}
+
+.biz-preview-badge {
+  display: inline-flex;
+  margin-bottom: 12px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  color: var(--blue);
+  background: var(--soft);
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.biz-preview-copy h3 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 30px;
+}
+
+.biz-preview-copy p {
+  margin: 0;
+  color: #526278;
+  font-size: 16px;
+}
+
+.biz-preview-screen {
+  position: relative;
+  margin: 18px 30px 30px;
+  border: 1px solid #dfe8f2;
+  border-radius: 26px;
+  background: white;
+  overflow: hidden;
+  min-height: 300px;
+  cursor: zoom-in;
+  box-shadow: 0 22px 58px rgba(7, 11, 79, .14);
+}
+
+.biz-preview-screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity .25s ease, transform .35s ease;
+}
+
+.biz-preview-screen img.switching {
+  opacity: 0;
+  transform: scale(.985);
+}
+
+@media (max-width: 960px) {
+  .biz-action-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .biz-action-preview {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .biz-action {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .biz-action-item {
+    grid-template-columns: 48px 1fr;
+    padding: 15px;
+  }
+
+  .biz-preview-copy {
+    padding: 24px 22px 6px;
+  }
+
+  .biz-preview-screen {
+    margin: 16px 22px 24px;
+  }
+}
   </style>
 </head>
 
 <body>
   <header class="topbar">
     <a class="brand" href="#home" aria-label="iREAPBIZ">
-      <object class="brand-logo-img" data="assets/logo-ireapbiz.png" type="image/png">
-        <span class="brand-mark">iB</span>
-      </object>
-      <span>iREAPBIZ</span>
+      <img class="brand-logo-img" src="assets/logo-ireapbiz.png" alt="iREAPBIZ">
+      <span>iReapbiz</span>
     </a>
     <nav>
       <a href="index.html">Portfolio</a>
       <a href="#problem">Pain Point</a>
       <a href="#modules">Modul</a>
-      <a href="#functions">Fungsi Modul</a>
-      <a href="#preview">Tampilan</a>
+      <a href="#screens">Fungsi Modul</a>
+      <a href="#app-preview">Tampilan</a>
       <a href="#sap">Integrasi SAP</a>
       <a class="cta" href="#closing">Demo</a>
     </nav>
@@ -1011,31 +1385,20 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div>
-          <span class="badge">Business Transaction | Finance Request | Reporting | SAP Integrated</span>
-          <h1>iREAPBIZ</h1>
+          <span class="badge"> Transaksi Bisnis | Finance Request | Laporan Management | Terintegrasi SAP</span>
+          <h1>iReapbiz</h1>
           <p class="lead">
-            iREAPBIZ adalah portal aplikasi bisnis untuk membantu perusahaan mengelola transaksi operasional,
-            request finance, approval, dashboard, dan reporting tanpa semua user harus mengakses SAP secara langsung.
+             iREAPBIZ menjadi <b>layer aplikasi web di atas SAP</b>
+			yang memungkinkan user operasional dan manajemen melakukan <b>transaksi, approval, dan monitoring</b> dengan lebih cepat dan sederhana.
           </p>
           <div class="buttons">
-            <a class="btn primary" href="#modules">Lihat Modul Utama</a>
-            <a class="btn secondary" href="#preview">Lihat Tampilan Aplikasi</a>
-          </div>
-          <div class="stats">
-            <div class="stat"><b>GRPO</b><span>Monitoring penerimaan barang</span></div>
-            <div class="stat"><b>SQ</b><span>Sales quotation dan nilai transaksi</span></div>
-            <div class="stat"><b>Cash</b><span>Petty cash request dan claim</span></div>
-            <div class="stat"><b>BI</b><span>Dashboard bisnis dan reporting</span></div>
+            <a class="btn primary" href="#demo">Mulai Digitalisasi</a>
+            <a class="btn secondary" href="#screens">Lihat Solusi Detail</a>
           </div>
         </div>
 
-        <div class="app-frame" aria-label="Screenshot dashboard iREAPBIZ">
-          <object class="hero-screenshot" data="assets/ireapbiz-hero-dashboard.png" type="image/png">
-            <div class="hero-screenshot-fallback">
-              Screenshot Dashboard iREAPBIZ
-              <small>Simpan file sebagai assets/ireapbiz-hero-dashboard.png</small>
-            </div>
-          </object>
+        <div class="hero-visual">
+          <img src="assets/ireapbiz-hero-dashboard.png" alt="iREAPBIZ dashboard preview">
         </div>
       </div>
     </section>
@@ -1043,20 +1406,17 @@
     <section class="dark" id="problem">
       <div class="container">
         <div class="section-title">
-          <h2>Masalah Bisnis yang Diselesaikan iREAPBIZ</h2>
-          <p>
-            Banyak proses operasional berjalan di luar SAP karena user membutuhkan form yang lebih mudah, workflow yang
-            lebih fleksibel, dan dashboard yang lebih cepat dibaca oleh manajemen.
-          </p>
+          <h2>Tantangan Nyata dalam Operasional Bisnis Sehari-hari</h2>
+          <p>Banyak proses bisnis membutuhkan <b>kecepatan, mobilitas, dan kemudahan akses</b>, namun tidak semua situasi memungkinkan user untuk selalu menggunakan SAP secara langsung.</p>
         </div>
 
         <div class="problem-grid">
-          <div class="problem"><b>Transaksi tersebar</b><span>Sales quotation, GRPO, inventory transfer, dan finance request sering berjalan di file atau aplikasi berbeda.</span></div>
-          <div class="problem"><b>User operasional tidak selalu cocok masuk SAP</b><span>User lapangan membutuhkan portal yang sederhana tanpa membuka akses SAP secara luas.</span></div>
-          <div class="problem"><b>Approval kurang terkontrol</b><span>Status request, dokumen, dan approval perlu dipantau agar proses bisnis tidak tersendat.</span></div>
-          <div class="problem"><b>Finance request butuh audit trail</b><span>Petty cash request dan claim membutuhkan bukti, status, user, dan histori yang jelas.</span></div>
-          <div class="problem"><b>Report masih manual</b><span>Inventory, sales quotation, petty cash, mutasi kas, dan open PO perlu report yang lebih mudah diakses.</span></div>
-          <div class="problem"><b>Akses data perlu dibatasi</b><span>User hanya boleh melihat transaksi, report, company, department, atau area kerja sesuai otorisasinya.</span></div>
+          <div class="problem"><b>Management Tidak Selalu Dapat Mengakses SAP</b><span>Saat membutuhkan approval atau melihat report, manajemen tidak selalu memiliki akses ke SAP karena aktivitas seperti meeting atau mobilitas di luar kantor.</span></div>
+          <div class="problem"><b>Approval Tidak Bisa Menunggu</b><span>Keputusan bisnis sering dibutuhkan dengan cepat, namun proses approval tidak selalu bisa dilakukan langsung melalui sistem yang kompleks.</span></div>
+          <div class="problem"><b>Sales & User Lapangan Tidak Selalu di Kantor</b><span>Sales dan user operasional di lapangan membutuhkan sistem yang bisa diakses dengan cepat tanpa harus bergantung pada SAP</span></div>
+          <div class="problem"><b>Aktivitas Warehouse Masih Manual</b><span>Proses seperti stock counting, pick list, atau delivery sering masih dicatat manual di lapangan karena tidak praktis jika harus langsung melalui SAP.</span></div>
+          <div class="problem"><b>Finance Request Terjadi di Luar Sistem</b><span>Permintaan petty cash atau claim sering dilakukan di luar sistem, sehingga sulit dilacak dan dikontrol dengan baik.</span></div>
+          <div class="problem"><b>Kebutuhan Bisnis Tidak Selalu Sama</b><span>Setiap perusahaan memiliki kebutuhan proses yang berbeda, namun sistem yang ada sering tidak cukup fleksibel untuk menyesuaikan perubahan tersebut.</span></div>
         </div>
       </div>
     </section>
@@ -1066,220 +1426,266 @@
         <div class="module-showcase">
           <div class="solution-panel">
             <div>
-              <span class="badge" style="box-shadow:none">Modul Utama iREAPBIZ</span>
-              <h2 style="margin-top:18px">Portal Bisnis untuk Transaksi, Finance, Report, dan Dashboard</h2>
+              <span class="badge" style="box-shadow:none">Solusi iReapbiz</span>
+              <h2 style="margin-top:18px">Portal Operasional Bisnis di Atas SAP</h2>
               <p>
-                iREAPBIZ menjadi layer aplikasi web yang menjembatani user operasional dengan proses bisnis dan SAP,
-                sehingga transaksi lebih mudah diinput, dipantau, dan dianalisa.
-              </p>
+                iREAPBIZ membantu user operasional dan manajemen menjalankan transaksi, approval, dan monitoring melalui portal web yang lebih sederhana, sehingga proses bisnis tetap berjalan cepat tanpa bergantung pada akses langsung ke SAP.</p>
             </div>
             <div class="solution-points">
-              <span>Transaksi purchasing, warehouse, sales, dan payment</span>
-              <span>Finance request dan petty cash dengan audit trail</span>
-              <span>Dashboard dan report bisnis untuk manajemen</span>
+              <span>Business Transaction Portal</span>
+              <span>Faster Approval & Monitoring</span>
+              <span>Finance Request & Control</span>
+			  <span>Flexible Business Solution</span>
             </div>
           </div>
 
           <div class="module-cards">
-            <div class="module-card"><div class="icon">01</div><h3>Business Transaction</h3><p>Modul untuk sales quotation, receipt payment, goods receipt purchase order, inventory transfer, dan transaksi operasional lain.</p></div>
-            <div class="module-card"><div class="icon">02</div><h3>Finance Request</h3><p>Modul untuk petty cash request, petty cash claim, dan proses finance yang membutuhkan kontrol status dan dokumen.</p></div>
-            <div class="module-card"><div class="icon">03</div><h3>Business Report</h3><p>Modul laporan untuk inventory, sales quotation, petty cash, mutasi kas, driver tracking, dan open purchase order.</p></div>
-            <div class="module-card"><div class="icon">04</div><h3>Dashboard KPI</h3><p>Modul monitoring untuk melihat trend GRPO, top vendor, open PO, sales quotation, petty cash, dan indikator bisnis lain.</p></div>
+            <div class="module-card">
+              <div class="icon">01</div>
+              <h3>Business Transaction Portal</h3>
+              <p>User operasional dapat menjalankan transaksi seperti sales, purchasing, dan warehouse melalui portal web yang lebih sederhana tanpa harus membuka SAP.</p>
+            </div>
+            <div class="module-card">
+              <div class="icon">02</div>
+              <h3>Faster Approval & Monitoring</h3>
+              <p>Management dapat melakukan approval dan melihat status transaksi dengan cepat, tanpa harus bergantung pada akses SAP di setiap saat.</p>
+            </div>
+            <div class="module-card">
+              <div class="icon">03</div>
+              <h3>Finance Request & Control</h3>
+              <p>Proses petty cash request dan claim dapat dilakukan dengan lebih terstruktur, lengkap dengan status, histori, dan kontrol yang jelas.</p>
+            </div>
+			 <div class="module-card">
+              <div class="icon">04</div>
+              <h3>Flexible Business Solution</h3>
+              <p>iREAPBIZ dapat menyesuaikan kebutuhan proses bisnis seperti stock counting, taking order, pick list delivery, dan workflow lainnya sesuai kebutuhan perusahaan.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="functions">
+    <section class="screen-section" id="screens">
       <div class="container">
         <div class="section-title">
-          <h2>Fungsi Modul iREAPBIZ</h2>
+          <h2>Kapabilitas iREAPBIZ dalam Mendukung Proses Bisnis</h2>
           <p>
-            Fungsi iREAPBIZ mencakup transaksi operasional, finance, reporting, otorisasi, dan integrasi agar proses
-            bisnis dapat berjalan lebih rapi dan lebih mudah dikontrol.
+            iREAPBIZ dirancang untuk memastikan proses transaksi, approval, dan monitoring dapat berjalan secara terstruktur, cepat, dan tetap terkontrol dalam satu sistem yang terintegrasi dengan SAP.
           </p>
         </div>
 
         <div class="function-grid">
-          <div class="function-card"><div class="icon">TR</div><h3>Transaction</h3><p>Memproses transaksi bisnis operasional.</p><ul class="function-list"><li>Sales Quotation</li><li>Receipt Payment</li><li>Goods Receipt Purchase Order</li><li>Inventory Transfer</li></ul></div>
-          <div class="function-card"><div class="icon">FI</div><h3>Finance</h3><p>Mengontrol request dan claim finance.</p><ul class="function-list"><li>Petty Cash Request</li><li>Petty Cash Claim</li><li>Status pending, unsettled, dan approved</li><li>Audit trail user dan dokumen</li></ul></div>
-          <div class="function-card"><div class="icon">RP</div><h3>Report</h3><p>Menyediakan laporan bisnis untuk operasional dan manajemen.</p><ul class="function-list"><li>Report Inventory</li><li>Report Sales Quotation</li><li>Report Petty Cash</li><li>Open Purchase Order Report</li></ul></div>
-          <div class="function-card"><div class="icon">BI</div><h3>Dashboard KPI</h3><p>Membaca ringkasan bisnis secara cepat.</p><ul class="function-list"><li>Trend Penerimaan GRPO</li><li>Top 5 Vendor GRPO</li><li>Total Sales Quotation</li><li>Petty Cash Pending</li></ul></div>
-          <div class="function-card"><div class="icon">AU</div><h3>Authorization & Access Control</h3><p>Membatasi akses sesuai tanggung jawab user.</p><ul class="function-list"><li>Akses berdasarkan role dan menu</li><li>Otorisasi per transaksi dan report</li><li>Kontrol akses company, department, atau branch</li><li>Mendukung approval level</li></ul></div>
-          <div class="function-card"><div class="icon">SI</div><h3>SAP Integration</h3><p>Menghubungkan portal bisnis dengan SAP.</p><ul class="function-list"><li>GRPO dan inventory transfer</li><li>Sales quotation dan receipt payment</li><li>Finance document dan petty cash</li><li>Data siap untuk SAP reporting</li></ul></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="preview-section" id="preview">
-      <div class="container">
-        <div class="section-title">
-          <h2>Tampilan Aplikasi iREAPBIZ</h2>
-          <p>
-            Tampilan dashboard iREAPBIZ membantu user melihat purchasing, warehouse, sales, finance, dan report dalam
-            satu portal bisnis yang mudah digunakan.
-          </p>
-        </div>
-
-        <div class="screens">
-          <div class="screen-card wide">
-            <div class="screen-top">
-              <div><h3>Dashboard Purchasing & Warehouse</h3><p>Menampilkan open PO, GRPO, trend penerimaan, dan top vendor untuk memantau proses purchasing.</p></div>
-              <span class="screen-label">Dashboard</span>
-            </div>
-            <div class="screenshot-frame">
-              <img src="assets/ireapbiz-dashboard.png" alt="Tampilan Dashboard Purchasing dan Warehouse iREAPBIZ" />
-            </div>
+          <div class="function-card">
+            <div class="icon">01</div>
+            <h3>Easy Transaction Input</h3>
+            <p>Transaksi operasional seperti sales, purchasing, dan warehouse dapat dilakukan melalui web dengan alur yang sederhana sehingga user tetap dapat melakukan input dengan cepat dan konsisten.</p>
           </div>
-          <div class="screen-card">
-            <div class="screen-top">
-              <div><h3>Finance</h3><p>Menu finance untuk petty cash request dan petty cash claim agar proses pengajuan lebih terkontrol.</p></div>
-              <span class="screen-label">Finance Request</span>
-            </div>
-            <div class="screenshot-frame">
-              <img src="assets/ireapbiz-finance.png" alt="Tampilan Menu Finance iREAPBIZ" />
-            </div>
+
+          <div class="function-card">
+            <div class="icon">02</div>
+            <h3>Structured Approval Flow</h3>
+            <p>Setiap transaksi dan request memiliki alur approval yang jelas dan dapat dipantau secara real-time, sehingga tidak bergantung pada komunikasi manual.</p>
           </div>
-          <div class="screen-card">
-            <div class="screen-top">
-              <div><h3>Report</h3><p>Menu report untuk inventory, sales quotation, petty cash, mutasi kas, driver tracking, dan open PO.</p></div>
-              <span class="screen-label">Business Report</span>
-            </div>
-            <div class="screenshot-frame">
-              <img src="assets/ireapbiz-report.png" alt="Tampilan Menu Report iREAPBIZ" />
-            </div>
+
+          <div class="function-card">
+            <div class="icon">03</div>
+            <h3>Standardized Business Reporting</h3>
+            <p>Data transaksi langsung tersusun dalam format report yang terstandarisasi sehingga dapat digunakan oleh operasional dan manajemen tanpa proses rekap ulang.</p>
+          </div>
+
+          <div class="function-card">
+            <div class="icon">04</div>
+            <h3>KPI Monitoring & Visibility</h3>
+            <p>Dashboard membantu manajemen melihat kondisi bisnis secara cepat melalui indikator utama tanpa harus membuka banyak menu atau laporan.</p>
+          </div>
+
+          <div class="function-card">
+            <div class="icon">05</div>
+            <h3>Authorization & Access Control</h3>
+            <p>Akses data diatur berdasarkan role, fungsi, dan organisasi sehingga setiap user hanya melihat data yang relevan sesuai tanggung jawabnya.</p>
+          </div>
+
+          <div class="function-card">
+            <div class="icon">06</div>
+            <h3>SAP Integration</h3>
+            <p>Data transaksi terhubung ke SAP tanpa input ulang sehingga mendukung kebutuhan reporting dan kontrol bisnis.</p>
           </div>
         </div>
       </div>
     </section>
 
+	 <section class="biz-action" id="biz-action">
+	  <div class="container">
+		<div class="section-title">
+		  <h2>iREAPBIZ in Action</h2>
+		  <p>
+			Berbagai proses bisnis dapat dijalankan melalui portal web yang sederhana,
+			fleksibel, dan tetap terhubung dengan SAP.
+		  </p>
+		</div>
+
+		<div class="biz-action-grid">
+		  <div class="biz-action-menu">
+			<button class="biz-action-item active"
+			  data-title="Transaction"
+			  data-subtitle="Taking Order • Stock Take • Pick List Delivery • Goods Movement"
+			  data-image="assets/ireapbiz-transaction.png">
+			  <span>01</span>
+			  <div>
+				<b>Transaction</b>
+				<small>Transaksi operasional harian</small>
+			  </div>
+			</button>
+
+			<button class="biz-action-item"
+			  data-title="Finance & Request"
+			  data-subtitle="Petty Cash Request • Claim • Internal Request"
+			  data-image="assets/ireapbiz-finance-request.png">
+			  <span>02</span>
+			  <div>
+				<b>Finance & Request</b>
+				<small>Request operasional & finance</small>
+			  </div>
+			</button>
+
+			<button class="biz-action-item"
+			  data-title="Approval & Workflow"
+			  data-subtitle="Approval transaksi • Approval request • Status tracking"
+			  data-image="assets/ireapbiz-approval.png">
+			  <span>03</span>
+			  <div>
+				<b>Approval & Workflow</b>
+				<small>Approval cepat & terkontrol</small>
+			  </div>
+			</button>
+
+			<button class="biz-action-item"
+			  data-title="Dashboard & Reporting"
+			  data-subtitle="Dashboard • Monitoring • Business Report"
+			  data-image="assets/ireapbiz-dashboard-report.png">
+			  <span>04</span>
+			  <div>
+				<b>Dashboard & Reporting</b>
+				<small>Visibilitas untuk manajemen</small>
+			  </div>
+			</button>
+
+			<button class="biz-action-item"
+			  data-title="Custom Business Flow"
+			  data-subtitle="Custom Module • Workflow Khusus • Future Development"
+			  data-image="assets/ireapbiz-custom-flow.png">
+			  <span>05</span>
+			  <div>
+				<b>Custom Business Flow</b>
+				<small>Fleksibel sesuai kebutuhan bisnis</small>
+			  </div>
+			</button>
+		  </div>
+
+		  <div class="biz-action-preview">
+			<div class="biz-preview-copy">
+			  <span class="biz-preview-badge">Flexible Business Portal</span>
+			  <h3 id="bizPreviewTitle">Transaction</h3>
+			  <p id="bizPreviewSubtitle">
+				Taking Order • Stock Take • Pick List Delivery • Goods Movement
+			  </p>
+			</div>
+
+			<div class="biz-preview-screen">
+			  <img id="bizPreviewImage" src="assets/ireapbiz-transaction.png" alt="iREAPBIZ transaction preview">
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</section> 
+   
+   
     <section id="workflow">
       <div class="container">
         <div class="section-title">
-          <h2>Workflow iREAPBIZ</h2>
+          <h2>iREAPBIZ Business Workflow</h2>
           <p>
-            iREAPBIZ memudahkan user operasional menginput transaksi atau request, lalu data dapat divalidasi,
-            dimonitor, dan diarahkan ke proses SAP maupun reporting.
+           Transaksi bisnis dapat dilakukan melalui portal web yang sederhana, diproses melalui alur approval, dan terhubung ke SAP tanpa mengganggu kecepatan operasional.
           </p>
         </div>
 
         <div class="flow-wrap">
-          <div class="flow-step"><div class="step-num">01</div><b>Input Transaksi</b><span>User membuat sales quotation, GRPO, transfer, petty cash, atau request bisnis lain.</span></div>
-          <div class="flow-step"><div class="step-num">02</div><b>Validasi Data</b><span>Sistem memvalidasi field, referensi master data, dan kebutuhan dokumen.</span></div>
-          <div class="flow-step"><div class="step-num">03</div><b>Authorization</b><span>Hak akses memastikan user hanya membuka transaksi dan report sesuai otorisasi.</span></div>
-          <div class="flow-step"><div class="step-num">04</div><b>Approval & Status</b><span>Dokumen dapat dipantau melalui status pending, active, unsettled, atau approved.</span></div>
-          <div class="flow-step"><div class="step-num">05</div><b>Dashboard & Report</b><span>Data transaksi menjadi dashboard dan laporan untuk user serta manajemen.</span></div>
-          <div class="flow-step"><div class="step-num">06</div><b>SAP Ready</b><span>Data approved disiapkan untuk integrasi SAP, rekonsiliasi, dan reporting.</span></div>
+          <div class="flow-step"><div class="step-num">01</div><b>Transaction Input</b><span>User operasional melakukan transaksi seperti sales, purchasing, warehouse, atau request melalui portal web tanpa harus membuka SAP.</span></div>
+          <div class="flow-step"><div class="step-num">02</div><b>Data Validation</b><span>Data yang diinput langsung tervalidasi sesuai kebutuhan bisnis sehingga mengurangi kesalahan sebelum diproses lebih lanjut.</span></div>
+          <div class="flow-step"><div class="step-num">03</div><b>Approval Process</b><span>Transaksi dan request diproses melalui alur approval yang jelas sehingga status dapat dipantau tanpa komunikasi manual.</span></div>
+          <div class="flow-step"><div class="step-num">04</div><b>Real-Time Monitoring</b><span>User dan manajemen dapat melihat status transaksi dan kondisi bisnis secara langsung melalui dashboard dan report.</span></div>
+          <div class="flow-step"><div class="step-num">05</div><b>Controlled Access</b><span>Setiap user hanya dapat melihat dan mengakses data sesuai peran, lokasi, dan tanggung jawabnya, sehingga operasional tetap terkontrol.</span></div>
+          <div class="flow-step"><div class="step-num">06</div><b>SAP Integration & Decision</b><span>Data langsung terhubung ke SAP tanpa input ulang dan siap digunakan untuk costing, reporting, dan keputusan manajemen.</span></div>
         </div>
       </div>
     </section>
 
-    <section class="integration" id="sap">
-      <div class="container integration-grid">
-        <div class="sap-panel">
-          <h2 style="color:white">Integrasi SAP untuk Business Transaction Portal</h2>
-          <p>
-            iREAPBIZ dapat menjadi portal operasional yang menangkap transaksi dari user bisnis, sementara SAP menjadi
-            sistem utama untuk inventory, sales, finance, accounting, dan reporting.
-          </p>
-          <div class="sap-list">
-            <div>Goods Receipt Purchase Order dan inventory transfer</div>
-            <div>Sales quotation dan receipt payment reference</div>
-            <div>Petty cash request, claim, dan finance document</div>
-            <div>Authorization mapping untuk role, menu, transaction type, dan report</div>
-          </div>
-        </div>
-
-        <div>
-          <div class="section-title" style="display:block;margin-bottom:22px">
-            <h2>Output Integrasi untuk Manajemen</h2>
-            <p style="margin-top:12px">Integrasi membuat transaksi operasional lebih mudah dipakai sebagai data reporting dan kontrol bisnis.</p>
-          </div>
-          <div class="cards" style="grid-template-columns:1fr 1fr">
-            <div class="module-card"><div class="icon">GR</div><h3>GRPO Control</h3><p>Monitoring penerimaan barang dan vendor performance dapat dikaitkan dengan data purchasing.</p></div>
-            <div class="module-card"><div class="icon">SQ</div><h3>Sales Visibility</h3><p>Sales quotation dan nilai transaksi dapat dimonitor dari dashboard dan report.</p></div>
-            <div class="module-card"><div class="icon">PC</div><h3>Petty Cash Traceability</h3><p>Permintaan dan claim petty cash memiliki status, dokumen, dan audit trail yang lebih jelas.</p></div>
-            <div class="module-card"><div class="icon">BI</div><h3>Business Dashboard</h3><p>Data purchasing, warehouse, sales, dan finance dapat dirangkum menjadi dashboard manajemen.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section id="value">
       <div class="container">
         <div class="section-title">
-          <h2>Nilai Bisnis iREAPBIZ</h2>
+          <h2>Business Value untuk Proses Bisnis</h2>
           <p>
-            iREAPBIZ membantu perusahaan membangun portal transaksi yang lebih mudah dipakai oleh user bisnis, tetapi
-            tetap memiliki kontrol, otorisasi, dan kesiapan integrasi ke SAP.
-          </p>
+           iReapbiz membantu perusahaan menjalankan transaksi dan approval dengan lebih cepat tanpa mengorbankan kontrol, sekaligus memastikan data tetap terintegrasi dengan SAP.</p>
         </div>
 
-        <div class="value-grid">
-          <div class="value-card"><span class="metric">01</span><h3>Transaksi Lebih Cepat</h3><p>User operasional dapat menginput transaksi melalui web app yang lebih ringan dan mudah digunakan.</p></div>
-          <div class="value-card"><span class="metric">02</span><h3>Approval Lebih Rapi</h3><p>Status dokumen, request, dan approval dapat dipantau sehingga proses tidak bergantung pada komunikasi manual.</p></div>
-          <div class="value-card"><span class="metric">03</span><h3>Finance Lebih Traceable</h3><p>Petty cash request dan claim memiliki histori, status, dan data pendukung yang lebih jelas.</p></div>
-          <div class="value-card"><span class="metric">04</span><h3>Data Lebih Aman</h3><p>Authorization membatasi akses berdasarkan role, menu, transaction type, company, department, atau report.</p></div>
-          <div class="value-card"><span class="metric">05</span><h3>Dashboard Management</h3><p>Trend GRPO, vendor, sales quotation, dan finance request dapat dibaca dalam satu dashboard.</p></div>
-          <div class="value-card"><span class="metric">06</span><h3>SAP Lebih Fokus</h3><p>Tidak semua user perlu masuk SAP langsung, sementara data approved tetap dapat disiapkan untuk integrasi.</p></div>
+        <div class="value-table-wrap">
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Area Bisnis</th>
+                <th>Kondisi Manual</th>
+                <th>Dengan iREAPBIZ</th>
+                <th>Business Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Business Transaction</td>
+                <td>Input transaksi bergantung akses SAP.</td>
+                <td>User input lewat portal web.</td>
+                <td><span class="value-tag">Process speed</span></td>
+              </tr>
+              <tr>
+                <td>Finance Request</td>
+                <td>Request tersebar lewat chat atau file.</td>
+                <td>Request tercatat dengan status jelas.</td>
+                <td><span class="value-tag">Traceable request</span></td>
+              </tr>
+              <tr>
+                <td>Approval</td>
+                <td>Approval lambat dan sulit dipantau.</td>
+                <td>Approval berjalan sesuai flow.</td>
+                <td><span class="value-tag">Faster decision</span></td>
+              </tr>
+              <tr>
+                <td>Monitoring</td>
+                <td>Status transaksi tidak terlihat real-time.</td>
+                <td>Status dan report mudah dipantau.</td>
+                <td><span class="value-tag">Better visibility</span></td>
+              </tr>
+              <tr>
+                <td>Access Control</td>
+                <td>Akses data sulit dibatasi per role.</td>
+                <td>Akses mengikuti user, role, dan lokasi.</td>
+                <td><span class="value-tag">Controlled operation</span></td>
+              </tr>
+              <tr>
+                <td>SAP Integration</td>
+                <td>Data perlu input ulang ke SAP.</td>
+                <td>Data siap terhubung ke SAP.</td>
+                <td><span class="value-tag">SAP-ready data</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
-    <section id="implementation">
-      <div class="container">
-        <div class="section-title">
-          <h2>Roadmap Implementasi</h2>
-          <p>
-            Implementasi iREAPBIZ dapat dimulai dari transaksi paling kritikal, lalu diperluas ke finance, reporting,
-            dashboard, dan integrasi SAP.
-          </p>
-        </div>
-
-        <div class="roadmap">
-          <div class="phase"><span class="tag">Phase 1</span><b>Assessment</b><span>Mapping transaksi, approval, report, user, dan integrasi SAP.</span></div>
-          <div class="phase"><span class="tag">Phase 2</span><b>Master Data & Authorization</b><span>Setup user, role, menu, transaction type, dan hak akses data.</span></div>
-          <div class="phase"><span class="tag">Phase 3</span><b>Transaction Pilot</b><span>Validasi sales quotation, GRPO, inventory transfer, dan petty cash.</span></div>
-          <div class="phase"><span class="tag">Phase 4</span><b>Dashboard & Report</b><span>Setup dashboard purchasing, warehouse, sales, finance, dan report bisnis.</span></div>
-          <div class="phase"><span class="tag">Phase 5</span><b>SAP Integration</b><span>Integrasi data approved ke SAP dan rollout user operasional.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="closing" id="closing">
-      <div class="container closing-card">
-        <div>
-          <h2>iREAPBIZ Membantu Proses Bisnis Lebih Cepat, Terkontrol, dan Siap SAP</h2>
-          <p>
-            Dengan iREAPBIZ, perusahaan dapat menyediakan portal transaksi untuk user bisnis tanpa kehilangan kontrol
-            authorization, audit trail, dashboard, dan integrasi ERP.
-          </p>
-          <div class="buttons">
-            <a class="btn primary" href="index.html">Kembali ke Portfolio</a>
-            <a class="btn secondary" href="#preview">Lihat Tampilan</a>
-          </div>
-        </div>
-        <div class="closing-box">
-          <b>Output Demo iREAPBIZ</b>
-          <span>Business Transaction Portal</span>
-          <span>Finance Request & Petty Cash</span>
-          <span>Business Report & Dashboard KPI</span>
-          <span>Authorization & Access Control</span>
-          <span>Integrasi SAP untuk transaksi dan reporting</span>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      iREAPBIZ Product Profile. Halaman konsep untuk demo business transaction portal, finance request, reporting,
-      dashboard, authorization, dan integrasi SAP.
-    </div>
-  </footer>
+    
   <div class="lightbox" id="imageLightbox" aria-hidden="true">
-    <button type="button" aria-label="Tutup gambar">&times;</button>
-    <img src="" alt="" />
+    <button type="button" aria-label="Tutup gambar">×</button>
+    <img src="" alt="">
   </div>
   <script>
     const lightbox = document.getElementById('imageLightbox');
@@ -1291,7 +1697,7 @@
       lightboxImage.alt = '';
     };
 
-    document.querySelectorAll('.screenshot-frame img, .hero-screenshot img').forEach((image) => {
+    document.querySelectorAll('.screenshot-frame img, .hero-screenshot img, .hero-visual img, .biz-preview-screen img').forEach((image) => {
       image.addEventListener('click', () => {
         lightboxImage.src = image.currentSrc || image.src;
         lightboxImage.alt = image.alt || 'Tampilan aplikasi';
@@ -1308,6 +1714,28 @@
       if (event.key === 'Escape') closeLightbox();
     });
   </script>
-</body>
+<script>
+  const bizActionItems = document.querySelectorAll(".biz-action-item");
+  const bizPreviewTitle = document.getElementById("bizPreviewTitle");
+  const bizPreviewSubtitle = document.getElementById("bizPreviewSubtitle");
+  const bizPreviewImage = document.getElementById("bizPreviewImage");
 
-</html>
+  bizActionItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      bizActionItems.forEach((btn) => btn.classList.remove("active"));
+      item.classList.add("active");
+
+      bizPreviewImage.classList.add("switching");
+
+      setTimeout(() => {
+        bizPreviewTitle.textContent = item.dataset.title;
+        bizPreviewSubtitle.textContent = item.dataset.subtitle;
+        bizPreviewImage.src = item.dataset.image;
+        bizPreviewImage.alt = item.dataset.title;
+        bizPreviewImage.classList.remove("switching");
+      }, 180);
+    });
+  });
+</script>
+
+</body></html>
