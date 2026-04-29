@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STEM Digital Solution | Portfolio Bisnis Peternakan Ayam</title>
+  <title>STEM Digital Solution | Farm</title>
   <style>
     :root {
       --navy: #082f49;
@@ -117,11 +117,13 @@
     nav a:hover {
       background: var(--soft);
       color: var(--navy);
+      transform: translateY(-1px);
     }
 
     nav a.cta {
       background: var(--navy);
       color: white;
+      box-shadow: 0 10px 22px rgba(8, 47, 73, .18);
     }
 
     .hero {
@@ -204,6 +206,7 @@
       border-radius: 16px;
       text-decoration: none;
       font-weight: 950;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background-color .22s ease;
     }
 
     .btn.primary {
@@ -428,7 +431,7 @@
     .btn:hover,
     .btn-primary:hover,
     .btn-secondary:hover {
-      transform: translateY(-1px);
+      transform: translateY(-2px);
     }
 
     .btn.secondary:hover,
@@ -452,6 +455,7 @@
     .client-logo:hover {
       border-color: #cfe3ff;
       box-shadow: 0 14px 30px rgba(8, 47, 73, .08);
+      transform: translateY(-4px);
     }
 
     /* Challenge cards */
@@ -463,11 +467,13 @@
     /* Hero visual */
     .hero-panel:hover {
       box-shadow: 0 28px 78px rgba(8, 47, 73, .18);
+      transform: translateY(-3px);
     }
 
     /* Contact box */
     .contact-box:hover {
       box-shadow: 0 18px 42px rgba(0, 0, 0, .12);
+      transform: translateY(-3px);
     }
 
     @media (max-width: 1100px) {
@@ -873,13 +879,58 @@
     }
 
     .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 40px rgba(8, 47, 73, .12);
+      transform: translateY(-5px);
+      border-color: #cfe3ff;
+      box-shadow: 0 20px 46px rgba(8, 47, 73, .11);
     }
 
     .value-card:hover {
-      box-shadow: 0 10px 22px rgba(8, 47, 73, .08);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 46px rgba(8, 47, 73, .09);
       border-color: #d6e6ff;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+      transition-delay: calc(var(--reveal-order, 0) * 70ms);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+
+      nav a:hover,
+      .btn:hover,
+      .btn-primary:hover,
+      .btn-secondary:hover,
+      .product-link:hover,
+      .proof-card:hover,
+      .client-logo:hover,
+      .hero-panel:hover,
+      .contact-box:hover,
+      .product-card:hover,
+      .value-card:hover {
+        transform: none;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
     }
 
     .panel {
@@ -1453,6 +1504,7 @@
       <a href="#challenge">Tantangan</a>
       <a href="#solutions">Solusi</a>
       <a href="#ecosystem">Mengapa Solusi Ini Bekerja</a>
+      <a href="#value">Business Value</a>
       <a href="#demo">Mulai Digitalisasi</a>
       <a class="cta" href="#contact">Hubungi Kami</a>
     </nav>
@@ -1811,7 +1863,7 @@
 
         <div class="cta-buttons">
           <a href="https://wa.me/+6287786555055?text=Halo%20tim%20STEM,%20saya%20ingin%20diskusi%20terkait%20solusi%20digitalisasi%20operasional%20farm."
-            class="btn-primary">
+            target="_blank" rel="noopener noreferrer" class="btn-primary">
             Chat via WhatsApp
           </a>
 
@@ -1860,8 +1912,31 @@
     </div>
   </footer>
 
+  <script>
+    const revealItems = document.querySelectorAll(
+      '.hero-left, .hero-panel, .section-title, .proof-card, .product-card, .value-card, .client-logo, .cta-final .container, .contact-box'
+    );
 
+    revealItems.forEach((item, index) => {
+      item.classList.add('reveal');
+      item.style.setProperty('--reveal-order', index % 6);
+    });
 
+    if (!('IntersectionObserver' in window)) {
+      revealItems.forEach((item) => item.classList.add('is-visible'));
+    } else {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.16 });
+
+      revealItems.forEach((item) => revealObserver.observe(item));
+    }
+  </script>
 </body>
 
 </html>

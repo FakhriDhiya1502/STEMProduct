@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iFLOCS | Product Profile Farm Operation</title>
+  <title>iFlocs| Product Profile</title>
   <style>
     :root {
       --forest: #12372a;
@@ -1584,6 +1584,26 @@
       box-shadow: 0 10px 24px rgba(18, 55, 42, .08);
     }
 
+    .next-links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+      color: #526658;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .next-links a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .next-links a:hover {
+      text-decoration: underline;
+    }
+
     .contact-section {
       padding: 76px 5vw 40px;
       background: linear-gradient(135deg, var(--forest), #24503e);
@@ -1733,14 +1753,14 @@
       <span>iFLOCS</span>
     </a>
     <nav>
-      <a href="index.html">Portfolio</a>
-      <a href="#problem">Pain Point</a>
-      <a href="#iflocs-action">Menu iFLOCS</a>
-      <a href="#modules">Modul</a>
-      <a href="#screens">Fungsi Modul</a>
-      <a href="#app-preview">Tampilan</a>
-      <a href="#sap">Integrasi SAP</a>
-      <a class="cta" href="#closing">Demo</a>
+      <a href="index.html">Halaman Utama</a>
+      <a href="#problem">Tantangan</a>
+      <a href="#modules">Solusi</a>
+      <a href="#screens">Kapabilitas</a>
+      <a href="#iflocs-action">iFLOCS in Action</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#value">Business Value</a>
+      <a class="cta" href="#demo">Mulai Digitalisasi</a>
     </nav>
   </header>
 
@@ -1799,76 +1819,6 @@
               proses pencocokan dan pelaporan keuangan menjadi kompleks.</span></div>
           <div class="problem"><b>Data Awal Menentukan Hasil Akhir</b><span>Kesalahan pencatatan di awal operasional
               akan terbawa hingga costing dan laporan manajemen.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="iflocs-action" id="iflocs-action">
-      <div class="container">
-        <div class="section-title">
-          <h2>iFLOCS in Action</h2>
-          <p>
-            Modul inti yang digunakan tim farm untuk mencatat transaksi, membaca laporan, dan memantau kondisi
-            operasional secara lebih cepat.
-          </p>
-        </div>
-
-        <div class="action-grid">
-          <div class="action-menu" aria-label="Pilih preview menu iFLOCS">
-            <button class="action-item active" type="button" data-title="Inventory Transaction"
-              data-subtitle="GRPO, transfer stock, goods issue, statistic, dan harvest dalam satu alur transaksi farm."
-              data-image="assets/iflocs-grpo.png">
-              <span aria-hidden="true"><svg>
-                  <use href="#icon-box"></use>
-                </svg></span>
-              <div>
-                <b>Inventory Transaction</b>
-                <small>Transaksi material dan aktivitas farm</small>
-              </div>
-            </button>
-
-            <button class="action-item" type="button" data-title="Inventory Report"
-              data-subtitle="Monitoring stok dan pergerakan material agar tim operasional dan finance membaca data yang sama."
-              data-image="assets/iflocs-inventory-report.png">
-              <span aria-hidden="true"><svg>
-                  <use href="#icon-report"></use>
-                </svg></span>
-              <div>
-                <b>Inventory Report</b>
-                <small>Kontrol stok dan movement</small>
-              </div>
-            </button>
-
-            <button class="action-item" type="button" data-title="Report per Phase"
-              data-subtitle="Analisis performa farm per phase untuk membaca production, feed intake, body weight, dan indikator operasional lain."
-              data-image="assets/iflocs-report-per-phase.png">
-              <span aria-hidden="true"><svg>
-                  <use href="#icon-chart"></use>
-                </svg></span>
-              <div>
-                <b>Report per Phase</b>
-                <small>Analisis performa dan KPI farm</small>
-              </div>
-            </button>
-          </div>
-
-          <div class="action-preview">
-            <div class="preview-copy">
-              <span class="preview-badge">Live Module Preview</span>
-              <h3 id="previewTitle">Inventory Transaction</h3>
-              <p id="previewSubtitle">
-                GRPO, transfer stock, goods issue, statistic, dan harvest dalam satu alur transaksi farm.
-              </p>
-              <div class="preview-actions">
-                <a class="preview-link" href="http://ppmcentral.my.id:4172/iflocsbreeding/" target="_blank"
-                  rel="noopener">Show iFLOCS</a>
-              </div>
-            </div>
-
-            <div class="preview-screen">
-              <img id="previewImage" src="assets/iflocs-grpo.png" alt="Inventory Transaction">
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -2021,6 +1971,76 @@
     </section>
 
 
+    <section class="iflocs-action" id="iflocs-action">
+      <div class="container">
+        <div class="section-title">
+          <h2>iFLOCS in Action</h2>
+          <p>
+            Modul inti yang digunakan tim farm untuk mencatat transaksi, membaca laporan, dan memantau kondisi
+            operasional secara lebih cepat.
+          </p>
+        </div>
+
+        <div class="action-grid">
+          <div class="action-menu" aria-label="Pilih preview menu iFLOCS">
+            <button class="action-item active" type="button" data-title="Inventory Transaction"
+              data-subtitle="GRPO, transfer stock, goods issue, statistic, dan harvest dalam satu alur transaksi farm."
+              data-image="assets/iflocs-grpo.png">
+              <span aria-hidden="true"><svg>
+                  <use href="#icon-box"></use>
+                </svg></span>
+              <div>
+                <b>Inventory Transaction</b>
+                <small>Transaksi material dan aktivitas farm</small>
+              </div>
+            </button>
+
+            <button class="action-item" type="button" data-title="Inventory Report"
+              data-subtitle="Monitoring stok dan pergerakan material agar tim operasional dan finance membaca data yang sama."
+              data-image="assets/iflocs-inventory-report.png">
+              <span aria-hidden="true"><svg>
+                  <use href="#icon-report"></use>
+                </svg></span>
+              <div>
+                <b>Inventory Report</b>
+                <small>Kontrol stok dan movement</small>
+              </div>
+            </button>
+
+            <button class="action-item" type="button" data-title="Report per Phase"
+              data-subtitle="Analisis performa farm per phase untuk membaca production, feed intake, body weight, dan indikator operasional lain."
+              data-image="assets/iflocs-report-per-phase.png">
+              <span aria-hidden="true"><svg>
+                  <use href="#icon-chart"></use>
+                </svg></span>
+              <div>
+                <b>Report per Phase</b>
+                <small>Analisis performa dan KPI farm</small>
+              </div>
+            </button>
+          </div>
+
+          <div class="action-preview">
+            <div class="preview-copy">
+              <span class="preview-badge">Live Module Preview</span>
+              <h3 id="previewTitle">Inventory Transaction</h3>
+              <p id="previewSubtitle">
+                GRPO, transfer stock, goods issue, statistic, dan harvest dalam satu alur transaksi farm.
+              </p>
+              <div class="preview-actions">
+                <a class="preview-link" href="http://ppmcentral.my.id:4172/iflocsbreeding/" target="_blank"
+                  rel="noopener">Show iFLOCS</a>
+              </div>
+            </div>
+
+            <div class="preview-screen">
+              <img id="previewImage" src="assets/iflocs-grpo.png" alt="Inventory Transaction">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="workflow">
       <div class="container">
         <div class="section-title">
@@ -2142,11 +2162,22 @@
       <div class="container">
         <h2>Mulai Digitalisasi Operasional Farm Anda</h2>
         <p>
-          Diskusikan kebutuhan operasional farm Anda bersama tim STEM untuk menentukan solusi yang sesuai dengan proses bisnis dan skala operasional Anda.
+          Diskusikan kebutuhan operasional farm Anda bersama tim STEM untuk menentukan solusi yang sesuai dengan proses
+          bisnis dan skala operasional Anda.
         </p>
         <div class="cta-buttons">
-          <a href="https://wa.me/+6287786555055?text=Halo%20tim%20STEM,%20saya%20ingin%20diskusi%20terkait%20solusi%20digitalisasi%20operasional%20farm." class="btn-cta-primary">Chat via WhatsApp</a>
+          <a href="https://wa.me/+6287786555055?text=Halo%20tim%20STEM,%20saya%20ingin%20diskusi%20terkait%20solusi%20digitalisasi%20operasional%20farm."
+            target="_blank" rel="noopener noreferrer" class="btn-cta-primary">Chat via WhatsApp</a>
           <a href="mailto:sales-enquiry@sterling-team.com" class="btn-cta-secondary">Kirim Email</a>
+        </div>
+        <div class="next-links">
+          <a href="index.html">Kembali ke Halaman Utama</a>
+          <span>&bull;</span>
+          <a href="sap-solution.html">Lihat SAP Solution</a>
+          <span>&bull;</span>
+          <a href="ireapbiz.html">Lihat iREAPBIZ</a>
+          <span>&bull;</span>
+          <a href="ireapnet.html">Lihat iREAPNET</a>
         </div>
       </div>
     </section>
@@ -2156,7 +2187,10 @@
         <div>
           <h2>Tentang STEM</h2>
           <p>
-            STEM (Sterling Tulus Cemerlang) adalah konsultan ERP dan solusi bisnis terintegrasi yang membantu perusahaan meningkatkan efisiensi operasional dan kontrol bisnis melalui sistem yang terstruktur. Kami berpengalaman dalam implementasi ERP, otomasi proses bisnis, dan pengembangan aplikasi berbasis web untuk mendukung transformasi digital yang berkelanjutan.
+            STEM (Sterling Tulus Cemerlang) adalah konsultan ERP dan solusi bisnis terintegrasi yang membantu perusahaan
+            meningkatkan efisiensi operasional dan kontrol bisnis melalui sistem yang terstruktur. Kami berpengalaman
+            dalam implementasi ERP, otomasi proses bisnis, dan pengembangan aplikasi berbasis web untuk mendukung
+            transformasi digital yang berkelanjutan.
           </p>
           <div class="footer-keywords">
             SAP Business One • Microsoft Dynamics 365 Business Central • UiPath RPA • Siemens • SaaS • iREAP POS
@@ -2167,7 +2201,8 @@
           <span><b>WhatsApp:</b> +62-877-8655-5055</span>
           <span><b>Email:</b> sales-enquiry@sterling-team.com</span>
           <span><b>Website:</b> www.sterling-team.com</span>
-          <span><b>Lokasi:</b> Sampoerna Strategic Square, South Tower Level 30, Jl Jend. Sudirman No. 45-46, Jakarta 12930</span>
+          <span><b>Lokasi:</b> Sampoerna Strategic Square, South Tower Level 30, Jl Jend. Sudirman No. 45-46, Jakarta
+            12930</span>
         </div>
       </div>
     </section>

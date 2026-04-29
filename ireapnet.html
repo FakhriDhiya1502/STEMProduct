@@ -1,7 +1,9 @@
-<html lang="id"><head>
+<html lang="id">
+
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iREAPNET | Proposal HR &amp; Payroll Peternakan Ayam Telur</title>
+  <title>iReapnet | Product Profile</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     :root {
@@ -94,17 +96,20 @@
       font-size: 13px;
       font-weight: 800;
       padding: 8px 11px;
-      border-radius: 999px
+      border-radius: 999px;
+      transition: color .2s ease, background-color .2s ease, transform .2s ease, box-shadow .2s ease;
     }
 
     nav a:hover {
       background: var(--soft);
-      color: var(--navy)
+      color: var(--navy);
+      transform: translateY(-1px);
     }
 
     nav a.cta {
       background: var(--blue);
-      color: white
+      color: white;
+      box-shadow: 0 10px 22px rgba(49, 92, 169, .2);
     }
 
     .hero {
@@ -168,7 +173,8 @@
       padding: 14px 19px;
       border-radius: 16px;
       text-decoration: none;
-      font-weight: 950
+      font-weight: 950;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background-color .22s ease;
     }
 
     .btn.primary {
@@ -181,6 +187,19 @@
       background: white;
       color: var(--navy);
       border: 1px solid var(--line)
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn.primary:hover {
+      box-shadow: 0 18px 38px rgba(30, 41, 59, .18);
+    }
+
+    .btn.secondary:hover {
+      border-color: rgba(49, 92, 169, .32);
+      box-shadow: 0 12px 26px rgba(30, 41, 59, .1);
     }
 
     .hero-visual {
@@ -315,7 +334,8 @@
       border: 1px solid var(--line);
       border-radius: 26px;
       padding: 24px;
-      box-shadow: var(--shadow2)
+      box-shadow: var(--shadow2);
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, background-color .28s ease;
     }
 
     .icon {
@@ -327,7 +347,19 @@
       background: var(--soft);
       font-size: 26px;
       margin-bottom: 14px;
-      color: var(--blue)
+      color: var(--blue);
+      transition: transform .28s ease, background-color .28s ease, color .28s ease;
+    }
+
+    .icon svg,
+    .net-action-item span svg {
+      width: 26px;
+      height: 26px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     h3 {
@@ -353,7 +385,8 @@
       border: 1px solid var(--line);
       border-radius: 30px;
       padding: 18px;
-      box-shadow: var(--shadow2)
+      box-shadow: var(--shadow2);
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, background-color .28s ease;
     }
 
     .screen h3 {
@@ -381,7 +414,8 @@
       border-radius: 26px;
       padding: 22px;
       box-shadow: var(--shadow2);
-      min-height: 335px
+      min-height: 335px;
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, background-color .28s ease;
     }
 
     .module ul {
@@ -405,7 +439,8 @@
       border: 1px solid var(--line);
       border-radius: 22px;
       padding: 18px;
-      box-shadow: var(--shadow2)
+      box-shadow: var(--shadow2);
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, background-color .28s ease;
     }
 
     .step-num {
@@ -417,7 +452,8 @@
       background: var(--navy);
       color: white;
       font-weight: 950;
-      margin-bottom: 12px
+      margin-bottom: 12px;
+      transition: transform .28s ease, background-color .28s ease;
     }
 
     .step b {
@@ -442,7 +478,8 @@
       border: 1px solid var(--line);
       border-radius: 30px;
       padding: 24px;
-      box-shadow: var(--shadow2)
+      box-shadow: var(--shadow2);
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, background-color .28s ease;
     }
 
     .chart-stack {
@@ -456,6 +493,7 @@
       border-radius: 28px;
       background: white;
       box-shadow: var(--shadow2);
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, background-color .28s ease;
     }
 
     .value-table {
@@ -519,7 +557,26 @@
       border: 1px solid var(--line);
       border-radius: 26px;
       padding: 24px;
-      box-shadow: var(--shadow2)
+      box-shadow: var(--shadow2);
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, background-color .28s ease;
+    }
+
+    .card:hover,
+    .screen:hover,
+    .module:hover,
+    .step:hover,
+    .chart-card:hover,
+    .phase:hover,
+    .value-table-wrap:hover {
+      transform: translateY(-5px);
+      border-color: rgba(49, 92, 169, .28);
+      box-shadow: 0 20px 46px rgba(30, 41, 59, .11);
+    }
+
+    .card:hover .icon,
+    .module:hover .icon,
+    .step:hover .step-num {
+      transform: scale(1.06) rotate(-2deg);
     }
 
     .phase small {
@@ -642,181 +699,182 @@
         padding: 28px
       }
     }
-	.net-action {
-  padding: 76px 5vw;
-  background: linear-gradient(180deg, #f8fafc, #f1f5f9);
-}
 
-.net-action-grid {
-  display: grid;
-  grid-template-columns: 0.78fr 1.22fr;
-  gap: 24px;
-  align-items: stretch;
-}
+    .net-action {
+      padding: 76px 5vw;
+      background: linear-gradient(180deg, #f8fafc, #f1f5f9);
+    }
 
-.net-action-menu {
-  display: grid;
-  gap: 12px;
-}
+    .net-action-grid {
+      display: grid;
+      grid-template-columns: 0.78fr 1.22fr;
+      gap: 24px;
+      align-items: stretch;
+    }
 
-.net-action-item {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 52px 1fr;
-  gap: 14px;
-  align-items: center;
-  padding: 15px 16px;
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  background: #fff;
-  color: var(--ink);
-  text-align: left;
-  cursor: pointer;
-  box-shadow: var(--shadow2);
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
-}
+    .net-action-menu {
+      display: grid;
+      gap: 12px;
+    }
 
-.net-action-item span {
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border-radius: 15px;
-  background: var(--soft);
-  color: var(--blue);
-  font-weight: 950;
-}
+    .net-action-item {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 15px 16px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #fff;
+      color: var(--ink);
+      text-align: left;
+      cursor: pointer;
+      box-shadow: var(--shadow2);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+    }
 
-.net-action-item b {
-  display: block;
-  color: var(--navy);
-  font-size: 17px;
-  line-height: 1.2;
-}
+    .net-action-item span {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: var(--soft);
+      color: var(--blue);
+      font-weight: 950;
+    }
 
-.net-action-item small {
-  display: block;
-  margin-top: 4px;
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 750;
-}
+    .net-action-item b {
+      display: block;
+      color: var(--navy);
+      font-size: 17px;
+      line-height: 1.2;
+    }
 
-.net-action-item:hover,
-.net-action-item.active {
-  transform: translateY(-3px);
-  border-color: rgba(49, 92, 169, .34);
-  background: linear-gradient(135deg, #fff, #f3f8ff);
-  box-shadow: 0 18px 42px rgba(11, 47, 79, .13);
-}
+    .net-action-item small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+    }
 
-.net-action-item.active span {
-  background: linear-gradient(135deg, var(--navy), var(--blue2));
-  color: #fff;
-}
+    .net-action-item:hover,
+    .net-action-item.active {
+      transform: translateY(-3px);
+      border-color: rgba(49, 92, 169, .34);
+      background: linear-gradient(135deg, #fff, #f3f8ff);
+      box-shadow: 0 18px 42px rgba(11, 47, 79, .13);
+    }
 
-.net-action-preview {
-  position: relative;
-  min-height: 520px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 34px;
-  background:
-    radial-gradient(circle at 88% 12%, rgba(91, 155, 213, .22), transparent 30%),
-    linear-gradient(135deg, #fff, #f6fbff);
-  box-shadow: var(--shadow);
-}
+    .net-action-item.active span {
+      background: linear-gradient(135deg, var(--navy), var(--blue2));
+      color: #fff;
+    }
 
-.net-preview-copy {
-  position: relative;
-  z-index: 2;
-  padding: 28px 30px 8px;
-}
+    .net-action-preview {
+      position: relative;
+      min-height: 520px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 88% 12%, rgba(91, 155, 213, .22), transparent 30%),
+        linear-gradient(135deg, #fff, #f6fbff);
+      box-shadow: var(--shadow);
+    }
 
-.net-preview-badge {
-  display: inline-flex;
-  margin-bottom: 12px;
-  padding: 7px 12px;
-  border-radius: 999px;
-  color: var(--blue);
-  background: var(--soft);
-  font-size: 12px;
-  font-weight: 950;
-}
+    .net-preview-copy {
+      position: relative;
+      z-index: 2;
+      padding: 28px 30px 8px;
+    }
 
-.net-preview-copy h3 {
-  margin: 0 0 8px;
-  color: var(--navy);
-  font-size: 30px;
-  line-height: 1.16;
-}
+    .net-preview-badge {
+      display: inline-flex;
+      margin-bottom: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: var(--blue);
+      background: var(--soft);
+      font-size: 12px;
+      font-weight: 950;
+    }
 
-.net-preview-copy p {
-  margin: 0;
-  color: #526278;
-  font-size: 16px;
-}
+    .net-preview-copy h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 30px;
+      line-height: 1.16;
+    }
 
-.net-preview-screen {
-  position: relative;
-  margin: 18px 30px 30px;
-  border: 1px solid #dfe8f2;
-  border-radius: 26px;
-  background: #fff;
-  overflow: hidden;
-  min-height: 340px;
-  cursor: zoom-in;
-  box-shadow: 0 22px 58px rgba(11, 47, 79, .14);
-}
+    .net-preview-copy p {
+      margin: 0;
+      color: #526278;
+      font-size: 16px;
+    }
 
-.net-preview-screen img {
-  display: block;
-  width: 100%;
-  height: auto;
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity .25s ease, transform .35s ease;
-}
+    .net-preview-screen {
+      position: relative;
+      margin: 18px 30px 30px;
+      border: 1px solid #dfe8f2;
+      border-radius: 26px;
+      background: #fff;
+      overflow: hidden;
+      min-height: 340px;
+      cursor: zoom-in;
+      box-shadow: 0 22px 58px rgba(11, 47, 79, .14);
+    }
 
-.net-preview-screen img.switching {
-  opacity: 0;
-  transform: scale(.985);
-}
+    .net-preview-screen img {
+      display: block;
+      width: 100%;
+      height: auto;
+      opacity: 1;
+      transform: scale(1);
+      transition: opacity .25s ease, transform .35s ease;
+    }
 
-@media (max-width: 1060px) {
-  .net-action-grid {
-    grid-template-columns: 1fr;
-  }
+    .net-preview-screen img.switching {
+      opacity: 0;
+      transform: scale(.985);
+    }
 
-  .net-action-preview {
-    min-height: auto;
-  }
-}
+    @media (max-width: 1060px) {
+      .net-action-grid {
+        grid-template-columns: 1fr;
+      }
 
-@media (max-width: 720px) {
-  .net-action {
-    padding-left: 22px;
-    padding-right: 22px;
-  }
+      .net-action-preview {
+        min-height: auto;
+      }
+    }
 
-  .net-action-item {
-    grid-template-columns: 48px 1fr;
-    padding: 14px;
-  }
+    @media (max-width: 720px) {
+      .net-action {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
 
-  .net-preview-copy {
-    padding: 24px 22px 6px;
-  }
+      .net-action-item {
+        grid-template-columns: 48px 1fr;
+        padding: 14px;
+      }
 
-  .net-preview-copy h3 {
-    font-size: 25px;
-  }
+      .net-preview-copy {
+        padding: 24px 22px 6px;
+      }
 
-  .net-preview-screen {
-    margin: 16px 22px 24px;
-    min-height: 240px;
-  }
-}
+      .net-preview-copy h3 {
+        font-size: 25px;
+      }
+
+      .net-preview-screen {
+        margin: 16px 22px 24px;
+        min-height: 240px;
+      }
+    }
 
     .cta-final {
       padding: 80px 5vw;
@@ -882,6 +940,71 @@
     .btn-cta-secondary:hover {
       border-color: var(--blue2);
       box-shadow: 0 10px 24px rgba(30, 41, 59, .08);
+    }
+
+    .next-links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+      color: #475569;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .next-links a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .next-links a:hover {
+      text-decoration: underline;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+      transition-delay: calc(var(--reveal-order, 0) * 70ms);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+
+      nav a:hover,
+      .btn:hover,
+      .card:hover,
+      .screen:hover,
+      .module:hover,
+      .step:hover,
+      .chart-card:hover,
+      .phase:hover,
+      .value-table-wrap:hover,
+      .net-action-item:hover,
+      .card:hover .icon,
+      .module:hover .icon,
+      .step:hover .step-num {
+        transform: none;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
     }
 
     .contact-section {
@@ -955,20 +1078,101 @@
 </head>
 
 <body>
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <symbol id="icon-farm" viewBox="0 0 24 24">
+      <path d="M3 11l9-7 9 7"></path>
+      <path d="M5 10v10h14V10"></path>
+      <path d="M9 20v-6h6v6"></path>
+    </symbol>
+    <symbol id="icon-package" viewBox="0 0 24 24">
+      <path d="M4 7l8-4 8 4-8 4z"></path>
+      <path d="M4 7v10l8 4 8-4V7"></path>
+      <path d="M12 11v10"></path>
+    </symbol>
+    <symbol id="icon-wallet" viewBox="0 0 24 24">
+      <path d="M4 7h16v12H4z"></path>
+      <path d="M4 7l12-3v3"></path>
+      <path d="M16 13h4"></path>
+      <circle cx="17" cy="13" r="1"></circle>
+    </symbol>
+    <symbol id="icon-building" viewBox="0 0 24 24">
+      <path d="M4 21V5l8-3 8 3v16"></path>
+      <path d="M9 21v-5h6v5"></path>
+      <path d="M8 8h.01"></path>
+      <path d="M12 8h.01"></path>
+      <path d="M16 8h.01"></path>
+      <path d="M8 12h.01"></path>
+      <path d="M12 12h.01"></path>
+      <path d="M16 12h.01"></path>
+    </symbol>
+    <symbol id="icon-user-search" viewBox="0 0 24 24">
+      <circle cx="10" cy="8" r="4"></circle>
+      <path d="M3 21c1-4 3.5-7 7-7 1.5 0 2.8.5 3.9 1.4"></path>
+      <circle cx="17" cy="17" r="3"></circle>
+      <path d="M19.5 19.5L22 22"></path>
+    </symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M12 7v5l3 2"></path>
+    </symbol>
+    <symbol id="icon-clipboard" viewBox="0 0 24 24">
+      <path d="M9 4h6l1 2h3v15H5V6h3z"></path>
+      <path d="M9 12l2 2 4-4"></path>
+    </symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24">
+      <path d="M4 19h16"></path>
+      <path d="M7 16v-5"></path>
+      <path d="M12 16V8"></path>
+      <path d="M17 16v-7"></path>
+    </symbol>
+    <symbol id="icon-link" viewBox="0 0 24 24">
+      <path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"></path>
+      <path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"></path>
+    </symbol>
+    <symbol id="icon-test" viewBox="0 0 24 24">
+      <path d="M9 3v5l-5 9a3 3 0 0 0 2.6 4h10.8A3 3 0 0 0 20 17l-5-9V3"></path>
+      <path d="M8 3h8"></path>
+      <path d="M7 15h10"></path>
+    </symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24">
+      <circle cx="9" cy="8" r="3"></circle>
+      <path d="M3 19c.8-3 3-5 6-5s5.2 2 6 5"></path>
+      <path d="M16 11a3 3 0 1 0-1-5.8"></path>
+      <path d="M17 14c2.2.4 3.7 2.1 4 5"></path>
+    </symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24">
+      <path d="M5 5h14v15H5z"></path>
+      <path d="M8 3v4"></path>
+      <path d="M16 3v4"></path>
+      <path d="M5 10h14"></path>
+    </symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24">
+      <path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"></path>
+      <path d="M9 12l2 2 4-4"></path>
+    </symbol>
+    <symbol id="icon-cycle" viewBox="0 0 24 24">
+      <path d="M4 12a8 8 0 0 1 13-6"></path>
+      <path d="M17 3v5h-5"></path>
+      <path d="M20 12a8 8 0 0 1-13 6"></path>
+      <path d="M7 21v-5h5"></path>
+    </symbol>
+  </svg>
   <header class="topbar">
     <a class="brand" href="#home">
-      <object class="brand-logo-img" data="assets/logo-ireapnet.png" type="image/png"><span class="brand-mark">iN</span></object>
+      <object class="brand-logo-img" data="assets/logo-ireapnet.png" type="image/png"><span
+          class="brand-mark">iN</span></object>
       <span>iREAPNET</span>
     </a>
     <nav>
-      <a href="index.html">Portfolio</a>
-      <a href="#business">Business</a>
-      <a href="#screenshot">Aplikasi</a>
-      <a href="#fitur">Fitur</a>
-      <a href="#modules">Modul</a>
-      <a href="#dashboard">Dashboard</a>
-      <a href="#implementation">Implementasi</a>
-      <a class="cta" href="#closing">Proposal</a>
+      <a href="index.html">Halaman Utama</a>
+      <a href="#business">Business Case</a>
+      <a href="#problem">Tantangan HR</a>
+      <a href="#fitur">Solusi</a>
+      <a href="#modules">Kapabilitas</a>
+      <a href="#ireapnet-action">iREAPNET in Action</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#value">Business Value</a>
+      <a class="cta" href="#demo">Mulai Digitalisasi</a>
     </nav>
   </header>
 
@@ -977,15 +1181,18 @@
       <div>
         <span class="badge">Enterprise HRIS • Payroll • Attendance • SAP Connected</span>
         <h1>iReapNet HR-Friendly System, Seamlessly Connected to SAP</h1>
-          iREAPNET membantu tim HR mengelola proses karyawan dari rekrutmen hingga payroll dan bonus melalui web tanpa perlu masuk ke SAP. Sistem tetap terhubung dengan SAP sebagai sumber data utama untuk memastikan perhitungan lebih akurat, tanpa membuka akses data HR ke seluruh pengguna SAP.        <p class="lead">
+        iREAPNET membantu tim HR mengelola proses karyawan dari rekrutmen hingga payroll dan bonus melalui web tanpa
+        perlu masuk ke SAP. Sistem tetap terhubung dengan SAP sebagai sumber data utama untuk memastikan perhitungan
+        lebih akurat, tanpa membuka akses data HR ke seluruh pengguna SAP. <p class="lead">
         </p>
         <div class="buttons">
-          <a class="btn primary" href="#screenshot">Lihat Tampilan Aplikasi →</a>
+          <a class="btn primary" href="#ireapnet-action">Lihat Tampilan Aplikasi →</a>
           <a class="btn secondary" href="#modules">Lihat Fungsi Modul</a>
         </div>
       </div>
       <div class="hero-visual">
-        <img src="assets/ireapnet-hero-dashboard.png" alt="Dashboard iREAPNET dengan menu HR, absensi, payroll, rekrutmen, online test, self service dan reporting">
+        <img src="assets/ireapnet-hero-dashboard.png"
+          alt="Dashboard iREAPNET dengan menu HR, absensi, payroll, rekrutmen, online test, self service dan reporting">
       </div>
     </div>
   </section>
@@ -995,24 +1202,35 @@
       <div class="section-title">
         <h2>Business Case Peternakan Farm</h2>
         <p>
-         Perusahaan peternakan farm memiliki operasional yang kompleks dengan karyawan tersebar di kandang, grading, gudang pakan, logistik, maintenance, hingga office. Aktivitas berjalan setiap hari dan membutuhkan koordinasi tenaga kerja yang konsisten di berbagai lokasi.
-		</p>
+          Perusahaan peternakan farm memiliki operasional yang kompleks dengan karyawan tersebar di kandang, grading,
+          gudang pakan, logistik, maintenance, hingga office. Aktivitas berjalan setiap hari dan membutuhkan koordinasi
+          tenaga kerja yang konsisten di berbagai lokasi.
+        </p>
       </div>
       <div class="cards">
         <div class="card">
-          <div class="icon">🐔</div>
+          <div class="icon" aria-hidden="true"><svg>
+              <use href="#icon-farm"></use>
+            </svg></div>
           <h3>Operasional Farm</h3>
-          <p>Aktivitas seperti shift kandang, feeding, biosecurity, hingga pengambilan telur berjalan setiap hari dan sangat bergantung pada kedisiplinan serta kehadiran tenaga kerja di lapangan.</p>
+          <p>Aktivitas seperti shift kandang, feeding, biosecurity, hingga pengambilan telur berjalan setiap hari dan
+            sangat bergantung pada kedisiplinan serta kehadiran tenaga kerja di lapangan.</p>
         </div>
         <div class="card">
-          <div class="icon">🥚</div>
+          <div class="icon" aria-hidden="true"><svg>
+              <use href="#icon-package"></use>
+            </svg></div>
           <h3>Produksi Telur</h3>
-          <p>Proses sortir, grading, packing, dan dispatch membutuhkan koordinasi tenaga kerja yang tepat waktu untuk menjaga kualitas dan target produksi tetap tercapai.</p>
+          <p>Proses sortir, grading, packing, dan dispatch membutuhkan koordinasi tenaga kerja yang tepat waktu untuk
+            menjaga kualitas dan target produksi tetap tercapai.</p>
         </div>
         <div class="card">
-          <div class="icon">💼</div>
+          <div class="icon" aria-hidden="true"><svg>
+              <use href="#icon-wallet"></use>
+            </svg></div>
           <h3>HR & Finance</h3>
-          <p>Pengelolaan absensi, cuti, lembur, hingga payroll membutuhkan data yang akurat dari berbagai lokasi, termasuk perhitungan komponen seperti BPJS dan PPh 21 yang kompleks dan harus sesuai regulasi.</p>
+          <p>Pengelolaan absensi, cuti, lembur, hingga payroll membutuhkan data yang akurat dari berbagai lokasi,
+            termasuk perhitungan komponen seperti BPJS dan PPh 21 yang kompleks dan harus sesuai regulasi.</p>
         </div>
       </div>
     </div>
@@ -1022,180 +1240,106 @@
     <div class="container">
       <div class="section-title">
         <h2>Tantangan HR di Operasional Farm yang Kompleks</h2>
-        <p>Pengelolaan HR di perusahaan dengan banyak karyawan dan lokasi operasional sering menghadapi berbagai kendala yang mempengaruhi kecepatan, akurasi, dan kontrol data.</p>
+        <p>Pengelolaan HR di perusahaan dengan banyak karyawan dan lokasi operasional sering menghadapi berbagai kendala
+          yang mempengaruhi kecepatan, akurasi, dan kontrol data.</p>
       </div>
       <div class="problem-grid">
-        <div class="problem"><b>Data Pelamar Tidak Terpusat</b><span>Status lamaran, hasil tes, dan interview sering tersebar di berbagai file atau komunikasi, sehingga sulit dipantau secara konsisten.</span></div>
-        <div class="problem"><b>Absensi Sulit Dimonitor</b><span>Karyawan di farm, shift malam, dan lokasi lapangan membuat HR kesulitan mendapatkan data kehadiran yang akurat dan tepat waktu.</span></div>
-        <div class="problem"><b>Multi-Company Sulit Dikontrol</b><span>Perusahaan dengan banyak unit atau lokasi membutuhkan pemisahan data, namun tetap harus terkonsolidasi untuk payroll dan pelaporan.</span></div>
-        <div class="problem"><b>Payroll Kompleks dan Rawan Kesalahan</b><span>Perhitungan gaji melibatkan banyak komponen seperti lembur, tunjangan, BPJS, dan PPh 21 yang harus sesuai regulasi, sehingga sering diolah manual di Excel dan berisiko tinggi terjadi kesalahan.</span></div>
-        <div class="problem"><b>Cuti & Izin Tidak Terkontrol</b><span>Proses pengajuan izin, sakit, dan cuti sering tidak terdokumentasi dengan baik, sehingga berpotensi menimbulkan dispute dan mempengaruhi perhitungan payroll yang harus sesuai kebijakan dan regulasi.</span></div>
-        <div class="problem"><b>Laporan Manajemen Tidak Siap</b><span>Manajemen membutuhkan data seperti kehadiran, payroll cost, kontrak berakhir, dan pipeline rekrutmen, namun sering harus menunggu rekap manual terlebih dahulu.</span></div>
+        <div class="problem"><b>Data Pelamar Tidak Terpusat</b><span>Status lamaran, hasil tes, dan interview sering
+            tersebar di berbagai file atau komunikasi, sehingga sulit dipantau secara konsisten.</span></div>
+        <div class="problem"><b>Absensi Sulit Dimonitor</b><span>Karyawan di farm, shift malam, dan lokasi lapangan
+            membuat HR kesulitan mendapatkan data kehadiran yang akurat dan tepat waktu.</span></div>
+        <div class="problem"><b>Multi-Company Sulit Dikontrol</b><span>Perusahaan dengan banyak unit atau lokasi
+            membutuhkan pemisahan data, namun tetap harus terkonsolidasi untuk payroll dan pelaporan.</span></div>
+        <div class="problem"><b>Payroll Kompleks dan Rawan Kesalahan</b><span>Perhitungan gaji melibatkan banyak
+            komponen seperti lembur, tunjangan, BPJS, dan PPh 21 yang harus sesuai regulasi, sehingga sering diolah
+            manual di Excel dan berisiko tinggi terjadi kesalahan.</span></div>
+        <div class="problem"><b>Cuti & Izin Tidak Terkontrol</b><span>Proses pengajuan izin, sakit, dan cuti sering
+            tidak terdokumentasi dengan baik, sehingga berpotensi menimbulkan dispute dan mempengaruhi perhitungan
+            payroll yang harus sesuai kebijakan dan regulasi.</span></div>
+        <div class="problem"><b>Laporan Manajemen Tidak Siap</b><span>Manajemen membutuhkan data seperti kehadiran,
+            payroll cost, kontrak berakhir, dan pipeline rekrutmen, namun sering harus menunggu rekap manual terlebih
+            dahulu.</span></div>
       </div>
     </div>
   </section>
 
-  
+
   <section id="fitur">
     <div class="container">
       <div class="section-title">
         <h2>iREAPNET Satu Portal untuk Seluruh Proses HR</h2>
         <p>
-         iREAPNET menggabungkan seluruh proses HR dari pelamar hingga payroll dalam satu sistem terpusat yang mudah digunakan, tetap terhubung dengan SAP, dan dirancang untuk operasional multi lokasi dan multi perusahaan.
+          iREAPNET menggabungkan seluruh proses HR dari pelamar hingga payroll dalam satu sistem terpusat yang mudah
+          digunakan, tetap terhubung dengan SAP, dan dirancang untuk operasional multi lokasi dan multi perusahaan.
         </p>
       </div>
       <div class="cards">
         <div class="card">
-          <div class="icon">🏢</div>
+          <div class="icon" aria-hidden="true"><svg>
+              <use href="#icon-building"></use>
+            </svg></div>
           <h3>Multi-Company dalam Satu Sistem</h3>
-          <p>Mengelola karyawan dari berbagai perusahaan atau unit dalam satu portal dengan pemisahan data yang jelas namun tetap terkonsolidasi untuk kebutuhan HR dan payroll.</p>
+          <p>Mengelola karyawan dari berbagai perusahaan atau unit dalam satu portal dengan pemisahan data yang jelas
+            namun tetap terkonsolidasi untuk kebutuhan HR dan payroll.</p>
         </div>
         <div class="card">
-          <div class="icon">📲</div>
+          <div class="icon" aria-hidden="true"><svg>
+              <use href="#icon-user-search"></use>
+            </svg></div>
           <h3>Rekrutmen Lebih Terstruktur</h3>
-          <p>Data pelamar, proses seleksi, hingga status rekrutmen dikelola dalam satu sistem sehingga tidak lagi tersebar di berbagai file atau komunikasi..</p>
+          <p>Data pelamar, proses seleksi, hingga status rekrutmen dikelola dalam satu sistem sehingga tidak lagi
+            tersebar di berbagai file atau komunikasi..</p>
         </div>
         <div class="card">
-          <div class="icon">🔗</div>
+          <div class="icon" aria-hidden="true"><svg>
+              <use href="#icon-clock"></use>
+            </svg></div>
           <h3>Absensi dan Aktivitas Lebih Terkontrol</h3>
-          <p>Kehadiran karyawan dapat dicatat melalui berbagai metode seperti fingerprint, NFC, mesin absensi, dan mobile, sehingga mendukung kebutuhan operasional di office maupun lapangan dengan data yang lebih akurat dan real-time.</p>
+          <p>Kehadiran karyawan dapat dicatat melalui berbagai metode seperti fingerprint, NFC, mesin absensi, dan
+            mobile, sehingga mendukung kebutuhan operasional di office maupun lapangan dengan data yang lebih akurat dan
+            real-time.</p>
         </div>
         <div class="card">
-          <div class="icon">🧪</div>
+          <div class="icon" aria-hidden="true"><svg>
+              <use href="#icon-wallet"></use>
+            </svg></div>
           <h3>Payroll Sesuai Struktur dan Regulasi</h3>
-          <p>Perhitungan gaji mencakup lembur, tunjangan, BPJS, dan PPh 21 dalam satu sistem yang lebih terstruktur dan mengurangi ketergantungan pada Excel.</p>
+          <p>Perhitungan gaji mencakup lembur, tunjangan, BPJS, dan PPh 21 dalam satu sistem yang lebih terstruktur dan
+            mengurangi ketergantungan pada Excel.</p>
         </div>
         <div class="card">
-          <div class="icon">🙋</div>
+          <div class="icon" aria-hidden="true"><svg>
+              <use href="#icon-clipboard"></use>
+            </svg></div>
           <h3>Cuti, Izin, dan Request Lebih Jelas</h3>
-          <p>Pengajuan cuti, izin, dan kebutuhan HR lainnya memiliki alur yang terdokumentasi dengan baik sehingga mengurangi potensi kesalahan dan dispute.</p>
+          <p>Pengajuan cuti, izin, dan kebutuhan HR lainnya memiliki alur yang terdokumentasi dengan baik sehingga
+            mengurangi potensi kesalahan dan dispute.</p>
         </div>
         <div class="card">
-          <div class="icon">📊</div>
+          <div class="icon" aria-hidden="true"><svg>
+              <use href="#icon-chart"></use>
+            </svg></div>
           <h3>Terhubung ke SAP</h3>
-          <p>Data tetap terintegrasi dengan SAP sebagai sumber utama, termasuk data operasional seperti produksi, penjualan, dan aktivitas bisnis lainnya yang digunakan untuk perhitungan gaji, komisi, dan bonus, tanpa mengharuskan HR bekerja langsung di dalam SAP.</p>
+          <p>Data tetap terintegrasi dengan SAP sebagai sumber utama, termasuk data operasional seperti produksi,
+            penjualan, dan aktivitas bisnis lainnya yang digunakan untuk perhitungan gaji, komisi, dan bonus, tanpa
+            mengharuskan HR bekerja langsung di dalam SAP.</p>
         </div>
       </div>
     </div>
   </section>
-	<section class="net-action" id="ireapnet-action">
-  <div class="container">
-    <div class="section-title">
-      <h2>iREAPNET in Action</h2>
-      <p>
-        Lihat bagaimana iREAPNET digunakan dalam proses HR sehari-hari, mulai dari rekrutmen,
-        absensi, self service, payroll, approval, hingga reporting manajemen.
-      </p>
-    </div>
-
-    <div class="net-action-grid">
-      <div class="net-action-menu">
-        <button class="net-action-item active"
-          data-title="Recruitment & Online Test"
-          data-subtitle="Kelola data pelamar, proses seleksi, hasil interview, dan online test dalam satu sistem."
-          data-image="assets/ireapnet-recruitment.png">
-          <span>01</span>
-          <div>
-            <b>Pelamar & Test</b>
-            <small>Recruitment, seleksi, online test</small>
-          </div>
-        </button>
-
-        <button class="net-action-item"
-          data-title="Employee & Attendance"
-          data-subtitle="Kelola data karyawan dan pantau absensi melalui fingerprint, NFC, mesin absensi, dan mobile."
-          data-image="assets/ireapnet-attendance.png">
-          <span>02</span>
-          <div>
-            <b>Karyawan & Absensi</b>
-            <small>Employee master, shift, attendance</small>
-          </div>
-        </button>
-
-        <button class="net-action-item"
-          data-title="Self Service Izin & Cuti"
-          data-subtitle="Karyawan dapat mengajukan izin, sakit, dan cuti tanpa proses manual yang tercecer."
-          data-image="assets/ireapnet-self-service.png">
-          <span>03</span>
-          <div>
-            <b>Self Service</b>
-            <small>Izin, sakit, cuti</small>
-          </div>
-        </button>
-
-        <button class="net-action-item"
-          data-title="Payroll, THR, Bonus & Komisi"
-          data-subtitle="Perhitungan payroll, THR, bonus, dan komisi menggunakan data yang lebih terstruktur dan terkontrol."
-          data-image="assets/ireapnet-payroll.png">
-          <span>04</span>
-          <div>
-            <b>Payroll</b>
-            <small>Gaji, THR, bonus, komisi</small>
-          </div>
-        </button>
-
-        <button class="net-action-item"
-          data-title="Approval & Monitoring"
-          data-subtitle="Manager dan HR dapat memantau status serta melakukan approval request dengan lebih cepat."
-          data-image="assets/ireapnet-approval.png">
-          <span>05</span>
-          <div>
-            <b>Approval</b>
-            <small>Approval request & monitoring</small>
-          </div>
-        </button>
-
-        <button class="net-action-item"
-          data-title="Reporting & Dashboard"
-          data-subtitle="Dashboard HR membantu manajemen melihat absensi, payroll cost, kontrak, dan pipeline rekrutmen."
-          data-image="assets/ireapnet-reporting.png">
-          <span>06</span>
-          <div>
-            <b>Reporting</b>
-            <small>Dashboard & management report</small>
-          </div>
-        </button>
-
-        <button class="net-action-item"
-          data-title="Employee Lifecycle"
-          data-subtitle="Kelola status karyawan, kontrak, histori kerja, dan perubahan data secara lebih terstruktur."
-          data-image="assets/ireapnet-lifecycle.png">
-          <span>07</span>
-          <div>
-            <b>Lifecycle</b>
-            <small>Kontrak, status, histori</small>
-          </div>
-        </button>
-      </div>
-
-      <div class="net-action-preview">
-        <div class="net-preview-copy">
-          <span class="net-preview-badge">HR System Preview</span>
-          <h3 id="netPreviewTitle">Recruitment & Online Test</h3>
-          <p id="netPreviewSubtitle">
-            Kelola data pelamar, proses seleksi, hasil interview, dan online test dalam satu sistem.
-          </p>
-        </div>
-
-        <div class="net-preview-screen">
-          <img id="netPreviewImage"
-               src="assets/ireapnet-recruitment.png"
-               alt="iREAPNET Recruitment Preview">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
   <section id="modules">
     <div class="container">
       <div class="section-title">
         <h2>Kapabilitas iREAPNET dalam Pengelolaan HR</h2>
-        <p>iREAPNET menyediakan fungsi lengkap untuk mengelola proses HR dari pelamar hingga payroll dalam satu sistem yang terintegrasi dan siap digunakan dalam operasional sehari-hari.</p>
+        <p>iREAPNET menyediakan fungsi lengkap untuk mengelola proses HR dari pelamar hingga payroll dalam satu sistem
+          yang terintegrasi dan siap digunakan dalam operasional sehari-hari.</p>
       </div>
       <div class="module-grid">
         <div class="module">
-          <div class="icon">🧲</div>
+          <div class="icon" aria-hidden="true"><svg>
+              <use href="#icon-user-search"></use>
+            </svg></div>
           <h3>Rekrutmen</h3>
           <p>Pipeline kandidat untuk pekerja kandang, grading, gudang, driver, security, maintenance, admin, dan
             supervisor.</p>
@@ -1208,7 +1352,9 @@
           </ul>
         </div>
         <div class="module">
-          <div class="icon">🧪</div>
+          <div class="icon" aria-hidden="true"><svg>
+              <use href="#icon-test"></use>
+            </svg></div>
           <h3>Tes Online</h3>
           <p>Mempercepat seleksi dan membuat penilaian kandidat lebih terdokumentasi.</p>
           <ul>
@@ -1219,7 +1365,9 @@
           </ul>
         </div>
         <div class="module">
-          <div class="icon">👥</div>
+          <div class="icon" aria-hidden="true"><svg>
+              <use href="#icon-users"></use>
+            </svg></div>
           <h3>Data Karyawan</h3>
           <p>Single source of truth untuk seluruh data karyawan group.</p>
           <ul>
@@ -1231,7 +1379,9 @@
           </ul>
         </div>
         <div class="module">
-          <div class="icon">🕒</div>
+          <div class="icon" aria-hidden="true"><svg>
+              <use href="#icon-clock"></use>
+            </svg></div>
           <h3>Absensi</h3>
           <p>Kontrol kehadiran harian dari berbagai metode absensi.</p>
           <ul>
@@ -1243,7 +1393,9 @@
           </ul>
         </div>
         <div class="module">
-          <div class="icon">🏖️</div>
+          <div class="icon" aria-hidden="true"><svg>
+              <use href="#icon-calendar"></use>
+            </svg></div>
           <h3>Cuti &amp; Izin</h3>
           <p>Mengelola pengajuan dan approval cuti/izin agar tidak menjadi dispute payroll.</p>
           <ul>
@@ -1255,7 +1407,9 @@
           </ul>
         </div>
         <div class="module">
-          <div class="icon">💳</div>
+          <div class="icon" aria-hidden="true"><svg>
+              <use href="#icon-wallet"></use>
+            </svg></div>
           <h3>Penggajian</h3>
           <p>Kalkulasi payroll otomatis dari data karyawan dan absensi.</p>
           <ul>
@@ -1268,7 +1422,9 @@
           </ul>
         </div>
         <div class="module">
-          <div class="icon">🙋</div>
+          <div class="icon" aria-hidden="true"><svg>
+              <use href="#icon-clipboard"></use>
+            </svg></div>
           <h3>Self Service</h3>
           <p>Memberi akses mandiri ke karyawan untuk kebutuhan HR tertentu.</p>
           <ul>
@@ -1279,7 +1435,9 @@
           </ul>
         </div>
         <div class="module">
-          <div class="icon">🔐</div>
+          <div class="icon" aria-hidden="true"><svg>
+              <use href="#icon-shield"></use>
+            </svg></div>
           <h3>Otorisasi</h3>
           <p>Kontrol akses dan approval sesuai struktur organisasi.</p>
           <ul>
@@ -1292,31 +1450,151 @@
       </div>
     </div>
   </section>
+  <section class="net-action" id="ireapnet-action">
+    <div class="container">
+      <div class="section-title">
+        <h2>iREAPNET in Action</h2>
+        <p>
+          Lihat bagaimana iREAPNET digunakan dalam proses HR sehari-hari, mulai dari rekrutmen,
+          absensi, self service, payroll, approval, hingga reporting manajemen.
+        </p>
+      </div>
+
+      <div class="net-action-grid">
+        <div class="net-action-menu">
+          <button class="net-action-item active" data-title="Recruitment & Online Test"
+            data-subtitle="Kelola data pelamar, proses seleksi, hasil interview, dan online test dalam satu sistem."
+            data-image="assets/ireapnet-recruitment.png">
+            <span aria-hidden="true"><svg>
+                <use href="#icon-user-search"></use>
+              </svg></span>
+            <div>
+              <b>Pelamar & Test</b>
+              <small>Recruitment, seleksi, online test</small>
+            </div>
+          </button>
+
+          <button class="net-action-item" data-title="Employee & Attendance"
+            data-subtitle="Kelola data karyawan dan pantau absensi melalui fingerprint, NFC, mesin absensi, dan mobile."
+            data-image="assets/ireapnet-attendance.png">
+            <span aria-hidden="true"><svg>
+                <use href="#icon-clock"></use>
+              </svg></span>
+            <div>
+              <b>Karyawan & Absensi</b>
+              <small>Employee master, shift, attendance</small>
+            </div>
+          </button>
+
+          <button class="net-action-item" data-title="Self Service Izin & Cuti"
+            data-subtitle="Karyawan dapat mengajukan izin, sakit, dan cuti tanpa proses manual yang tercecer."
+            data-image="assets/ireapnet-self-service.png">
+            <span aria-hidden="true"><svg>
+                <use href="#icon-clipboard"></use>
+              </svg></span>
+            <div>
+              <b>Self Service</b>
+              <small>Izin, sakit, cuti</small>
+            </div>
+          </button>
+
+          <button class="net-action-item" data-title="Payroll, THR, Bonus & Komisi"
+            data-subtitle="Perhitungan payroll, THR, bonus, dan komisi menggunakan data yang lebih terstruktur dan terkontrol."
+            data-image="assets/ireapnet-payroll.png">
+            <span aria-hidden="true"><svg>
+                <use href="#icon-wallet"></use>
+              </svg></span>
+            <div>
+              <b>Payroll</b>
+              <small>Gaji, THR, bonus, komisi</small>
+            </div>
+          </button>
+
+          <button class="net-action-item" data-title="Approval & Monitoring"
+            data-subtitle="Manager dan HR dapat memantau status serta melakukan approval request dengan lebih cepat."
+            data-image="assets/ireapnet-approval.png">
+            <span aria-hidden="true"><svg>
+                <use href="#icon-shield"></use>
+              </svg></span>
+            <div>
+              <b>Approval</b>
+              <small>Approval request & monitoring</small>
+            </div>
+          </button>
+
+          <button class="net-action-item" data-title="Reporting & Dashboard"
+            data-subtitle="Dashboard HR membantu manajemen melihat absensi, payroll cost, kontrak, dan pipeline rekrutmen."
+            data-image="assets/ireapnet-reporting.png">
+            <span aria-hidden="true"><svg>
+                <use href="#icon-chart"></use>
+              </svg></span>
+            <div>
+              <b>Reporting</b>
+              <small>Dashboard & management report</small>
+            </div>
+          </button>
+
+          <button class="net-action-item" data-title="Employee Lifecycle"
+            data-subtitle="Kelola status karyawan, kontrak, histori kerja, dan perubahan data secara lebih terstruktur."
+            data-image="assets/ireapnet-lifecycle.png">
+            <span aria-hidden="true"><svg>
+                <use href="#icon-cycle"></use>
+              </svg></span>
+            <div>
+              <b>Lifecycle</b>
+              <small>Kontrak, status, histori</small>
+            </div>
+          </button>
+        </div>
+
+        <div class="net-action-preview">
+          <div class="net-preview-copy">
+            <span class="net-preview-badge">HR System Preview</span>
+            <h3 id="netPreviewTitle">Recruitment & Online Test</h3>
+            <p id="netPreviewSubtitle">
+              Kelola data pelamar, proses seleksi, hasil interview, dan online test dalam satu sistem.
+            </p>
+          </div>
+
+          <div class="net-preview-screen">
+            <img id="netPreviewImage" src="assets/ireapnet-recruitment.png" alt="iREAPNET Recruitment Preview">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section id="workflow">
     <div class="container">
       <div class="section-title">
         <h2>Alur Kerja HR dalam Satu Sistem Terintegrasi</h2>
-        <p>Seluruh proses HR berjalan dalam satu alur yang terhubung, mulai dari rekrutmen hingga payroll, tanpa proses manual yang terpisah.</p>
+        <p>Seluruh proses HR berjalan dalam satu alur yang terhubung, mulai dari rekrutmen hingga payroll, tanpa proses
+          manual yang terpisah.</p>
       </div>
       <div class="flow">
         <div class="step">
-          <div class="step-num">1</div><b>Recruitment</b><span>Proses dimulai dari pengelolaan pelamar dan seleksi kandidat dalam satu sistem yang terpusat.</span>
+          <div class="step-num">1</div><b>Recruitment</b><span>Proses dimulai dari pengelolaan pelamar dan seleksi
+            kandidat dalam satu sistem yang terpusat.</span>
         </div>
         <div class="step">
-          <div class="step-num">2</div><b>Employee Onboarding</b><span>Data karyawan yang diterima langsung terdaftar dalam sistem untuk kebutuhan administrasi dan operasional.</span>
+          <div class="step-num">2</div><b>Employee Onboarding</b><span>Data karyawan yang diterima langsung terdaftar
+            dalam sistem untuk kebutuhan administrasi dan operasional.</span>
         </div>
         <div class="step">
-          <div class="step-num">3</div><b>Attendance & Activity</b><span>Kehadiran dan aktivitas karyawan dicatat secara real-time melalui berbagai metode sesuai kondisi operasional.</span>
+          <div class="step-num">3</div><b>Attendance & Activity</b><span>Kehadiran dan aktivitas karyawan dicatat secara
+            real-time melalui berbagai metode sesuai kondisi operasional.</span>
         </div>
         <div class="step">
-          <div class="step-num">4</div><b>HR Process</b><span>Pengajuan cuti, izin, dan kebutuhan HR lainnya diproses dengan alur yang jelas dan terdokumentasi.</span>
+          <div class="step-num">4</div><b>HR Process</b><span>Pengajuan cuti, izin, dan kebutuhan HR lainnya diproses
+            dengan alur yang jelas dan terdokumentasi.</span>
         </div>
         <div class="step">
-          <div class="step-num">5</div><b>Payroll & Calculation</b><span>Perhitungan gaji, BPJS, dan PPh 21 dilakukan dengan struktur yang terkontrol dan berbasis data operasional.</span>
+          <div class="step-num">5</div><b>Payroll & Calculation</b><span>Perhitungan gaji, BPJS, dan PPh 21 dilakukan
+            dengan struktur yang terkontrol dan berbasis data operasional.</span>
         </div>
         <div class="step">
-          <div class="step-num">6</div><b>SAP Integration</b><span>Data yang dibutuhkan tetap terhubung ke SAP sebagai sumber utama untuk memastikan akurasi dan konsistensi.</span>
+          <div class="step-num">6</div><b>SAP Integration</b><span>Data yang dibutuhkan tetap terhubung ke SAP sebagai
+            sumber utama untuk memastikan akurasi dan konsistensi.</span>
         </div>
       </div>
     </div>
@@ -1326,7 +1604,8 @@
     <div class="container">
       <div class="section-title">
         <h2>Perubahan Nyata dalam Pengelolaan HR</h2>
-        <p>iREAPNET membantu mengubah proses HR dari manual dan tersebar menjadi sistem yang lebih cepat, terkontrol, dan siap digunakan untuk kebutuhan operasional dan keputusan bisnis.</p>
+        <p>iREAPNET membantu mengubah proses HR dari manual dan tersebar menjadi sistem yang lebih cepat, terkontrol,
+          dan siap digunakan untuk kebutuhan operasional dan keputusan bisnis.</p>
       </div>
       <div class="value-table-wrap">
         <table class="value-table">
@@ -1381,7 +1660,7 @@
     </div>
   </section>
 
- 
+
 
   <script>
     const navy = '#0b2f4f', blue = '#315ca9', sky = '#9ecdf2', green = '#22a06b', amber = '#f5a524', red = '#e5484d';
@@ -1417,11 +1696,22 @@
     <div class="container">
       <h2>Mulai Digitalisasi Operasional Farm Anda</h2>
       <p>
-        Diskusikan kebutuhan operasional farm Anda bersama tim STEM untuk menentukan solusi yang sesuai dengan proses bisnis dan skala operasional Anda.
+        Diskusikan kebutuhan operasional farm Anda bersama tim STEM untuk menentukan solusi yang sesuai dengan proses
+        bisnis dan skala operasional Anda.
       </p>
       <div class="cta-buttons">
-        <a href="https://wa.me/+6287786555055?text=Halo%20tim%20STEM,%20saya%20ingin%20diskusi%20terkait%20solusi%20digitalisasi%20operasional%20farm." class="btn-cta-primary">Chat via WhatsApp</a>
+        <a href="https://wa.me/+6287786555055?text=Halo%20tim%20STEM,%20saya%20ingin%20diskusi%20terkait%20solusi%20digitalisasi%20operasional%20farm."
+          target="_blank" rel="noopener noreferrer" class="btn-cta-primary">Chat via WhatsApp</a>
         <a href="mailto:sales-enquiry@sterling-team.com" class="btn-cta-secondary">Kirim Email</a>
+      </div>
+      <div class="next-links">
+        <a href="index.html">Kembali ke Halaman Utama</a>
+        <span>&bull;</span>
+        <a href="sap-solution.html">Lihat SAP Solution</a>
+        <span>&bull;</span>
+        <a href="iflocs.html">Lihat iFLOCS</a>
+        <span>&bull;</span>
+        <a href="ireapbiz.html">Lihat iREAPBIZ</a>
       </div>
     </div>
   </section>
@@ -1431,7 +1721,10 @@
       <div>
         <h2>Tentang STEM</h2>
         <p>
-          STEM (Sterling Tulus Cemerlang) adalah konsultan ERP dan solusi bisnis terintegrasi yang membantu perusahaan meningkatkan efisiensi operasional dan kontrol bisnis melalui sistem yang terstruktur. Kami berpengalaman dalam implementasi ERP, otomasi proses bisnis, dan pengembangan aplikasi berbasis web untuk mendukung transformasi digital yang berkelanjutan.
+          STEM (Sterling Tulus Cemerlang) adalah konsultan ERP dan solusi bisnis terintegrasi yang membantu perusahaan
+          meningkatkan efisiensi operasional dan kontrol bisnis melalui sistem yang terstruktur. Kami berpengalaman
+          dalam implementasi ERP, otomasi proses bisnis, dan pengembangan aplikasi berbasis web untuk mendukung
+          transformasi digital yang berkelanjutan.
         </p>
         <div class="footer-keywords">
           SAP Business One • Microsoft Dynamics 365 Business Central • UiPath RPA • Siemens • SaaS • iREAP POS
@@ -1442,7 +1735,8 @@
         <span><b>WhatsApp:</b> +62-877-8655-5055</span>
         <span><b>Email:</b> sales-enquiry@sterling-team.com</span>
         <span><b>Website:</b> www.sterling-team.com</span>
-        <span><b>Lokasi:</b> Sampoerna Strategic Square, South Tower Level 30, Jl Jend. Sudirman No. 45-46, Jakarta 12930</span>
+        <span><b>Lokasi:</b> Sampoerna Strategic Square, South Tower Level 30, Jl Jend. Sudirman No. 45-46, Jakarta
+          12930</span>
       </div>
     </div>
   </section>
@@ -1458,6 +1752,30 @@
     <img src="" alt="">
   </div>
   <script>
+    const revealItems = document.querySelectorAll(
+      '.hero-grid > div:first-child, .hero-visual, .section-title, .card, .problem, .net-action-menu, .net-action-preview, .screen, .module, .step, .chart-card, .value-table-wrap, .contact-box'
+    );
+
+    revealItems.forEach((item, index) => {
+      item.classList.add('reveal');
+      item.style.setProperty('--reveal-order', index % 6);
+    });
+
+    if (!('IntersectionObserver' in window)) {
+      revealItems.forEach((item) => item.classList.add('is-visible'));
+    } else {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.16 });
+
+      revealItems.forEach((item) => revealObserver.observe(item));
+    }
+
     const lightbox = document.getElementById('imageLightbox');
     const lightboxImage = lightbox.querySelector('img');
     const closeLightbox = () => {
@@ -1485,28 +1803,30 @@
     });
   </script>
 
-<script>
-  const netActionItems = document.querySelectorAll(".net-action-item");
-  const netPreviewTitle = document.getElementById("netPreviewTitle");
-  const netPreviewSubtitle = document.getElementById("netPreviewSubtitle");
-  const netPreviewImage = document.getElementById("netPreviewImage");
+  <script>
+    const netActionItems = document.querySelectorAll(".net-action-item");
+    const netPreviewTitle = document.getElementById("netPreviewTitle");
+    const netPreviewSubtitle = document.getElementById("netPreviewSubtitle");
+    const netPreviewImage = document.getElementById("netPreviewImage");
 
-  netActionItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      netActionItems.forEach((btn) => btn.classList.remove("active"));
-      item.classList.add("active");
+    netActionItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        netActionItems.forEach((btn) => btn.classList.remove("active"));
+        item.classList.add("active");
 
-      netPreviewImage.classList.add("switching");
+        netPreviewImage.classList.add("switching");
 
-      setTimeout(() => {
-        netPreviewTitle.textContent = item.dataset.title;
-        netPreviewSubtitle.textContent = item.dataset.subtitle;
-        netPreviewImage.src = item.dataset.image;
-        netPreviewImage.alt = item.dataset.title;
-        netPreviewImage.classList.remove("switching");
-      }, 180);
+        setTimeout(() => {
+          netPreviewTitle.textContent = item.dataset.title;
+          netPreviewSubtitle.textContent = item.dataset.subtitle;
+          netPreviewImage.src = item.dataset.image;
+          netPreviewImage.alt = item.dataset.title;
+          netPreviewImage.classList.remove("switching");
+        }, 180);
+      });
     });
-  });
-</script>
+  </script>
 
-</body></html>
+</body>
+
+</html>

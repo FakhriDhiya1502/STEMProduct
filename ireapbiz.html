@@ -1,7 +1,9 @@
-<html lang="id"><head>
+<html lang="id">
+
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iReapbiz | Product Profile Business Transaction Portal</title>
+  <title>iReapbiz | Product Profile</title>
   <style>
     :root {
       --navy: #0c4a5a;
@@ -102,16 +104,19 @@
       font-weight: 850;
       padding: 8px 11px;
       border-radius: 999px;
+      transition: color .2s ease, background-color .2s ease, transform .2s ease, box-shadow .2s ease;
     }
 
     nav a:hover {
       color: var(--forest);
       background: var(--soft);
+      transform: translateY(-1px);
     }
 
     nav a.cta {
       color: white;
       background: var(--green);
+      box-shadow: 0 10px 22px rgba(51, 148, 75, .18);
     }
 
     .hero {
@@ -134,23 +139,25 @@
       gap: 42px;
       align-items: center;
     }
-	.hero-visual {
-	  overflow: hidden;
-	  padding: 22px;
-	  border: 1px solid var(--line);
-	  border-radius: 34px;
-	  background: rgba(255, 255, 255, .84);
-	  box-shadow: var(--shadow);
-	}
 
-	.hero-visual img {
-	  display: block;
-	  width: 100%;
-	  border: 1px solid #dfe8f2;
-	  border-radius: 22px;
-	  background: white;
-	  cursor: zoom-in;
-	}
+    .hero-visual {
+      overflow: hidden;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background: rgba(255, 255, 255, .84);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-visual img {
+      display: block;
+      width: 100%;
+      border: 1px solid #dfe8f2;
+      border-radius: 22px;
+      background: white;
+      cursor: zoom-in;
+    }
+
     .badge {
       display: inline-flex;
       align-items: center;
@@ -198,6 +205,7 @@
       border-radius: 15px;
       text-decoration: none;
       font-weight: 950;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background-color .22s ease;
     }
 
     .btn.primary {
@@ -210,6 +218,19 @@
       color: var(--forest);
       background: white;
       border: 1px solid var(--line);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn.primary:hover {
+      box-shadow: 0 18px 38px rgba(13, 40, 30, .18);
+    }
+
+    .btn.secondary:hover {
+      border-color: rgba(51, 148, 75, .32);
+      box-shadow: 0 12px 26px rgba(13, 40, 30, .1);
     }
 
     .stats {
@@ -595,6 +616,7 @@
       border: 1px solid var(--line);
       background: white;
       box-shadow: var(--shadow-2);
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, background-color .28s ease;
     }
 
     .card {
@@ -614,6 +636,47 @@
       background: var(--soft);
       font-size: 20px;
       font-weight: 950;
+      transition: transform .28s ease, background-color .28s ease, color .28s ease;
+    }
+
+    .icon svg,
+    .biz-action-item span svg {
+      width: 25px;
+      height: 25px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .stat,
+    .module-card,
+    .function-card,
+    .sap-panel,
+    .phase,
+    .value-table-wrap {
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, background-color .28s ease;
+    }
+
+    .stat:hover,
+    .module-card:hover,
+    .function-card:hover,
+    .screen-card:hover,
+    .flow-step:hover,
+    .value-card:hover,
+    .sap-panel:hover,
+    .phase:hover,
+    .value-table-wrap:hover {
+      transform: translateY(-5px);
+      border-color: rgba(51, 148, 75, .28);
+      box-shadow: 0 20px 46px rgba(13, 40, 30, .11);
+    }
+
+    .module-card:hover .icon,
+    .function-card:hover .icon,
+    .flow-step:hover .step-num {
+      transform: scale(1.06) rotate(-2deg);
     }
 
     h3 {
@@ -1117,6 +1180,7 @@
 
 
     @media (max-width: 1120px) {
+
       .hero-grid,
       .section-title,
       .integration-grid,
@@ -1186,175 +1250,176 @@
         padding: 24px;
       }
     }
-	.biz-action {
-  padding: 76px 5vw;
-  background: linear-gradient(180deg, #f8fbff, #eef8fb);
-}
 
-.biz-action-grid {
-  display: grid;
-  grid-template-columns: .76fr 1.24fr;
-  gap: 24px;
-  align-items: stretch;
-}
+    .biz-action {
+      padding: 76px 5vw;
+      background: linear-gradient(180deg, #f8fbff, #eef8fb);
+    }
 
-.biz-action-menu {
-  display: grid;
-  gap: 12px;
-}
+    .biz-action-grid {
+      display: grid;
+      grid-template-columns: .76fr 1.24fr;
+      gap: 24px;
+      align-items: stretch;
+    }
 
-.biz-action-item {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 52px 1fr;
-  gap: 14px;
-  align-items: center;
-  padding: 16px;
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  background: white;
-  color: var(--ink);
-  text-align: left;
-  cursor: pointer;
-  box-shadow: var(--shadow-2);
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
-}
+    .biz-action-menu {
+      display: grid;
+      gap: 12px;
+    }
 
-.biz-action-item span {
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border-radius: 15px;
-  background: var(--soft);
-  color: var(--blue);
-  font-weight: 950;
-}
+    .biz-action-item {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: white;
+      color: var(--ink);
+      text-align: left;
+      cursor: pointer;
+      box-shadow: var(--shadow-2);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+    }
 
-.biz-action-item b {
-  display: block;
-  color: var(--navy);
-  font-size: 17px;
-  line-height: 1.2;
-}
+    .biz-action-item span {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: var(--soft);
+      color: var(--blue);
+      font-weight: 950;
+    }
 
-.biz-action-item small {
-  display: block;
-  margin-top: 4px;
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 750;
-}
+    .biz-action-item b {
+      display: block;
+      color: var(--navy);
+      font-size: 17px;
+      line-height: 1.2;
+    }
 
-.biz-action-item:hover,
-.biz-action-item.active {
-  transform: translateY(-3px);
-  border-color: rgba(11, 119, 189, .32);
-  background: linear-gradient(135deg, #fff, #f3fbff);
-  box-shadow: 0 18px 42px rgba(7, 11, 79, .13);
-}
+    .biz-action-item small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+    }
 
-.biz-action-item.active span {
-  background: linear-gradient(135deg, var(--blue), var(--cyan));
-  color: white;
-}
+    .biz-action-item:hover,
+    .biz-action-item.active {
+      transform: translateY(-3px);
+      border-color: rgba(11, 119, 189, .32);
+      background: linear-gradient(135deg, #fff, #f3fbff);
+      box-shadow: 0 18px 42px rgba(7, 11, 79, .13);
+    }
 
-.biz-action-preview {
-  position: relative;
-  min-height: 460px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 34px;
-  background:
-    radial-gradient(circle at 88% 12%, rgba(33, 196, 201, .22), transparent 30%),
-    linear-gradient(135deg, #fff, #f6fbff);
-  box-shadow: var(--shadow);
-}
+    .biz-action-item.active span {
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      color: white;
+    }
 
-.biz-preview-copy {
-  position: relative;
-  z-index: 2;
-  padding: 28px 30px 8px;
-}
+    .biz-action-preview {
+      position: relative;
+      min-height: 460px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 88% 12%, rgba(33, 196, 201, .22), transparent 30%),
+        linear-gradient(135deg, #fff, #f6fbff);
+      box-shadow: var(--shadow);
+    }
 
-.biz-preview-badge {
-  display: inline-flex;
-  margin-bottom: 12px;
-  padding: 7px 12px;
-  border-radius: 999px;
-  color: var(--blue);
-  background: var(--soft);
-  font-size: 12px;
-  font-weight: 950;
-}
+    .biz-preview-copy {
+      position: relative;
+      z-index: 2;
+      padding: 28px 30px 8px;
+    }
 
-.biz-preview-copy h3 {
-  margin: 0 0 8px;
-  color: var(--navy);
-  font-size: 30px;
-}
+    .biz-preview-badge {
+      display: inline-flex;
+      margin-bottom: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: var(--blue);
+      background: var(--soft);
+      font-size: 12px;
+      font-weight: 950;
+    }
 
-.biz-preview-copy p {
-  margin: 0;
-  color: #526278;
-  font-size: 16px;
-}
+    .biz-preview-copy h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 30px;
+    }
 
-.biz-preview-screen {
-  position: relative;
-  margin: 18px 30px 30px;
-  border: 1px solid #dfe8f2;
-  border-radius: 26px;
-  background: white;
-  overflow: hidden;
-  min-height: 300px;
-  cursor: zoom-in;
-  box-shadow: 0 22px 58px rgba(7, 11, 79, .14);
-}
+    .biz-preview-copy p {
+      margin: 0;
+      color: #526278;
+      font-size: 16px;
+    }
 
-.biz-preview-screen img {
-  display: block;
-  width: 100%;
-  height: auto;
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity .25s ease, transform .35s ease;
-}
+    .biz-preview-screen {
+      position: relative;
+      margin: 18px 30px 30px;
+      border: 1px solid #dfe8f2;
+      border-radius: 26px;
+      background: white;
+      overflow: hidden;
+      min-height: 300px;
+      cursor: zoom-in;
+      box-shadow: 0 22px 58px rgba(7, 11, 79, .14);
+    }
 
-.biz-preview-screen img.switching {
-  opacity: 0;
-  transform: scale(.985);
-}
+    .biz-preview-screen img {
+      display: block;
+      width: 100%;
+      height: auto;
+      opacity: 1;
+      transform: scale(1);
+      transition: opacity .25s ease, transform .35s ease;
+    }
 
-@media (max-width: 960px) {
-  .biz-action-grid {
-    grid-template-columns: 1fr;
-  }
+    .biz-preview-screen img.switching {
+      opacity: 0;
+      transform: scale(.985);
+    }
 
-  .biz-action-preview {
-    min-height: auto;
-  }
-}
+    @media (max-width: 960px) {
+      .biz-action-grid {
+        grid-template-columns: 1fr;
+      }
 
-@media (max-width: 640px) {
-  .biz-action {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
+      .biz-action-preview {
+        min-height: auto;
+      }
+    }
 
-  .biz-action-item {
-    grid-template-columns: 48px 1fr;
-    padding: 15px;
-  }
+    @media (max-width: 640px) {
+      .biz-action {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
 
-  .biz-preview-copy {
-    padding: 24px 22px 6px;
-  }
+      .biz-action-item {
+        grid-template-columns: 48px 1fr;
+        padding: 15px;
+      }
 
-  .biz-preview-screen {
-    margin: 16px 22px 24px;
-  }
-}
+      .biz-preview-copy {
+        padding: 24px 22px 6px;
+      }
+
+      .biz-preview-screen {
+        margin: 16px 22px 24px;
+      }
+    }
 
     .cta-final {
       padding: 80px 5vw;
@@ -1420,6 +1485,73 @@
     .btn-cta-secondary:hover {
       border-color: var(--teal);
       box-shadow: 0 10px 24px rgba(12, 74, 90, .08);
+    }
+
+    .next-links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+      color: #526658;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .next-links a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .next-links a:hover {
+      text-decoration: underline;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+      transition-delay: calc(var(--reveal-order, 0) * 70ms);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+
+      nav a:hover,
+      .btn:hover,
+      .stat:hover,
+      .module-card:hover,
+      .function-card:hover,
+      .screen-card:hover,
+      .flow-step:hover,
+      .value-card:hover,
+      .sap-panel:hover,
+      .phase:hover,
+      .value-table-wrap:hover,
+      .biz-action-item:hover,
+      .module-card:hover .icon,
+      .function-card:hover .icon,
+      .flow-step:hover .step-num {
+        transform: none;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
     }
 
     .contact-section {
@@ -1493,19 +1625,77 @@
 </head>
 
 <body>
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <symbol id="icon-monitor" viewBox="0 0 24 24">
+      <rect x="3" y="4" width="18" height="12" rx="2"></rect>
+      <path d="M8 20h8"></path>
+      <path d="M12 16v4"></path>
+    </symbol>
+    <symbol id="icon-approval" viewBox="0 0 24 24">
+      <path d="M9 11l2 2 4-5"></path>
+      <path d="M6 3h9l3 3v15H6z"></path>
+      <path d="M15 3v4h4"></path>
+    </symbol>
+    <symbol id="icon-wallet" viewBox="0 0 24 24">
+      <path d="M4 7h16v12H4z"></path>
+      <path d="M4 7l12-3v3"></path>
+      <path d="M16 13h4"></path>
+      <circle cx="17" cy="13" r="1"></circle>
+    </symbol>
+    <symbol id="icon-sliders" viewBox="0 0 24 24">
+      <path d="M4 7h6"></path>
+      <path d="M14 7h6"></path>
+      <circle cx="12" cy="7" r="2"></circle>
+      <path d="M4 17h10"></path>
+      <path d="M18 17h2"></path>
+      <circle cx="16" cy="17" r="2"></circle>
+    </symbol>
+    <symbol id="icon-edit" viewBox="0 0 24 24">
+      <path d="M4 20h16"></path>
+      <path d="M6 16l9.5-9.5 2 2L8 18H6z"></path>
+      <path d="M14 8l2 2"></path>
+    </symbol>
+    <symbol id="icon-report" viewBox="0 0 24 24">
+      <path d="M6 3h9l3 3v15H6z"></path>
+      <path d="M14 3v4h4"></path>
+      <path d="M9 13h6"></path>
+      <path d="M9 17h4"></path>
+    </symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24">
+      <path d="M4 19h16"></path>
+      <path d="M7 16v-5"></path>
+      <path d="M12 16V8"></path>
+      <path d="M17 16v-7"></path>
+    </symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24">
+      <path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"></path>
+      <path d="M9 12l2 2 4-4"></path>
+    </symbol>
+    <symbol id="icon-link" viewBox="0 0 24 24">
+      <path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"></path>
+      <path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"></path>
+    </symbol>
+    <symbol id="icon-receipt" viewBox="0 0 24 24">
+      <path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"></path>
+      <path d="M9 8h6"></path>
+      <path d="M9 12h6"></path>
+      <path d="M9 16h4"></path>
+    </symbol>
+  </svg>
   <header class="topbar">
     <a class="brand" href="#home" aria-label="iREAPBIZ">
       <img class="brand-logo-img" src="assets/logo-ireapbiz.png" alt="iREAPBIZ">
       <span>iReapbiz</span>
     </a>
     <nav>
-      <a href="index.html">Portfolio</a>
-      <a href="#problem">Pain Point</a>
-      <a href="#modules">Modul</a>
-      <a href="#screens">Fungsi Modul</a>
-      <a href="#app-preview">Tampilan</a>
-      <a href="#sap">Integrasi SAP</a>
-      <a class="cta" href="#closing">Demo</a>
+      <a href="index.html">Halaman Utama</a>
+      <a href="#problem">Tantangan</a>
+      <a href="#modules">Solusi</a>
+      <a href="#screens">Kapabilitas</a>
+      <a href="#biz-action">iREAPBIZ in Action</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#value">Business Value</a>
+      <a class="cta" href="#demo">Mulai Digitalisasi</a>
     </nav>
   </header>
 
@@ -1516,8 +1706,9 @@
           <span class="badge"> Transaksi Bisnis | Finance Request | Laporan Management | Terintegrasi SAP</span>
           <h1>iReapbiz</h1>
           <p class="lead">
-             iREAPBIZ menjadi <b>layer aplikasi web di atas SAP</b>
-			yang memungkinkan user operasional dan manajemen melakukan <b>transaksi, approval, dan monitoring</b> dengan lebih cepat dan sederhana.
+            iREAPBIZ menjadi <b>layer aplikasi web di atas SAP</b>
+            yang memungkinkan user operasional dan manajemen melakukan <b>transaksi, approval, dan monitoring</b> dengan
+            lebih cepat dan sederhana.
           </p>
           <div class="buttons">
             <a class="btn primary" href="#demo">Mulai Digitalisasi</a>
@@ -1535,16 +1726,26 @@
       <div class="container">
         <div class="section-title">
           <h2>Tantangan Nyata dalam Operasional Bisnis Sehari-hari</h2>
-          <p>Banyak proses bisnis membutuhkan <b>kecepatan, mobilitas, dan kemudahan akses</b>, namun tidak semua situasi memungkinkan user untuk selalu menggunakan SAP secara langsung.</p>
+          <p>Banyak proses bisnis membutuhkan <b>kecepatan, mobilitas, dan kemudahan akses</b>, namun tidak semua
+            situasi memungkinkan user untuk selalu menggunakan SAP secara langsung.</p>
         </div>
 
         <div class="problem-grid">
-          <div class="problem"><b>Management Tidak Selalu Dapat Mengakses SAP</b><span>Saat membutuhkan approval atau melihat report, manajemen tidak selalu memiliki akses ke SAP karena aktivitas seperti meeting atau mobilitas di luar kantor.</span></div>
-          <div class="problem"><b>Approval Tidak Bisa Menunggu</b><span>Keputusan bisnis sering dibutuhkan dengan cepat, namun proses approval tidak selalu bisa dilakukan langsung melalui sistem yang kompleks.</span></div>
-          <div class="problem"><b>Sales & User Lapangan Tidak Selalu di Kantor</b><span>Sales dan user operasional di lapangan membutuhkan sistem yang bisa diakses dengan cepat tanpa harus bergantung pada SAP</span></div>
-          <div class="problem"><b>Aktivitas Warehouse Masih Manual</b><span>Proses seperti stock counting, pick list, atau delivery sering masih dicatat manual di lapangan karena tidak praktis jika harus langsung melalui SAP.</span></div>
-          <div class="problem"><b>Finance Request Terjadi di Luar Sistem</b><span>Permintaan petty cash atau claim sering dilakukan di luar sistem, sehingga sulit dilacak dan dikontrol dengan baik.</span></div>
-          <div class="problem"><b>Kebutuhan Bisnis Tidak Selalu Sama</b><span>Setiap perusahaan memiliki kebutuhan proses yang berbeda, namun sistem yang ada sering tidak cukup fleksibel untuk menyesuaikan perubahan tersebut.</span></div>
+          <div class="problem"><b>Management Tidak Selalu Dapat Mengakses SAP</b><span>Saat membutuhkan approval atau
+              melihat report, manajemen tidak selalu memiliki akses ke SAP karena aktivitas seperti meeting atau
+              mobilitas di luar kantor.</span></div>
+          <div class="problem"><b>Approval Tidak Bisa Menunggu</b><span>Keputusan bisnis sering dibutuhkan dengan cepat,
+              namun proses approval tidak selalu bisa dilakukan langsung melalui sistem yang kompleks.</span></div>
+          <div class="problem"><b>Sales & User Lapangan Tidak Selalu di Kantor</b><span>Sales dan user operasional di
+              lapangan membutuhkan sistem yang bisa diakses dengan cepat tanpa harus bergantung pada SAP</span></div>
+          <div class="problem"><b>Aktivitas Warehouse Masih Manual</b><span>Proses seperti stock counting, pick list,
+              atau delivery sering masih dicatat manual di lapangan karena tidak praktis jika harus langsung melalui
+              SAP.</span></div>
+          <div class="problem"><b>Finance Request Terjadi di Luar Sistem</b><span>Permintaan petty cash atau claim
+              sering dilakukan di luar sistem, sehingga sulit dilacak dan dikontrol dengan baik.</span></div>
+          <div class="problem"><b>Kebutuhan Bisnis Tidak Selalu Sama</b><span>Setiap perusahaan memiliki kebutuhan
+              proses yang berbeda, namun sistem yang ada sering tidak cukup fleksibel untuk menyesuaikan perubahan
+              tersebut.</span></div>
         </div>
       </div>
     </section>
@@ -1557,36 +1758,50 @@
               <span class="badge" style="box-shadow:none">Solusi iReapbiz</span>
               <h2 style="margin-top:18px">Portal Operasional Bisnis di Atas SAP</h2>
               <p>
-                iREAPBIZ membantu user operasional dan manajemen menjalankan transaksi, approval, dan monitoring melalui portal web yang lebih sederhana, sehingga proses bisnis tetap berjalan cepat tanpa bergantung pada akses langsung ke SAP.</p>
+                iREAPBIZ membantu user operasional dan manajemen menjalankan transaksi, approval, dan monitoring melalui
+                portal web yang lebih sederhana, sehingga proses bisnis tetap berjalan cepat tanpa bergantung pada akses
+                langsung ke SAP.</p>
             </div>
             <div class="solution-points">
               <span>Business Transaction Portal</span>
               <span>Faster Approval & Monitoring</span>
               <span>Finance Request & Control</span>
-			  <span>Flexible Business Solution</span>
+              <span>Flexible Business Solution</span>
             </div>
           </div>
 
           <div class="module-cards">
             <div class="module-card">
-              <div class="icon">01</div>
+              <div class="icon" aria-hidden="true"><svg>
+                  <use href="#icon-monitor"></use>
+                </svg></div>
               <h3>Business Transaction Portal</h3>
-              <p>User operasional dapat menjalankan transaksi seperti sales, purchasing, dan warehouse melalui portal web yang lebih sederhana tanpa harus membuka SAP.</p>
+              <p>User operasional dapat menjalankan transaksi seperti sales, purchasing, dan warehouse melalui portal
+                web yang lebih sederhana tanpa harus membuka SAP.</p>
             </div>
             <div class="module-card">
-              <div class="icon">02</div>
+              <div class="icon" aria-hidden="true"><svg>
+                  <use href="#icon-approval"></use>
+                </svg></div>
               <h3>Faster Approval & Monitoring</h3>
-              <p>Management dapat melakukan approval dan melihat status transaksi dengan cepat, tanpa harus bergantung pada akses SAP di setiap saat.</p>
+              <p>Management dapat melakukan approval dan melihat status transaksi dengan cepat, tanpa harus bergantung
+                pada akses SAP di setiap saat.</p>
             </div>
             <div class="module-card">
-              <div class="icon">03</div>
+              <div class="icon" aria-hidden="true"><svg>
+                  <use href="#icon-wallet"></use>
+                </svg></div>
               <h3>Finance Request & Control</h3>
-              <p>Proses petty cash request dan claim dapat dilakukan dengan lebih terstruktur, lengkap dengan status, histori, dan kontrol yang jelas.</p>
+              <p>Proses petty cash request dan claim dapat dilakukan dengan lebih terstruktur, lengkap dengan status,
+                histori, dan kontrol yang jelas.</p>
             </div>
-			 <div class="module-card">
-              <div class="icon">04</div>
+            <div class="module-card">
+              <div class="icon" aria-hidden="true"><svg>
+                  <use href="#icon-sliders"></use>
+                </svg></div>
               <h3>Flexible Business Solution</h3>
-              <p>iREAPBIZ dapat menyesuaikan kebutuhan proses bisnis seperti stock counting, taking order, pick list delivery, dan workflow lainnya sesuai kebutuhan perusahaan.</p>
+              <p>iREAPBIZ dapat menyesuaikan kebutuhan proses bisnis seperti stock counting, taking order, pick list
+                delivery, dan workflow lainnya sesuai kebutuhan perusahaan.</p>
             </div>
           </div>
         </div>
@@ -1598,152 +1813,195 @@
         <div class="section-title">
           <h2>Kapabilitas iREAPBIZ dalam Mendukung Proses Bisnis</h2>
           <p>
-            iREAPBIZ dirancang untuk memastikan proses transaksi, approval, dan monitoring dapat berjalan secara terstruktur, cepat, dan tetap terkontrol dalam satu sistem yang terintegrasi dengan SAP.
+            iREAPBIZ dirancang untuk memastikan proses transaksi, approval, dan monitoring dapat berjalan secara
+            terstruktur, cepat, dan tetap terkontrol dalam satu sistem yang terintegrasi dengan SAP.
           </p>
         </div>
 
         <div class="function-grid">
           <div class="function-card">
-            <div class="icon">01</div>
+            <div class="icon" aria-hidden="true"><svg>
+                <use href="#icon-edit"></use>
+              </svg></div>
             <h3>Easy Transaction Input</h3>
-            <p>Transaksi operasional seperti sales, purchasing, dan warehouse dapat dilakukan melalui web dengan alur yang sederhana sehingga user tetap dapat melakukan input dengan cepat dan konsisten.</p>
+            <p>Transaksi operasional seperti sales, purchasing, dan warehouse dapat dilakukan melalui web dengan alur
+              yang sederhana sehingga user tetap dapat melakukan input dengan cepat dan konsisten.</p>
           </div>
 
           <div class="function-card">
-            <div class="icon">02</div>
+            <div class="icon" aria-hidden="true"><svg>
+                <use href="#icon-approval"></use>
+              </svg></div>
             <h3>Structured Approval Flow</h3>
-            <p>Setiap transaksi dan request memiliki alur approval yang jelas dan dapat dipantau secara real-time, sehingga tidak bergantung pada komunikasi manual.</p>
+            <p>Setiap transaksi dan request memiliki alur approval yang jelas dan dapat dipantau secara real-time,
+              sehingga tidak bergantung pada komunikasi manual.</p>
           </div>
 
           <div class="function-card">
-            <div class="icon">03</div>
+            <div class="icon" aria-hidden="true"><svg>
+                <use href="#icon-report"></use>
+              </svg></div>
             <h3>Standardized Business Reporting</h3>
-            <p>Data transaksi langsung tersusun dalam format report yang terstandarisasi sehingga dapat digunakan oleh operasional dan manajemen tanpa proses rekap ulang.</p>
+            <p>Data transaksi langsung tersusun dalam format report yang terstandarisasi sehingga dapat digunakan oleh
+              operasional dan manajemen tanpa proses rekap ulang.</p>
           </div>
 
           <div class="function-card">
-            <div class="icon">04</div>
+            <div class="icon" aria-hidden="true"><svg>
+                <use href="#icon-chart"></use>
+              </svg></div>
             <h3>KPI Monitoring & Visibility</h3>
-            <p>Dashboard membantu manajemen melihat kondisi bisnis secara cepat melalui indikator utama tanpa harus membuka banyak menu atau laporan.</p>
+            <p>Dashboard membantu manajemen melihat kondisi bisnis secara cepat melalui indikator utama tanpa harus
+              membuka banyak menu atau laporan.</p>
           </div>
 
           <div class="function-card">
-            <div class="icon">05</div>
+            <div class="icon" aria-hidden="true"><svg>
+                <use href="#icon-shield"></use>
+              </svg></div>
             <h3>Authorization & Access Control</h3>
-            <p>Akses data diatur berdasarkan role, fungsi, dan organisasi sehingga setiap user hanya melihat data yang relevan sesuai tanggung jawabnya.</p>
+            <p>Akses data diatur berdasarkan role, fungsi, dan organisasi sehingga setiap user hanya melihat data yang
+              relevan sesuai tanggung jawabnya.</p>
           </div>
 
           <div class="function-card">
-            <div class="icon">06</div>
+            <div class="icon" aria-hidden="true"><svg>
+                <use href="#icon-link"></use>
+              </svg></div>
             <h3>SAP Integration</h3>
-            <p>Data transaksi terhubung ke SAP tanpa input ulang sehingga mendukung kebutuhan reporting dan kontrol bisnis.</p>
+            <p>Data transaksi terhubung ke SAP tanpa input ulang sehingga mendukung kebutuhan reporting dan kontrol
+              bisnis.</p>
           </div>
         </div>
       </div>
     </section>
 
-	 <section class="biz-action" id="biz-action">
-	  <div class="container">
-		<div class="section-title">
-		  <h2>iREAPBIZ in Action</h2>
-		  <p>
-			Berbagai proses bisnis dapat dijalankan melalui portal web yang sederhana,
-			fleksibel, dan tetap terhubung dengan SAP.
-		  </p>
-		</div>
+    <section class="biz-action" id="biz-action">
+      <div class="container">
+        <div class="section-title">
+          <h2>iREAPBIZ in Action</h2>
+          <p>
+            Berbagai proses bisnis dapat dijalankan melalui portal web yang sederhana,
+            fleksibel, dan tetap terhubung dengan SAP.
+          </p>
+        </div>
 
-		<div class="biz-action-grid">
-		  <div class="biz-action-menu">
-			<button class="biz-action-item active"
-			  data-title="Transaction"
-			  data-subtitle="Taking Order • Stock Take • Pick List Delivery • Goods Movement"
-			  data-image="assets/ireapbiz-transaction.png">
-			  <span>01</span>
-			  <div>
-				<b>Transaction</b>
-				<small>Transaksi operasional harian</small>
-			  </div>
-			</button>
+        <div class="biz-action-grid">
+          <div class="biz-action-menu">
+            <button class="biz-action-item active" data-title="Transaction"
+              data-subtitle="Taking Order • Stock Take • Pick List Delivery • Goods Movement"
+              data-image="assets/ireapbiz-transaction.png">
+              <span aria-hidden="true"><svg>
+                  <use href="#icon-receipt"></use>
+                </svg></span>
+              <div>
+                <b>Transaction</b>
+                <small>Transaksi operasional harian</small>
+              </div>
+            </button>
 
-			<button class="biz-action-item"
-			  data-title="Finance & Request"
-			  data-subtitle="Petty Cash Request • Claim • Internal Request"
-			  data-image="assets/ireapbiz-finance-request.png">
-			  <span>02</span>
-			  <div>
-				<b>Finance & Request</b>
-				<small>Request operasional & finance</small>
-			  </div>
-			</button>
+            <button class="biz-action-item" data-title="Finance & Request"
+              data-subtitle="Petty Cash Request • Claim • Internal Request"
+              data-image="assets/ireapbiz-finance-request.png">
+              <span aria-hidden="true"><svg>
+                  <use href="#icon-wallet"></use>
+                </svg></span>
+              <div>
+                <b>Finance & Request</b>
+                <small>Request operasional & finance</small>
+              </div>
+            </button>
 
-			<button class="biz-action-item"
-			  data-title="Approval & Workflow"
-			  data-subtitle="Approval transaksi • Approval request • Status tracking"
-			  data-image="assets/ireapbiz-approval.png">
-			  <span>03</span>
-			  <div>
-				<b>Approval & Workflow</b>
-				<small>Approval cepat & terkontrol</small>
-			  </div>
-			</button>
+            <button class="biz-action-item" data-title="Approval & Workflow"
+              data-subtitle="Approval transaksi • Approval request • Status tracking"
+              data-image="assets/ireapbiz-approval.png">
+              <span aria-hidden="true"><svg>
+                  <use href="#icon-approval"></use>
+                </svg></span>
+              <div>
+                <b>Approval & Workflow</b>
+                <small>Approval cepat & terkontrol</small>
+              </div>
+            </button>
 
-			<button class="biz-action-item"
-			  data-title="Dashboard & Reporting"
-			  data-subtitle="Dashboard • Monitoring • Business Report"
-			  data-image="assets/ireapbiz-dashboard-report.png">
-			  <span>04</span>
-			  <div>
-				<b>Dashboard & Reporting</b>
-				<small>Visibilitas untuk manajemen</small>
-			  </div>
-			</button>
+            <button class="biz-action-item" data-title="Dashboard & Reporting"
+              data-subtitle="Dashboard • Monitoring • Business Report"
+              data-image="assets/ireapbiz-dashboard-report.png">
+              <span aria-hidden="true"><svg>
+                  <use href="#icon-chart"></use>
+                </svg></span>
+              <div>
+                <b>Dashboard & Reporting</b>
+                <small>Visibilitas untuk manajemen</small>
+              </div>
+            </button>
 
-			<button class="biz-action-item"
-			  data-title="Custom Business Flow"
-			  data-subtitle="Custom Module • Workflow Khusus • Future Development"
-			  data-image="assets/ireapbiz-custom-flow.png">
-			  <span>05</span>
-			  <div>
-				<b>Custom Business Flow</b>
-				<small>Fleksibel sesuai kebutuhan bisnis</small>
-			  </div>
-			</button>
-		  </div>
+            <button class="biz-action-item" data-title="Custom Business Flow"
+              data-subtitle="Custom Module • Workflow Khusus • Future Development"
+              data-image="assets/ireapbiz-custom-flow.png">
+              <span aria-hidden="true"><svg>
+                  <use href="#icon-sliders"></use>
+                </svg></span>
+              <div>
+                <b>Custom Business Flow</b>
+                <small>Fleksibel sesuai kebutuhan bisnis</small>
+              </div>
+            </button>
+          </div>
 
-		  <div class="biz-action-preview">
-			<div class="biz-preview-copy">
-			  <span class="biz-preview-badge">Flexible Business Portal</span>
-			  <h3 id="bizPreviewTitle">Transaction</h3>
-			  <p id="bizPreviewSubtitle">
-				Taking Order • Stock Take • Pick List Delivery • Goods Movement
-			  </p>
-			</div>
+          <div class="biz-action-preview">
+            <div class="biz-preview-copy">
+              <span class="biz-preview-badge">Flexible Business Portal</span>
+              <h3 id="bizPreviewTitle">Transaction</h3>
+              <p id="bizPreviewSubtitle">
+                Taking Order • Stock Take • Pick List Delivery • Goods Movement
+              </p>
+            </div>
 
-			<div class="biz-preview-screen">
-			  <img id="bizPreviewImage" src="assets/ireapbiz-transaction.png" alt="iREAPBIZ transaction preview">
-			</div>
-		  </div>
-		</div>
-	  </div>
-	</section> 
-   
-   
+            <div class="biz-preview-screen">
+              <img id="bizPreviewImage" src="assets/ireapbiz-transaction.png" alt="iREAPBIZ transaction preview">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <section id="workflow">
       <div class="container">
         <div class="section-title">
           <h2>iREAPBIZ Business Workflow</h2>
           <p>
-           Transaksi bisnis dapat dilakukan melalui portal web yang sederhana, diproses melalui alur approval, dan terhubung ke SAP tanpa mengganggu kecepatan operasional.
+            Transaksi bisnis dapat dilakukan melalui portal web yang sederhana, diproses melalui alur approval, dan
+            terhubung ke SAP tanpa mengganggu kecepatan operasional.
           </p>
         </div>
 
         <div class="flow-wrap">
-          <div class="flow-step"><div class="step-num">01</div><b>Transaction Input</b><span>User operasional melakukan transaksi seperti sales, purchasing, warehouse, atau request melalui portal web tanpa harus membuka SAP.</span></div>
-          <div class="flow-step"><div class="step-num">02</div><b>Data Validation</b><span>Data yang diinput langsung tervalidasi sesuai kebutuhan bisnis sehingga mengurangi kesalahan sebelum diproses lebih lanjut.</span></div>
-          <div class="flow-step"><div class="step-num">03</div><b>Approval Process</b><span>Transaksi dan request diproses melalui alur approval yang jelas sehingga status dapat dipantau tanpa komunikasi manual.</span></div>
-          <div class="flow-step"><div class="step-num">04</div><b>Real-Time Monitoring</b><span>User dan manajemen dapat melihat status transaksi dan kondisi bisnis secara langsung melalui dashboard dan report.</span></div>
-          <div class="flow-step"><div class="step-num">05</div><b>Controlled Access</b><span>Setiap user hanya dapat melihat dan mengakses data sesuai peran, lokasi, dan tanggung jawabnya, sehingga operasional tetap terkontrol.</span></div>
-          <div class="flow-step"><div class="step-num">06</div><b>SAP Integration & Decision</b><span>Data langsung terhubung ke SAP tanpa input ulang dan siap digunakan untuk costing, reporting, dan keputusan manajemen.</span></div>
+          <div class="flow-step">
+            <div class="step-num">01</div><b>Transaction Input</b><span>User operasional melakukan transaksi seperti
+              sales, purchasing, warehouse, atau request melalui portal web tanpa harus membuka SAP.</span>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">02</div><b>Data Validation</b><span>Data yang diinput langsung tervalidasi sesuai
+              kebutuhan bisnis sehingga mengurangi kesalahan sebelum diproses lebih lanjut.</span>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">03</div><b>Approval Process</b><span>Transaksi dan request diproses melalui alur
+              approval yang jelas sehingga status dapat dipantau tanpa komunikasi manual.</span>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">04</div><b>Real-Time Monitoring</b><span>User dan manajemen dapat melihat status
+              transaksi dan kondisi bisnis secara langsung melalui dashboard dan report.</span>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">05</div><b>Controlled Access</b><span>Setiap user hanya dapat melihat dan mengakses
+              data sesuai peran, lokasi, dan tanggung jawabnya, sehingga operasional tetap terkontrol.</span>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">06</div><b>SAP Integration & Decision</b><span>Data langsung terhubung ke SAP tanpa
+              input ulang dan siap digunakan untuk costing, reporting, dan keputusan manajemen.</span>
+          </div>
         </div>
       </div>
     </section>
@@ -1754,7 +2012,8 @@
         <div class="section-title">
           <h2>Business Value untuk Proses Bisnis</h2>
           <p>
-           iReapbiz membantu perusahaan menjalankan transaksi dan approval dengan lebih cepat tanpa mengorbankan kontrol, sekaligus memastikan data tetap terintegrasi dengan SAP.</p>
+            iReapbiz membantu perusahaan menjalankan transaksi dan approval dengan lebih cepat tanpa mengorbankan
+            kontrol, sekaligus memastikan data tetap terintegrasi dengan SAP.</p>
         </div>
 
         <div class="value-table-wrap">
@@ -1814,11 +2073,22 @@
       <div class="container">
         <h2>Mulai Digitalisasi Operasional Farm Anda</h2>
         <p>
-          Diskusikan kebutuhan operasional farm Anda bersama tim STEM untuk menentukan solusi yang sesuai dengan proses bisnis dan skala operasional Anda.
+          Diskusikan kebutuhan operasional farm Anda bersama tim STEM untuk menentukan solusi yang sesuai dengan proses
+          bisnis dan skala operasional Anda.
         </p>
         <div class="cta-buttons">
-          <a href="https://wa.me/+6287786555055?text=Halo%20tim%20STEM,%20saya%20ingin%20diskusi%20terkait%20solusi%20digitalisasi%20operasional%20farm." class="btn-cta-primary">Chat via WhatsApp</a>
+          <a href="https://wa.me/+6287786555055?text=Halo%20tim%20STEM,%20saya%20ingin%20diskusi%20terkait%20solusi%20digitalisasi%20operasional%20farm."
+            target="_blank" rel="noopener noreferrer" class="btn-cta-primary">Chat via WhatsApp</a>
           <a href="mailto:sales-enquiry@sterling-team.com" class="btn-cta-secondary">Kirim Email</a>
+        </div>
+        <div class="next-links">
+          <a href="index.html">Kembali ke Halaman Utama</a>
+          <span>&bull;</span>
+          <a href="sap-solution.html">Lihat SAP Solution</a>
+          <span>&bull;</span>
+          <a href="iflocs.html">Lihat iFLOCS</a>
+          <span>&bull;</span>
+          <a href="ireapnet.html">Lihat iREAPNET</a>
         </div>
       </div>
     </section>
@@ -1828,7 +2098,10 @@
         <div>
           <h2>Tentang STEM</h2>
           <p>
-            STEM (Sterling Tulus Cemerlang) adalah konsultan ERP dan solusi bisnis terintegrasi yang membantu perusahaan meningkatkan efisiensi operasional dan kontrol bisnis melalui sistem yang terstruktur. Kami berpengalaman dalam implementasi ERP, otomasi proses bisnis, dan pengembangan aplikasi berbasis web untuk mendukung transformasi digital yang berkelanjutan.
+            STEM (Sterling Tulus Cemerlang) adalah konsultan ERP dan solusi bisnis terintegrasi yang membantu perusahaan
+            meningkatkan efisiensi operasional dan kontrol bisnis melalui sistem yang terstruktur. Kami berpengalaman
+            dalam implementasi ERP, otomasi proses bisnis, dan pengembangan aplikasi berbasis web untuk mendukung
+            transformasi digital yang berkelanjutan.
           </p>
           <div class="footer-keywords">
             SAP Business One • Microsoft Dynamics 365 Business Central • UiPath RPA • Siemens • SaaS • iREAP POS
@@ -1839,70 +2112,98 @@
           <span><b>WhatsApp:</b> +62-877-8655-5055</span>
           <span><b>Email:</b> sales-enquiry@sterling-team.com</span>
           <span><b>Website:</b> www.sterling-team.com</span>
-          <span><b>Lokasi:</b> Sampoerna Strategic Square, South Tower Level 30, Jl Jend. Sudirman No. 45-46, Jakarta 12930</span>
+          <span><b>Lokasi:</b> Sampoerna Strategic Square, South Tower Level 30, Jl Jend. Sudirman No. 45-46, Jakarta
+            12930</span>
         </div>
       </div>
     </section>
 
     <footer>
       <div class="container">
-        STEM Digital Solution — iREAPBIZ Business Web Application. Solusi workflow bisnis dan transaksi operasional terintegrasi SAP.
+        STEM Digital Solution — iREAPBIZ Business Web Application. Solusi workflow bisnis dan transaksi operasional
+        terintegrasi SAP.
       </div>
     </footer>
 
-  <div class="lightbox" id="imageLightbox" aria-hidden="true">
-    <button type="button" aria-label="Tutup gambar">×</button>
-    <img src="" alt="">
-  </div>
-  <script>
-    const lightbox = document.getElementById('imageLightbox');
-    const lightboxImage = lightbox.querySelector('img');
-    const closeLightbox = () => {
-      lightbox.classList.remove('open');
-      lightbox.setAttribute('aria-hidden', 'true');
-      lightboxImage.src = '';
-      lightboxImage.alt = '';
-    };
+    <div class="lightbox" id="imageLightbox" aria-hidden="true">
+      <button type="button" aria-label="Tutup gambar">×</button>
+      <img src="" alt="">
+    </div>
+    <script>
+      const revealItems = document.querySelectorAll(
+        '.hero-grid > div:first-child, .hero-visual, .section-title, .stat, .solution-panel, .module-card, .function-card, .biz-action-menu, .biz-action-preview, .screen-card, .flow-step, .value-table-wrap, .contact-box'
+      );
 
-    document.querySelectorAll('.screenshot-frame img, .hero-screenshot img, .hero-visual img, .biz-preview-screen img').forEach((image) => {
-      image.addEventListener('click', () => {
-        lightboxImage.src = image.currentSrc || image.src;
-        lightboxImage.alt = image.alt || 'Tampilan aplikasi';
-        lightbox.classList.add('open');
-        lightbox.setAttribute('aria-hidden', 'false');
+      revealItems.forEach((item, index) => {
+        item.classList.add('reveal');
+        item.style.setProperty('--reveal-order', index % 6);
       });
-    });
 
-    lightbox.querySelector('button').addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (event) => {
-      if (event.target === lightbox) closeLightbox();
-    });
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeLightbox();
-    });
-  </script>
-<script>
-  const bizActionItems = document.querySelectorAll(".biz-action-item");
-  const bizPreviewTitle = document.getElementById("bizPreviewTitle");
-  const bizPreviewSubtitle = document.getElementById("bizPreviewSubtitle");
-  const bizPreviewImage = document.getElementById("bizPreviewImage");
+      if (!('IntersectionObserver' in window)) {
+        revealItems.forEach((item) => item.classList.add('is-visible'));
+      } else {
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.16 });
 
-  bizActionItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      bizActionItems.forEach((btn) => btn.classList.remove("active"));
-      item.classList.add("active");
+        revealItems.forEach((item) => revealObserver.observe(item));
+      }
 
-      bizPreviewImage.classList.add("switching");
+      const lightbox = document.getElementById('imageLightbox');
+      const lightboxImage = lightbox.querySelector('img');
+      const closeLightbox = () => {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImage.src = '';
+        lightboxImage.alt = '';
+      };
 
-      setTimeout(() => {
-        bizPreviewTitle.textContent = item.dataset.title;
-        bizPreviewSubtitle.textContent = item.dataset.subtitle;
-        bizPreviewImage.src = item.dataset.image;
-        bizPreviewImage.alt = item.dataset.title;
-        bizPreviewImage.classList.remove("switching");
-      }, 180);
-    });
-  });
-</script>
+      document.querySelectorAll('.screenshot-frame img, .hero-screenshot img, .hero-visual img, .biz-preview-screen img').forEach((image) => {
+        image.addEventListener('click', () => {
+          lightboxImage.src = image.currentSrc || image.src;
+          lightboxImage.alt = image.alt || 'Tampilan aplikasi';
+          lightbox.classList.add('open');
+          lightbox.setAttribute('aria-hidden', 'false');
+        });
+      });
 
-</body></html>
+      lightbox.querySelector('button').addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeLightbox();
+      });
+    </script>
+    <script>
+      const bizActionItems = document.querySelectorAll(".biz-action-item");
+      const bizPreviewTitle = document.getElementById("bizPreviewTitle");
+      const bizPreviewSubtitle = document.getElementById("bizPreviewSubtitle");
+      const bizPreviewImage = document.getElementById("bizPreviewImage");
+
+      bizActionItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          bizActionItems.forEach((btn) => btn.classList.remove("active"));
+          item.classList.add("active");
+
+          bizPreviewImage.classList.add("switching");
+
+          setTimeout(() => {
+            bizPreviewTitle.textContent = item.dataset.title;
+            bizPreviewSubtitle.textContent = item.dataset.subtitle;
+            bizPreviewImage.src = item.dataset.image;
+            bizPreviewImage.alt = item.dataset.title;
+            bizPreviewImage.classList.remove("switching");
+          }, 180);
+        });
+      });
+    </script>
+
+</body>
+
+</html>
